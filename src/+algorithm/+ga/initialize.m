@@ -61,7 +61,7 @@ function data = initialize(params)
 
     data.alg.population = [];
     for i = 1 : N
-        data.alg.population = [data.alg.population randomIndividual(data)];
+        data.alg.population = [data.alg.population algorithm.individual.randomIndividual(data)];
     end
 
 end

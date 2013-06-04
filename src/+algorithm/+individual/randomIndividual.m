@@ -12,10 +12,9 @@ function individual = randomIndividual(data)
 
             oldDim = data.in.arch(m - 1) + 1;
 
-            data.alg.W{m} = 2 / sqrt(oldDim) .* (rand(curDim, oldDim) - 0.5);
+            individual.W{m} = 2 / sqrt(oldDim) .* (rand(curDim, oldDim) - 0.5);
 
-            data.alg.W{m}(:, 1) = data.const.bias;
-
+            individual.W{m}(:, 1) = data.const.bias;
         end
     end
 end
