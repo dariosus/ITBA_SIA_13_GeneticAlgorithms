@@ -1,6 +1,6 @@
 function main(params)
 
-    data = algorithm.initialize(params);
+    data = algorithm.ga.initialize(params);
 
     % while !algorithm.ready(data)
 
