@@ -2,13 +2,13 @@ function main(params)
 
     data = algorithm.initialize(params);
 
-    while !algorithm.ready(data)
+    % while !algorithm.ready(data)
 
-        data.alg.generation = data.alg.generation + 1;
+    %     data.alg.generation = data.alg.generation + 1;
 
-        data = algorithm.its_a_new_generation(data);
-    end
+    %     data = algorithm.its_a_new_generation(data);
+    % end
 
-    algorithm.oh_yeah(data);
+    % algorithm.oh_yeah(data);
 end
 

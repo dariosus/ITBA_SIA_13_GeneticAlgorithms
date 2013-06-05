@@ -21,17 +21,17 @@ function data = initialize(params)
     data.const.bias = -1;         % TODO: FIXME: WARNING: WTF?? EOW
 
 
-    data.const.selection % method of choice
-    data.const.replacement % method of choice
-    data.const.crossing % method of choice
-    data.const.mutation % method of choice
+    % data.const.selection % method of choice
+    % data.const.replacement % method of choice
+    % data.const.crossing % method of choice
+    % data.const.mutation % method of choice
 
-    data.const.G % generation gap
-    data.const.pm % mutation probability
-    data.const.pb % back propagation probability
-    data.const.pc % crossing probability
-    data.const.a % mixed selection proportion
-    data.const.N % population size
+    % data.const.G % generation gap
+    % data.const.pm % mutation probability
+    % data.const.pb % back propagation probability
+    % data.const.pc % crossing probability
+    % data.const.a % mixed selection proportion
+    % data.const.N % population size
 
 
     data.const.generationsPerDump = 30;
