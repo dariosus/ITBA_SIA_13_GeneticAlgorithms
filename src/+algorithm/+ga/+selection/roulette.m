@@ -9,7 +9,7 @@ function population = roulette(k, oldPopulation)
 
     population = cell(k, 1);
 
-    r = sort(rand(k, 1) * F, 'descend');
+    r = sort(rand(k, 1) * F, 'descend')
 
     curR = 1;
 
