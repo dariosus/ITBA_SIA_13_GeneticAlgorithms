@@ -15,7 +15,7 @@ function chromosome = evalFitness(data, chromosome, useAllInputs)
 
         V = [-1; Xi(i, :)'];
 
-        for m = 2 : data.alg.M
+        for m = 2 : data.in.M
 
             V = [-1; data.fun.g(chromosome.W{m} * V)];
         end

@@ -2,9 +2,9 @@ function chromosome = randomChromosome(data)
 
     chromosome = struct();
 
-    chromosome.W = cell(data.alg.M, 1); % Weights
+    chromosome.W = cell(data.in.M, 1); % Weights
 
-    for m = 1 : data.alg.M
+    for m = 1 : data.in.M
 
         curDim = data.in.arch(m);
 
