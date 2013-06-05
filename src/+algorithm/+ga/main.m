@@ -2,6 +2,8 @@ function main(params)
 
     data = algorithm.ga.initialize(params);
 
+    algorithm.debug.printStruct(data);
+
     % while !algorithm.ready(data)
 
     %     data.alg.generation = data.alg.generation + 1;

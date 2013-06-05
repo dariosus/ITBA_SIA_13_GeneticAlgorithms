@@ -69,9 +69,10 @@ function data = initialize(params)
 
     data.alg.M = length(data.in.arch); % Number of layers
 
-    data.alg.population = [];
+    data.alg.population = cell(data.const.N, 1);
+
     for i = 1 : data.const.N
-        data.alg.population = [data.alg.population algorithm.chromosome.randomChromosome(data)];
+        data.alg.population{i} = algorithm.chromosome.randomChromosome(data);
     end
 
 end
