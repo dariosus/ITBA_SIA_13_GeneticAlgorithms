@@ -4,7 +4,7 @@ function population = roulette(k, oldPopulation)
 
     for i = 1 : size(oldPopulation, 1)
 
-        F = F + oldPopulation{i}.fitness;
+        F = F + oldPopulation{i}.fitness
     end
 
     population = cell(k, 1);
@@ -15,12 +15,12 @@ function population = roulette(k, oldPopulation)
 
     for chromosome = 1 : size(oldPopulation, 1)
 
-        F = F - oldPopulation{chromosome}.fitness;
+        F = F - oldPopulation{chromosome}.fitness
 
         while curR <= k && r(curR) > F
 
             population{curR} = oldPopulation{chromosome};
-            curR = curR + 1;
+            curR = curR + 1
         end
     end
 end
