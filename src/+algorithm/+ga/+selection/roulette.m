@@ -17,7 +17,7 @@ function population = roulette(k, oldPopulation)
 
         F = F - oldPopulation{chromosome}.fitness;
 
-        while curR <= k && r(currR) > F
+        while curR <= k && r(curR) > F
 
             population{curR} = oldPopulation{chromosome};
             curR = curR + 1;
