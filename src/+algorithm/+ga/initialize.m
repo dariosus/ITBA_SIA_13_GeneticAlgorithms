@@ -31,7 +31,7 @@ function data = initialize(params)
     % data.const.pb % back propagation probability
     % data.const.pc % crossing probability
     % data.const.a % mixed selection proportion
-    data.const.N = 2; % population size
+    data.const.N = 10; % population size
 
     data.const.generationsPerDump = 30;
     data.const.path = '';
