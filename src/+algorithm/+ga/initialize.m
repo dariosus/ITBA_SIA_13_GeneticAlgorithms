@@ -37,12 +37,21 @@ function data = initialize(params)
     data.const.generationsPerDump = 30;
     data.const.path = '';
 
+    data.const.g = @algorithm.functions.sigmoidLog;
+    data.const.dg = @algorithm.functions.DsigmoidLog;
+
     % Get input params
 
     names = fieldnames(params);
     for i = 1 : length(names)
         data.const.(names{i}) = params.(names{i});
     end
+
+    % Fix beta to functions
+
+    data.fun = struct();
+    data.fun.g = @(x)data.const.g(data.const.beta, x);
+    data.fun.dg = @(x)data.const.dg(data.const.beta, x);
 
     % Input
 
