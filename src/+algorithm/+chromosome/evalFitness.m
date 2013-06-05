@@ -1,12 +1,12 @@
-function individual = evalFitness(data, individual, useAllInputs)
+function chromosome = evalFitness(data, chromosome, useAllInputs)
 
     if nargin == 3 && useAllInputs
 
-        S  = data.alg.allS
-        Xi = data.alg.allXi
+        S  = data.in.allS;
+        Xi = data.in.allXi;
     else
-        S  = data.alg.S
-        Xi = data.alg.Xi
+        S  = data.in.S;
+        Xi = data.in.Xi;
     end
 
     errors = [];
@@ -17,12 +17,14 @@ function individual = evalFitness(data, individual, useAllInputs)
 
         for m = 2 : data.alg.M
 
-            V = [-1; data.fun.g(individual.W{m} * V);
+            V = [-1; data.fun.g(chromosome.W{m} * V)];
         end
 
-        errors = [errors abs(norm(S(i, :)' - V(2 : end)))];
+        error = abs(norm(S(i, :)' - V(2 : end)));
+
+        errors = [errors error];
     end
 
-    individual.fitness = mean(errors .^ 2);
+    chromosome.fitness = mean(errors .^ 2);
 end
 

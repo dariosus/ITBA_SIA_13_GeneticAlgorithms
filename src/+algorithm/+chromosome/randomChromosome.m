@@ -18,6 +18,6 @@ function chromosome = randomChromosome(data)
         end
     end
 
-    chromosome = evalFitness(data, chromosome);
+    chromosome = algorithm.chromosome.evalFitness(data, chromosome);
 end
 
