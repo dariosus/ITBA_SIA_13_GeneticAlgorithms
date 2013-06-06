@@ -27,9 +27,10 @@ function data = initialize(params)
     % data.const.mutation % method of choice
 
     % data.const.G % generation gap
-    % data.const.pm % mutation probability
-    % data.const.pb % back propagation probability
-    % data.const.pc % crossing probability
+    data.const.pm = 0.001; % single locus mutation probability
+    data.const.pmStar = 0.1; % chromosome mutation probability
+    data.const.pb = 0.5; % back propagation probability
+    data.const.pc = 0.7; % crossing probability
     % data.const.a % mixed selection proportion
     data.const.N = 10; % population size
 

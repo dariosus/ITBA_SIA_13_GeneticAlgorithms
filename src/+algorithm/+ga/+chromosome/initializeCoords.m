@@ -22,5 +22,7 @@ function data = initializeCoords(data)
             end
         end
     end
+
+    data.alg.numLocus = position;
 end
 
