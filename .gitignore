@@ -1,0 +1,15 @@
+# Mac stuff
+.DS_Store
+
+# Matlab stuff
+*~
+
+# Bad configured vim stuff
+*.sw[a-z]
+
+# Latex stuff (?)
+*.aux
+*.backup
+*.toc
+*.log
+
