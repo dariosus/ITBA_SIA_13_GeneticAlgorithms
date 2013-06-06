@@ -31,6 +31,7 @@ function data = initialize(params)
     data.const.pmStar = 0.1; % chromosome mutation probability
     data.const.pb = 0.5; % back propagation probability
     data.const.pc = 0.7; % crossing probability
+    data.const.p = 0.1; % uniform crossover probability per locus
     % data.const.a % mixed selection proportion
     data.const.N = 10; % population size
 
