@@ -4,9 +4,9 @@ function child = chromosome(data, parent)
 
         index = floor(rand() * data.const.numLocus) + 1;
 
-        [x y z] = data.const.vec2w(index, :);
+        p = data.const.vec2w(index, :);
 
-        parent{x}(y, z) = 2 / sqrt(data.in.arch(x - 1)) * (rand() - 0.5);
+        parent{p(1)}(p(2), p(3)) = 2 / sqrt(data.in.arch(p(1) - 1)) * (rand() - 0.5);
     end
 
     child = parent;

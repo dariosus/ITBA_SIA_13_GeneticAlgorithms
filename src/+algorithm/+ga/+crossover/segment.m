@@ -9,11 +9,11 @@ function [child1 child2] = segment(data, dad, mom, r1, r2)
 
     for index = r1 : r2
 
-        [x y z] = data.const.vec2w(index, :);
+        p = data.const.vec2w(index, :);
 
-        aux = dad{x}(y, z);
-        dad{x}(y, z) = mom{x}(y, z);
-        mom{x}(y, z) = aux;
+        aux = dad.W{p(1)}(p(2), p(3));
+        dad.W{p(1)}(p(2), p(3)) = mom.W{p(1)}(p(2), p(3));
+        mom.W{p(1)}(p(2), p(3)) = aux;
     end
 
     child1 = dad;

@@ -44,7 +44,7 @@ function data = initialize(params)
     data.const.pc = 0.7; % crossing probability
     data.const.p = 0.1; % uniform crossover probability per locus
     % data.const.a % mixed selection proportion
-    data.const.N = 10; % population size
+    data.const.N = 6; % population size
 
     data.const.generationsPerDump = 30;
     data.const.path = '';

@@ -7,20 +7,20 @@ function selected = linealFitness(k, population, r)
         F = F + population{i}.fitness;
     end
 
-    selected = cell(k, 1);
+    selected = [];
 
     r = r * F;
 
-    posR = 1;
+    rpos = 1;
 
     for chromosome = 1 : size(population, 1)
 
         F = F - population{chromosome}.fitness;
 
-        while posR <= k && r(posR) > F
+        while rpos <= k && r(rpos) > F
 
-            selected{posR} = population{chromosome};
-            posR = posR + 1;
+            selected = [selected population{chromosome}];
+            rpos = rpos + 1;
         end
     end
 end

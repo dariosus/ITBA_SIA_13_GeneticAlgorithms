@@ -1,6 +1,9 @@
 function [child1 child2] = spawn(data, population)
 
-    [child1 child2] = data.fun.selection(2, population);
+    children = data.fun.selection(2, population);
+
+    child1 = children(1);
+    child2 = children(2);
 
     if rand() <= data.const.pc
 
@@ -15,7 +18,7 @@ function [child1 child2] = spawn(data, population)
         % TODO: backpropagation
     end
 
-    child1.fitness = evalFitness(data, child1);
-    child2.fitness = evalFitness(data, child2);
+    child1.fitness = algorithm.ga.chromosome.evalFitness(data, child1);
+    child2.fitness = algorithm.ga.chromosome.evalFitness(data, child2);
 end
 
