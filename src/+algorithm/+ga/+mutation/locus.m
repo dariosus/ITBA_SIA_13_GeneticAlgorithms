@@ -6,7 +6,7 @@ function child = locus(data, parent)
 
             [x y z] = data.alg.vec2w(index, :);
 
-            % parent{x}(y, z) = ;
+            parent{x}(y, z) = 2 / sqrt(data.in.arch(x - 1)) * (rand() - 0.5);
         end
     end
 

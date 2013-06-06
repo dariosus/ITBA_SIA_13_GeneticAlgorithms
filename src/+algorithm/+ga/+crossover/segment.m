@@ -15,5 +15,8 @@ function [child1 child2] = segment(data, dad, mom, r1, r2)
         dad{x}(y, z) = mom{x}(y, z);
         mom{x}(y, z) = aux;
     end
+
+    child1 = dad;
+    child2 = mom;
 end
 

@@ -11,5 +11,8 @@ function [child1 child2] = uniform(data, dad, mom)
             mom{x}(y, z) = aux;
         end
     end
+
+    child1 = dad;
+    child2 = mom;
 end
 
