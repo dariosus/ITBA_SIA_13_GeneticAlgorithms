@@ -11,8 +11,5 @@ function [child1 child2] = uniform(data, dad, mom)
             mom{x}(y, z) = aux;
         end
     end
-
-    child1 = rmfield(dad, 'fitness');
-    child2 = rmfield(mom, 'fitness');
 end
 
