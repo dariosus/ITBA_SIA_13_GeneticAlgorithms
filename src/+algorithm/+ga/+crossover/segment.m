@@ -9,7 +9,7 @@ function [child1 child2] = segment(data, dad, mom, r1, r2)
 
     for index = r1 : r2
 
-        [x y z] = data.alg.vec2w(index, :);
+        [x y z] = data.const.vec2w(index, :);
 
         aux = dad{x}(y, z);
         dad{x}(y, z) = mom{x}(y, z);

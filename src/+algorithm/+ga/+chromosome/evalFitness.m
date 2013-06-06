@@ -1,4 +1,4 @@
-function chromosome = evalFitness(data, chromosome, useAllInputs)
+function fitness = evalFitness(data, chromosome, useAllInputs)
 
     if nargin == 3 && useAllInputs
 
@@ -25,6 +25,6 @@ function chromosome = evalFitness(data, chromosome, useAllInputs)
         errors = [errors error];
     end
 
-    chromosome.fitness = mean(errors .^ 2);
+    fitness = mean(errors .^ 2);
 end
 

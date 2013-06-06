@@ -1,6 +1,8 @@
 function data = initialize(params)
 
-    % Load from file
+    %%%
+    %% Load from file
+    %%%
 
     if isfield(params, 'file')
 
@@ -8,12 +10,20 @@ function data = initialize(params)
         return;
     end
 
+    %%%
+    %% Data struct
+    %%%
+
     data = struct();
 
-    % Default constants
-
     data.const = struct();
-    data.const.maxGenerations = 1000;
+    data.in    = struct();
+    data.fun   = struct();
+    data.alg   = struct();
+
+    %%%
+    %% Constants
+    %%%
 
     data.const.arch = [4 4];
     data.const.inputDim = 2;
@@ -26,6 +36,7 @@ function data = initialize(params)
     % data.const.crossing % method of choice
     % data.const.mutation % method of choice
 
+    data.const.maxGenerations = 1000;
     % data.const.G % generation gap
     data.const.pm = 0.001; % single locus mutation probability
     data.const.pmStar = 0.1; % chromosome mutation probability
@@ -41,33 +52,44 @@ function data = initialize(params)
     data.const.g = @algorithm.functions.sigmoidLog;
     data.const.dg = @algorithm.functions.DsigmoidLog;
 
-    % Get input params
+    data.const.selection   = @algorithm.ga.selection.roulette;
+    data.const.crossover   = @algorithm.ga.crossover.singlePoint;
+    data.const.mutation    = @algorithm.ga.mutation.locus;
+    data.const.replacement = @algorithm.ga.replacement.first;
 
     names = fieldnames(params);
     for i = 1 : length(names)
         data.const.(names{i}) = params.(names{i});
     end
 
-    % Fix beta to functions
+    data = algorithm.ga.chromosome.initializeCoords(data);
 
-    data.fun = struct();
-    data.fun.g = @(x)data.const.g(data.const.beta, x);
-    data.fun.dg = @(x)data.const.dg(data.const.beta, x);
-
-    % Input
-
-    data.in = struct();
+    %%%
+    %% Input
+    %%%
 
     [data.in.allXi, data.in.allS] = algorithm.input.getInputs(data);
-    [data.in.Xi, data.in.S] = algorithm.input.getRandomSamples(data);
+    [data.in.Xi,    data.in.S   ] = algorithm.input.getRandomSamples(data);
 
     data.in.arch = [size(data.in.Xi, 2) data.const.arch size(data.in.S, 2)]; % Architecture
 
     data.in.M = length(data.in.arch); % Number of layers
 
-    % Algorithm variables
+    %%%
+    %% Functions
+    %%%
 
-    data.alg = struct();
+    data.fun.g  = @(x)data.const.g(data.const.beta, x);
+    data.fun.dg = @(x)data.const.dg(data.const.beta, x);
+
+    data.fun.selection   = @(k, population)data.const.selection(k, population);
+    data.fun.crossover   = @(dad, mom)data.const.crossover(data, dad, mom);
+    data.fun.mutation    = @(parent)data.const.mutation(data, parent);
+    data.fun.replacement = @data.const.replacement;
+
+    %%%
+    %% Algorithm
+    %%%
 
     data.alg.generation = 0;
     data.alg.population = cell(data.const.N, 1);
@@ -75,7 +97,5 @@ function data = initialize(params)
     for i = 1 : data.const.N
         data.alg.population{i} = algorithm.ga.chromosome.randomChromosome(data);
     end
-
-    data = algorithm.ga.chromosome.initializeCoords(data);
 end
 

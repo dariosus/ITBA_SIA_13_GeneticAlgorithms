@@ -1,7 +1,7 @@
-function population = universal(k, oldPopulation)
+function selected = universal(k, population)
 
     r = 1 - rand() / k : -1 / k : 0
 
-    population = algorithm.ga.selection.linealFitness(k, oldPopulation, r);
+    selected = algorithm.ga.selection.linealFitness(k, population, r);
 end
 

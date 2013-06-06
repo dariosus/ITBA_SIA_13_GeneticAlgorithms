@@ -1,7 +1,7 @@
-function population = roulette(k, oldPopulation)
+function selected = roulette(k, population)
 
     r = sort(rand(k, 1), 'descend');
 
-    population = algorithm.ga.selection.linealFitness(k, oldPopulation, r);
+    selected = algorithm.ga.selection.linealFitness(k, population, r);
 end
 

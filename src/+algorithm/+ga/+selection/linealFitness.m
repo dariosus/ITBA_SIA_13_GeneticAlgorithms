@@ -1,26 +1,26 @@
-function population = linealFitness(k, oldPopulation, r)
+function selected = linealFitness(k, population, r)
 
     F = 0;
 
-    for i = 1 : size(oldPopulation, 1)
+    for i = 1 : size(population, 1)
 
-        F = F + oldPopulation{i}.fitness;
+        F = F + population{i}.fitness;
     end
 
-    population = cell(k, 1);
+    selected = cell(k, 1);
 
     r = r * F;
 
-    curR = 1;
+    posR = 1;
 
-    for chromosome = 1 : size(oldPopulation, 1)
+    for chromosome = 1 : size(population, 1)
 
-        F = F - oldPopulation{chromosome}.fitness;
+        F = F - population{chromosome}.fitness;
 
-        while curR <= k && r(curR) > F
+        while posR <= k && r(posR) > F
 
-            population{curR} = oldPopulation{chromosome};
-            curR = curR + 1;
+            selected{posR} = population{chromosome};
+            posR = posR + 1;
         end
     end
 end
