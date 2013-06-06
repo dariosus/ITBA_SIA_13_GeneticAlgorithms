@@ -74,5 +74,6 @@ function data = initialize(params)
         data.alg.population{i} = algorithm.chromosome.randomChromosome(data);
     end
 
+    data = algorithm.chromosome.initializeCoords(data);
 end
 
