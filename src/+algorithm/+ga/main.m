@@ -11,7 +11,7 @@ function main(params)
         data = data.fun.replacement(data);
 
         data.alg.generation
-        algorithm.debug.print(data.population);
+        algorithm.debug.print(data.alg.population);
     end
 
     % algorithm.oh_yeah(data);

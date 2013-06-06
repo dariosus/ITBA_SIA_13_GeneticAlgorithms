@@ -6,7 +6,7 @@ function child = locus(data, parent)
 
             p = data.const.vec2w(index, :);
 
-            parent{p(1)}(p(2), p(3)) = 2 / sqrt(data.in.arch(p(1) - 1)) * (rand() - 0.5);
+            parent.W{p(1)}(p(2), p(3)) = 2 / sqrt(data.in.arch(p(1) - 1)) * (rand() - 0.5);
         end
     end
 
