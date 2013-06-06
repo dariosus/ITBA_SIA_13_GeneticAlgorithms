@@ -4,7 +4,7 @@ function data = first(data)
 
     for pair = 1 : data.const.N / 2
 
-        [child1 child2] = spawn(data);
+        [child1 child2] = algorithm.ga.spawn(data, data.alg.population);
 
         population = [population child1 child2];
     end

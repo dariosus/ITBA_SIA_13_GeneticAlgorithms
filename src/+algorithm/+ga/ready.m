@@ -1,5 +1,5 @@
-function ready(data)
+function goAway = ready(data)
 
-    return false;
+    goAway = false;
 end
 

@@ -62,11 +62,12 @@ function data = initialize(params)
         data.const.(names{i}) = params.(names{i});
     end
 
-    data = algorithm.ga.chromosome.initializeCoords(data);
-
     %%%
     %% Input
     %%%
+
+    data.fun.g  = @(x)data.const.g(data.const.beta, x);
+    data.fun.dg = @(x)data.const.dg(data.const.beta, x);
 
     [data.in.allXi, data.in.allS] = algorithm.input.getInputs(data);
     [data.in.Xi,    data.in.S   ] = algorithm.input.getRandomSamples(data);
@@ -75,17 +76,16 @@ function data = initialize(params)
 
     data.in.M = length(data.in.arch); % Number of layers
 
+    data = algorithm.ga.chromosome.initializeCoords(data);
+
     %%%
     %% Functions
     %%%
 
-    data.fun.g  = @(x)data.const.g(data.const.beta, x);
-    data.fun.dg = @(x)data.const.dg(data.const.beta, x);
-
     data.fun.selection   = @(k, population)data.const.selection(k, population);
     data.fun.crossover   = @(dad, mom)data.const.crossover(data, dad, mom);
     data.fun.mutation    = @(parent)data.const.mutation(data, parent);
-    data.fun.replacement = @data.const.replacement;
+    data.fun.replacement = @(data)data.const.replacement(data);
 
     %%%
     %% Algorithm

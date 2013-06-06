@@ -1,19 +1,17 @@
 function data = initializeCoords(data)
 
-    arch = data.in.arch;
-
     data.const.vec2w = [];
-    data.const.w2vec = cell(length(arch), 1);
+    data.const.w2vec = cell(data.in.M, 1);
 
     position = 0;
 
-    for layer = 2 : length(arch)
+    for layer = 2 : data.in.M
 
         data.const.w2vec{layer} = [];
 
-        for curNeuron = 1 : arch(layer)
+        for curNeuron = 1 : data.in.arch(layer)
 
-            for prevNeuron = 1 : arch(layer - 1) + 1
+            for prevNeuron = 1 : data.in.arch(layer - 1) + 1
 
                 position = position + 1;
 
