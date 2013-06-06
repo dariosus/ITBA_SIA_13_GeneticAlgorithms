@@ -2,8 +2,8 @@ function main(params)
 
     data = algorithm.ga.initialize(params);
 
-    algorithm.debug.printStruct(data);
-    % algorithm.debug.printStruct(algorithm.ga.selection.roulette(5, data.alg.population));
+    algorithm.debug.print(data);
+    % algorithm.debug.print(algorithm.ga.selection.roulette(5, data.alg.population));
 %
 %     while ~algorithm.ready(data)
 %
