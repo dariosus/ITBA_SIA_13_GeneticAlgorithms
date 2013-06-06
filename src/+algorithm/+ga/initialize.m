@@ -71,9 +71,9 @@ function data = initialize(params)
     data.alg.population = cell(data.const.N, 1);
 
     for i = 1 : data.const.N
-        data.alg.population{i} = algorithm.chromosome.randomChromosome(data);
+        data.alg.population{i} = algorithm.ga.chromosome.randomChromosome(data);
     end
 
-    data = algorithm.chromosome.initializeCoords(data);
+    data = algorithm.ga.chromosome.initializeCoords(data);
 end
 
