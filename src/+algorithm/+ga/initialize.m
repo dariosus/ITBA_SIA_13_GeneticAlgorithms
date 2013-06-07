@@ -46,7 +46,7 @@ function data = initialize(params)
     % data.const.a % mixed selection proportion
     data.const.N = 6; % population size
 
-    data.const.generationsPerDump = 30;
+    data.const.generationsPerDump = 5;
     data.const.path = '';
 
     data.const.g = @algorithm.functions.sigmoidLog;
