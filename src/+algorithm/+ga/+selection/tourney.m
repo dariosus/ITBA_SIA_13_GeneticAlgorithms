@@ -1,26 +1,17 @@
 function selected = tourney(k, population)
 
-    selected = [];
+    selected = repmat(population(1), k, 1);
 
-    for iter = 1 : k
+    indexes = floor(rand(k, 2) * size(population, 1)) + 1;
 
-        chromosome1 = population{floor(rand() * size(population, 1)) + 1};
-        chromosome2 = population{floor(rand() * size(population, 1)) + 1};
+    for pos = 1 : k
 
-        if (chromosome1.fitness > chromosome2.fitness)
-            bestChromosome = chromosome1;
-            worstChromosome = chromosome2;
-        else
-            bestChromosome = chromosome2;
-            worstChromosome = chromosome1;
+        if population(indexes(pos, 1)).fitness > population(indexes(pos, 2)).fitness
+
+            indexes(pos, :) = fliplr(indexes(pos, :));
         end
 
-        if (rand() >= 0.75)
-            selected = [selected worstChromosome];
-        else
-            selected = [selected bestChromosome];
-        end
-
+        selected(pos) = population(indexes(pos, 1 + (rand() >= 0.75)));
     end
-
 end
+
