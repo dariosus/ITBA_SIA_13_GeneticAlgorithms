@@ -12,6 +12,8 @@ function data = first(data)
         population(pos + 2) = child2;
 
         pos = pos + 2;
+
+        algorithm.debug.printProgress(pair, data.const.N / 2);
     end
 
     data.alg.population = population;

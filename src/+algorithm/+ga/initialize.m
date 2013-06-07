@@ -28,7 +28,7 @@ function data = initialize(params)
 
     data.const.arch = [4 4];
     data.const.inputDim = 2;
-    data.const.inputSamples = 300;
+    data.const.inputSamples = 400;
     data.const.bias = -1; % TODO: FIXME: WARNING: WTF?? EOW
     data.const.beta = 0.5;
 
@@ -45,9 +45,9 @@ function data = initialize(params)
     data.const.pc = 0.7; % crossing probability
     data.const.p = 0.1; % uniform crossover probability per locus
     % data.const.a % mixed selection proportion
-    data.const.N = 6; % population size
+    data.const.N = 80; % population size
 
-    data.const.generationsPerDump = 5;
+    data.const.generationsPerDump = 1;
     data.const.path = '';
 
     data.const.g  = @algorithm.functions.sigmoidLog;

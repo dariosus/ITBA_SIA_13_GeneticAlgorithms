@@ -11,8 +11,11 @@ function plotInfo(plots, name)
 
     for i = 1 : length(plots)
 
-        ret = [ret plot(plots{i}{1}, colors{i})];
-        msg = [msg {plots{i}{2}}];
+        if ~isempty(plots{i}{1})
+
+            ret = [ret plot(plots{i}{1}, colors{i})];
+            msg = [msg {plots{i}{2}}];
+        end
     end
 
     legend(ret, msg);

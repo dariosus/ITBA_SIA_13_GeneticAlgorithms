@@ -13,16 +13,14 @@ function fitness = evalFitness(data, chromosome, useAllInputs)
 
     for i = 1 : size(S, 1)
 
-        V = [-1; Xi(i, :)'];
+        V = Xi(i, :)';
 
         for m = 2 : data.in.M
 
-            V = [-1; data.fun.g(chromosome.W{m} * V)];
-
-            % V(2 : end) = data.fun.g(chromosome.W{m} * V);
+            V = data.fun.g(chromosome.W{m} * [-1; V]);
         end
 
-        error = error + abs(norm(S(i, :)' - V(2 : end))) ^ 2;
+        error = error + norm(S(i, :)' - V) ^ 2;
     end
 
     fitness = error / size(S, 1);

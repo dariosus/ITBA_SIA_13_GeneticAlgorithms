@@ -8,6 +8,8 @@ function main(params)
 
     while ~algorithm.ga.ready(data)
 
+        fprintf(1, 'Generation %d: ', data.alg.generation + 1);
+
         data = data.fun.replacement(data);
 
         data = algorithm.debug.collectData(data);
@@ -17,11 +19,9 @@ function main(params)
             algorithm.debug.dump(data);
         end
 
-        data.alg.generation
-
         % algorithm.debug.print(data.alg.population);
     end
 
-    % algorithm.oh_yeah(data);
+    algorithm.debug.dump(data);
 end
 
