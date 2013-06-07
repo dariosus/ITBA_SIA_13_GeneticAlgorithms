@@ -1,6 +1,7 @@
 function selected = elite(k, population)
 
-    population = orderPopulation(population, 'descend');
+    [values indexes] = sort([population.fitness]);
 
-    selected = population(1 : k);
+    selected = population(indexes(1 : k));
 end
+

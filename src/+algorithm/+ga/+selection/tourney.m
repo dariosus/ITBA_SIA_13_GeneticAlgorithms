@@ -2,7 +2,7 @@ function selected = tourney(k, population)
 
     selected = repmat(population(1), k, 1);
 
-    indexes = floor(rand(k, 2) * size(population, 1)) + 1;
+    indexes = floor(rand(k, 2) * numel(population)) + 1;
 
     for pos = 1 : k
 

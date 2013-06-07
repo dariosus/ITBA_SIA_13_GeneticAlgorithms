@@ -1,24 +1,22 @@
 function selected = rank(k, population)
 
-    population = orderPopulation(population, 'ascend');
+    [values indexes] = sort([population.fitness], 'descend');
 
-    r = sort(rand(k, 1), 'descend');
+    F = sum(indexes);
 
-    F = sum([1 : length(population, 1)]);
-
-    r = r * F;
+    r = sort(rand(k, 1), 'descend') * F;
 
     selected = repmat(population(1), k, 1);
 
     rpos = 1;
 
-    for i = 1 : size(population, 1)
+    for i = 1 : numel(population)
 
         F = F - i;
 
         while rpos <= k && r(rpos) > F
 
-            selected(rpos) = population(i);
+            selected(rpos) = population(indexes(i));
 
             rpos = rpos + 1;
         end

@@ -8,7 +8,7 @@ function selected = linealFitness(k, population, r)
 
     rpos = 1;
 
-    for i = 1 : size(population, 1)
+    for i = 1 : numel(population)
 
         F = F - population(i).fitness;
 
