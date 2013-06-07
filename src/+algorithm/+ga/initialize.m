@@ -37,7 +37,7 @@ function data = initialize(params)
     % data.const.mutation % method of choice
 
     data.const.maxGenerations = 1000;
-    % data.const.G % generation gap
+    data.const.G = 0.6;% generation gap
     data.const.pm = 0.001; % single locus mutation probability
     data.const.pmStar = 0.1; % chromosome mutation probability
     data.const.pb = 0.5; % back propagation probability
