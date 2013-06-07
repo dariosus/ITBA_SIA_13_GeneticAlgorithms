@@ -2,20 +2,14 @@ function chromosome = randomChromosome(data)
 
     chromosome = struct();
 
-    chromosome.W = cell(data.in.M, 1); % Weights
+    chromosome.W = cell(data.in.M, 1);
 
-    for m = 1 : data.in.M
+    for m = 2 : data.in.M
 
         curDim = data.in.arch(m);
+        oldDim = data.in.arch(m - 1) + 1;
 
-        if m > 1
-
-            oldDim = data.in.arch(m - 1) + 1;
-
-            chromosome.W{m} = 2 / sqrt(oldDim) .* (rand(curDim, oldDim) - 0.5);
-
-            chromosome.W{m}(:, 1) = data.const.bias;
-        end
+        chromosome.W{m} = algorithm.ga.chromosome.randomAlleles(data, m, curDim, oldDim);
     end
 
     chromosome.fitness = algorithm.ga.chromosome.evalFitness(data, chromosome);

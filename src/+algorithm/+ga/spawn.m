@@ -20,6 +20,5 @@ function [child1 child2] = spawn(data, population)
 
     child1.fitness = algorithm.ga.chromosome.evalFitness(data, child1);
     child2.fitness = algorithm.ga.chromosome.evalFitness(data, child2);
-
 end
 

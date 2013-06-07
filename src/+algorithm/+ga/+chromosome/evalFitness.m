@@ -9,7 +9,7 @@ function fitness = evalFitness(data, chromosome, useAllInputs)
         Xi = data.in.Xi;
     end
 
-    errors = [];
+    error = 0;
 
     for i = 1 : size(S, 1)
 
@@ -18,13 +18,13 @@ function fitness = evalFitness(data, chromosome, useAllInputs)
         for m = 2 : data.in.M
 
             V = [-1; data.fun.g(chromosome.W{m} * V)];
+
+            % V(2 : end) = data.fun.g(chromosome.W{m} * V);
         end
 
-        error = abs(norm(S(i, :)' - V(2 : end)));
-
-        errors = [errors error];
+        error = error + abs(norm(S(i, :)' - V(2 : end))) ^ 2;
     end
 
-    fitness = mean(errors .^ 2);
+    fitness = error / size(S, 1);
 end
 

@@ -2,54 +2,60 @@ function print(data, file)
 
     function print2(str, data)
 
-        switch (class(data))
+        len = numel(data);
 
-            case 'struct'
+        if strcmp(class(data), 'cell')
 
-                cellfun(@(name) print2(strcat(str, '.', name), data.(name)), fieldnames(data));
+            arrayfun(...
+                @(pos) print2(strcat(str, '{', num2str(pos), '}'), data{pos}),...
+                [1 : len]...
+            );
 
-            case 'cell'
+        elseif strcmp(class(data), 'struct') && len == 1
 
-                for pos = 1 : length(data)
+            cellfun(...
+                @(name) print2(strcat(str, '.', name), data.(name)),...
+                fieldnames(data)...
+            );
 
-                    print2(strcat(str, '{', num2str(pos), '}'), data{pos});
-                end
+        elseif strcmp(class(data), 'struct')
 
-            otherwise
+            arrayfun(...
+                @(struct, pos) print2(strcat(str, '(', num2str(pos), ')'), data(pos)),...
+                data,...
+                reshape([1 : len], size(data))...
+            );
 
-                len = numel(data);
+        elseif len == 0
 
-                if len == 0
+            fprintf(file, '%s = [empty]\n', str);
 
-                    fprintf(file, '%s = [empty]\n', str);
+        elseif len == 1
 
-                elseif len == 1
+            fprintf(file, '%s = %s', str, evalc('disp(data)'));
 
-                    fprintf(file, '%s = %s', str, evalc('disp(data)'));
+        elseif len < 50
 
-                elseif len < 50
+            fprintf(file, '%s =\n', str, evalc('printmat(data)'));
 
-                    fprintf(file, '%s =\n%s', str, evalc('printmat(data)'));
+        else
 
+            dim = '';
+
+            for n = size(data)
+                if n > 10
+                    dim = strcat(dim, 'end - 9 : end,');
                 else
-
-                    dim = '';
-
-                    for n = size(data)
-                        if n > 10
-                            dim = strcat(dim, 'end - 9 : end,');
-                        else
-                            dim = strcat(dim, ':,');
-                        end
-                    end
-
-                    fprintf(file, '%s = [...] -> %s\n', str, mat2str(size(data)));
-                    fprintf(file, '%s', evalc(strcat('printmat(data(', dim(1 : end - 1), '));')));
+                    dim = strcat(dim, ':,');
                 end
+            end
+
+            fprintf(file, '%s = [...] -> %s\n', str, mat2str(size(data)));
+            fprintf(file, '%s', evalc(strcat('printmat(data(', dim(1 : end - 1), '));')));
         end
     end
 
-    if nargin < 2 || ~isa(file, 'double')
+    if nargin < 2
         file = 1;
     end
 

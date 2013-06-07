@@ -10,6 +10,8 @@ function main(params)
 
         data = data.fun.replacement(data);
 
+        data = algorithm.debug.collectData(data);
+
         if mod(data.alg.generation, data.const.generationsPerDump) == 0
 
             algorithm.debug.dump(data);

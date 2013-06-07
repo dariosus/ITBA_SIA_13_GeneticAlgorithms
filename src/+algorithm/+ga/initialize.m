@@ -37,7 +37,7 @@ function data = initialize(params)
     % data.const.mutation % method of choice
 
     data.const.maxGenerations = 1000;
-    data.const.G = 0.6;% generation gap
+    data.const.G = 0.6; % generation gap
     data.const.pm = 0.001; % single locus mutation probability
     data.const.pmStar = 0.1; % chromosome mutation probability
     data.const.pb = 0.5; % back propagation probability
@@ -49,7 +49,7 @@ function data = initialize(params)
     data.const.generationsPerDump = 5;
     data.const.path = '';
 
-    data.const.g = @algorithm.functions.sigmoidLog;
+    data.const.g  = @algorithm.functions.sigmoidLog;
     data.const.dg = @algorithm.functions.DsigmoidLog;
 
     data.const.selection   = @algorithm.ga.selection.roulette;
@@ -92,10 +92,6 @@ function data = initialize(params)
     %%%
 
     data.alg.generation = 0;
-    data.alg.population = cell(data.const.N, 1);
-
-    for i = 1 : data.const.N
-        data.alg.population{i} = algorithm.ga.chromosome.randomChromosome(data);
-    end
+    data.alg.population = arrayfun(@(x)algorithm.ga.chromosome.randomChromosome(data), [1 : data.const.N])';
 end
 

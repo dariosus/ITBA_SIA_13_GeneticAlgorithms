@@ -6,11 +6,6 @@ function [child1 child2] = uniform(data, dad, mom)
 
             p = data.const.vec2w(index, :);
 
-            try
-                aux = dad.W{p(1)}(p(2), p(3));
-            catch me
-                algorithm.debug.print(dad);
-            end
             aux = dad.W{p(1)}(p(2), p(3));
             dad.W{p(1)}(p(2), p(3)) = mom.W{p(1)}(p(2), p(3));
             mom.W{p(1)}(p(2), p(3)) = aux;
