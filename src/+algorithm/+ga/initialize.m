@@ -20,6 +20,7 @@ function data = initialize(params)
     data.in    = struct();
     data.fun   = struct();
     data.alg   = struct();
+    data.debug = struct();
 
     %%%
     %% Constants
@@ -93,5 +94,16 @@ function data = initialize(params)
 
     data.alg.generation = 0;
     data.alg.population = arrayfun(@(x)algorithm.ga.chromosome.randomChromosome(data), [1 : data.const.N])';
+
+    %%%
+    %% Debug
+    %%%
+
+    data.debug.sampleErrors = [];
+    data.debug.globalErrors = [];
+    data.debug.sampleBest = [];
+    data.debug.globalBest = [];
+    data.debug.sampleStd = [];
+    data.debug.globalStd = [];
 end
 
