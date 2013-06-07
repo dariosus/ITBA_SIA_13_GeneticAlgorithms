@@ -1,37 +1,28 @@
 function data = second(data)
 
-    population = cell(data.const.N, 1);
+    population = data.alg.population;
 
-    pos = 0;
+    pos = 1;
 
     k = floor(data.const.G * data.const.N);
-
-    if (mod(k, 2) != 0)
-        k = k + 1;
-    end
+    k = k + mod(k, 2);
 
     for pair = 1 : k / 2
 
         [child1 child2] = algorithm.ga.spawn(data, data.alg.population);
 
-        population{pos + 1} = child1;
-        population{pos + 2} = child2;
+        population(pos : pos + 1) = [child1 child2];
 
         pos = pos + 2;
 
+        algorithm.debug.printProgress(pair, k / 2);
     end
 
-    intactParents = data.fun.selection(data.const.N - k, data.alg.population);
+    survivors = data.fun.selection(data.const.N - k, data.alg.population);
 
-    for parent = 1 : data.const.N - k
-
-        population{pos + 1} = intactParents(parent);
-
-        pos = pos + 1;
-
-    end
+    population(pos : end) = data.alg.population(survivors);
 
     data.alg.population = population;
     data.alg.generation = data.alg.generation + 1;
-
 end
+
