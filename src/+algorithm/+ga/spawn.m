@@ -5,7 +5,7 @@ function [child1 child2] = spawn(data, population)
     child1 = children(1);
     child2 = children(2);
 
-    if rand() <= data.const.pc
+    if rand() <= data.const.pCross
 
         [child1 child2] = data.fun.crossover(child1, child2);
     end
@@ -13,9 +13,14 @@ function [child1 child2] = spawn(data, population)
     child1 = data.fun.mutation(child1);
     child2 = data.fun.mutation(child2);
 
-    if rand() <= data.const.pb
+    if rand() <= data.const.pBack
 
-        % TODO: backpropagation
+        child1 = algorithm.ga.network.main(data, child1);
+    end
+
+    if rand() <= data.const.pBack
+
+        child2 = algorithm.ga.network.main(data, child2);
     end
 
     child1.fitness = algorithm.ga.chromosome.evalFitness(data, child1);

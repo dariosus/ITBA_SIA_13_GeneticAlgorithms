@@ -4,7 +4,7 @@ function data = third(data)
 
     pos = 0;
 
-    k = floor(data.const.G * data.const.N);
+    k = floor(data.const.genGap * data.const.N);
 
     if (mod(k, 2) != 0)
         k = k + 1;

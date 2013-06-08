@@ -32,20 +32,26 @@ function data = initialize(params)
     data.const.bias = -1; % TODO: FIXME: WARNING: WTF?? EOW
     data.const.beta = 0.5;
 
-    % data.const.selection % method of choice
-    % data.const.replacement % method of choice
-    % data.const.crossing % method of choice
-    % data.const.mutation % method of choice
-
     data.const.maxGenerations = 1000;
-    data.const.G = 0.6; % generation gap
-    data.const.pm = 0.001; % single locus mutation probability
-    data.const.pmStar = 0.1; % chromosome mutation probability
-    data.const.pb = 0.5; % back propagation probability
-    data.const.pc = 0.7; % crossing probability
+    data.const.genGap = 0.6; % generation gap
+    data.const.pMutate = 0.001; % single locus mutation probability
+    data.const.pMutateStar = 0.1; % chromosome mutation probability
+    data.const.pBack = 0.1; % back propagation probability
+    data.const.pCross = 0.7; % crossing probability
     data.const.p = 0.1; % uniform crossover probability per locus
     % data.const.a % mixed selection proportion
-    data.const.N = 80; % population size
+    data.const.N = 50; % population size
+
+    data.const.maxEpochs = 10;
+    data.const.rollback = true;
+
+    data.const.beta = 1;
+    data.const.momentum = 0.1;
+    data.const.eta = 0.4;
+    data.const.etaEps = 0.01;
+    data.const.etaInc = 0.01;
+    data.const.etaDec = 0.001;
+    data.const.etaSteps = 3;
 
     data.const.generationsPerDump = 1;
     data.const.path = '';

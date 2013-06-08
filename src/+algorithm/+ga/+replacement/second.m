@@ -4,7 +4,7 @@ function data = second(data)
 
     pos = 1;
 
-    k = floor(data.const.G * data.const.N);
+    k = floor(data.const.genGap * data.const.N);
     k = k + mod(k, 2);
 
     for pair = 1 : k / 2
