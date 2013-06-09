@@ -1,8 +1,9 @@
 function chromosome = adaptativeEta(data, chromosome)
 
+    rollback = false;
+
     error = chromosome.curError / size(data.in.Xi, 1);
 
-rollback = false;
     if isfield(chromosome, 'oldError')
 
         delta = error - chromosome.oldError;
@@ -25,7 +26,7 @@ rollback = false;
 
             if data.const.rollback
 
-rollback = true;
+                rollback = true;
                 error = chromosome.oldError;
                 chromosome.W = chromosome.oldW;
                 chromosome.debug.rollbacks = chromosome.debug.rollbacks + 1;
@@ -45,11 +46,11 @@ rollback = true;
     %% Debug
     %%%
 
-if ~rollback
-    chromosome.debug.cummGoodSteps = [chromosome.debug.cummGoodSteps chromosome.debug.goodSteps];
-    chromosome.debug.cummRollbacks = [chromosome.debug.cummRollbacks chromosome.debug.rollbacks];
-    chromosome.debug.etas = [chromosome.debug.etas chromosome.eta];
-    chromosome.debug.errors = [chromosome.debug.errors error];
-end
+    if ~rollback
+        chromosome.debug.cummGoodSteps = [chromosome.debug.cummGoodSteps chromosome.debug.goodSteps];
+        chromosome.debug.cummRollbacks = [chromosome.debug.cummRollbacks chromosome.debug.rollbacks];
+        chromosome.debug.etas = [chromosome.debug.etas chromosome.eta];
+        chromosome.debug.errors = [chromosome.debug.errors error];
+    end
 end
 

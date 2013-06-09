@@ -42,13 +42,13 @@ function data = initialize(params)
     % data.const.a % mixed selection proportion
     data.const.N = 80; % population size
 
-    data.const.maxEpochs = 100;
+    data.const.maxEpochs = 200;
     data.const.rollback = true;
     data.const.momentum = 0.3;
     data.const.eta = 0.4;
-    data.const.etaEps = 0.00001;
-    data.const.etaInc = 0.01;
-    data.const.etaDec = 0.0001;
+    data.const.etaEps = 0.001;
+    data.const.etaInc = 0.1;
+    data.const.etaDec = 0.001;
     data.const.etaSteps = 3;
 
     data.const.generationsPerDump = 1;
