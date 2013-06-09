@@ -1,2 +1,9 @@
 @ 1. Introducción @
 
+Un algoritmo genético es un algoritmo que trata de mejorar la solución a un problema.
+Para esto, un algoritmo genético utiliza un conjunto conocido de soluciones (llamado
+población) en donde cada una de estas (llamadas individuos) posee un grado de adaptación, que es lo que se utiliza para evaluar que tan buena es una solución.
+
+La implementación de un algoritmo genético esta dada de modo tal que se realize un aprendizaje automático y existen muchos casos en donde un algoritmo genético puede ayudara resolver problemas que serían muy difíciles o hasta imposibles de resolver de forma explícita.
+
+Considerando redes neuronales artificiales que buscan resolver la serie temporal **`y = f(x(t-1), x(t-2), ...)`** con un paso temporal **`t`**, se busca mejorar los resultados de esta red mediante un algoritmo genético.
