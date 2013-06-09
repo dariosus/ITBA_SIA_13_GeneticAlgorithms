@@ -4,15 +4,17 @@ function main(params)
 
     while ~algorithm.ga.ready(data)
 
-        tic();
+        data.alg.generation = data.alg.generation + 1;
 
-        fprintf(1, 'Generation %d: ', data.alg.generation + 1);
+        fprintf(1, 'Generation %d: ', data.alg.generation);
+
+        tic();
 
         data = data.fun.replacement(data);
 
-        data = algorithm.debug.collectData(data);
-
         toc();
+
+        data = algorithm.debug.collectData(data);
 
         if mod(data.alg.generation, data.const.generationsPerDump) == 0
 

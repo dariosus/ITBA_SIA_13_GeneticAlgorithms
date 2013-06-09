@@ -11,5 +11,7 @@ function data = collectData(data)
 
     data.debug.sampleStd = [data.debug.sampleStd std(sampleFitness)];
     % data.debug.globalStd = [data.debug.globalStd std(globalFitness)];
+
+    data.debug.fitness = [data.alg.population.fitness];
 end
 

@@ -7,7 +7,5 @@ function data = third(data)
     selected = data.fun.selection(data.const.N, population);
 
     data.alg.population = algorithm.ga.replacement.unique(data, selected, population);
-
-    data.alg.generation = data.alg.generation + 1;
 end
 
