@@ -1,4 +1,4 @@
-function selected = roulette(k, population)
+function selected = roulette(data, k, population)
 
     r = sort(rand(k, 1), 'descend');
 

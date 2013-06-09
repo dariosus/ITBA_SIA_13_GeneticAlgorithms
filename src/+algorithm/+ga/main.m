@@ -6,6 +6,8 @@ function main(params)
 
         data.alg.generation = data.alg.generation + 1;
 
+        data.debug.fitness = [data.alg.population.fitness];
+
         fprintf(1, 'Generation %d: ', data.alg.generation);
 
         tic();

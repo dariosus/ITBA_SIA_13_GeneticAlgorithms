@@ -1,4 +1,4 @@
-function selected = elite(k, population)
+function selected = elite(data, k, population)
 
     [values indexes] = sort([population.fitness]);
 
