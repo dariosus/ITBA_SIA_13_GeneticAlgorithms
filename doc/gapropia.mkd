@@ -1,2 +1,31 @@
 @ 3. Desarrollo @
 
+El problema a enfocar en este informe es el de tratar de encontrar la mejor red neuronal que solucione el problema de aproximación de una serie temporal.
+
+Para representar nuestro problema, cada individuo estaba conformado por la matriz de pesos correspondiente a una red neuronal mientras que el valor de cada locus equivalía a un peso particular. La función de adaptación para este problema era el Error Cuadrático Medio obtenido al evaluar la red.
+
+A las operaciones habituales de un algoritmo genético (entrecruzamiento y mutación) se
+agregó la posibilidad de aplicar una cantidad de pasos del algoritmo de **backpropagation** a un individuo.
+
+Para poder evaluar el problema se prefijaron ciertos elementos de la red neuronal en base a una buena ejecución de la misma. Estos fueron:
+
+* Estructura de la red:
+* Momentum:
+* Parametros Adaptativos:
+* Learning Rate:
+* Rollbacks: Activados.
+* Función de activación:
+* Beta:
+* Patrones utilizados para el aprendizaje:
+
+Con esta configuración originalmente se pudo obtener un error de
+
+Dentro de nuestra implementación existe la posibilidad de configurar los siguientes parámetros para el algoritmo genético:
+
+* Cantidad de individuos en la población.
+* Criterios de corte: Se puede definir una cantidad máxima de generaciones, una cota mínima para el grado de aceptación de las soluciones, un porcentaje para el cual se considera que la población no ha sido modificada entre generaciones y un cantidad de generaciones en las cuales se espera que las soluciones hayan mejorado.
+* Mutaciones a los individuos: Además de contar con una probabilidad de mutación, la mutación a los individuos puede ser clásica o no uniforme.
+* Entrecruzamientos entre individuos: Además de contar con una probabilidad de entrecruzamiento, se puede elegir el método de entrecruzamiento entre individuos. Estos pueden ser un entrecruzamiento clásico, cruce de dos puntos, uniforme o anular.
+* Backpropagation: Se puede configurar una probabilidad sobre la cual se ejecutará el algoritmo de backpropagation sobre un individuo. Así mismo se puede configurar cuantas iteraciones del algoritmo se realizarán.
+* Métodos de reemplazo: Se puede configurar cual de los tres métodos de reemplazo dados por la cátedra será utilizado. Para los metodos que lo necesiten también se puede configurar la brecha generacional.
+* Métodos de selección: Se puede configurar cual será el método de selección. Estos son ruleta, universal, elitismo, ranking, Boltzman, torneos, mixto 1 (elitismo y ruleta) o mixto 2 (elitismo y universal).
