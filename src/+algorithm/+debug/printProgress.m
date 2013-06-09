@@ -15,7 +15,7 @@ function printProgress(N, numN)
     end
 
     if N == numN
-        fprintf(' - done\n');
+        fprintf(' - done. \n');
     end
 end
 

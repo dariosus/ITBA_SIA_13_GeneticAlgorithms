@@ -41,6 +41,7 @@ function data = initialize(params)
     data.const.p = 0.1; % uniform crossover probability per locus
     % data.const.a % mixed selection proportion
     data.const.N = 80; % population size
+    data.const.uniqueTries = 2; % tries to remove repeated chromosomes
 
     data.const.maxEpochs = 200;
     data.const.rollback = true;
@@ -54,8 +55,8 @@ function data = initialize(params)
     data.const.generationsPerDump = 1;
     data.const.path = '';
 
-    data.const.g  = @algorithm.functions.sigmoidLog;
-    data.const.dg = @algorithm.functions.DsigmoidLog;
+    data.const.g  = @algorithm.functions.sigmoidTanh;
+    data.const.dg = @algorithm.functions.DsigmoidTanh;
 
     data.const.selection   = @algorithm.ga.selection.roulette;
     data.const.crossover   = @algorithm.ga.crossover.singlePoint;
