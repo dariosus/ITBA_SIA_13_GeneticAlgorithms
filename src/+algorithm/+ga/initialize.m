@@ -61,6 +61,7 @@ function data = initialize(params)
     data.const.dg = @algorithm.functions.DsigmoidLog;
 
     data.const.selection   = @algorithm.ga.selection.roulette;
+    data.const.selection2  = @algorithm.ga.selection.roulette;
     data.const.crossover   = @algorithm.ga.crossover.singlePoint;
     data.const.mutation    = @algorithm.ga.mutation.locus;
     data.const.replacement = @algorithm.ga.replacement.first;
@@ -91,6 +92,7 @@ function data = initialize(params)
     %%%
 
     data.fun.selection   = @(k, population)data.const.selection(k, population);
+    data.fun.selection2  = @(k, population)data.const.selection(k, population);
     data.fun.crossover   = @(dad, mom)data.const.crossover(data, dad, mom);
     data.fun.mutation    = @(parent)data.const.mutation(data, parent);
     data.fun.replacement = @(data)data.const.replacement(data);
