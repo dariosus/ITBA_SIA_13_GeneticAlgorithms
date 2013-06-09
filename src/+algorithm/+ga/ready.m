@@ -1,5 +1,11 @@
 function goAway = ready(data)
 
+    if data.alg.generation <= data.const.contentGenerations
+
+        goAway = false;
+        return;
+    end
+
     best = min(data.debug.sampleBest(end - data.const.contentGenerations : end));
 
     old = sort(data.debug.fitness);
@@ -23,7 +29,7 @@ function goAway = ready(data)
         fprintf('Reached max generation\n');
         goAway = true;
 
-    elseif min([data.alg.population]) <= data.const.targetFitness
+    elseif min([data.alg.population.fitness]) <= data.const.targetFitness
 
         fprintf('Reached target fitness\n');
         goAway = true;

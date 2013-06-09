@@ -32,30 +32,30 @@ function data = initialize(params)
     data.const.bias = -1;
     data.const.beta = 1;
 
-    data.const.maxGenerations = 1000;
-    data.const.genGap = 0.6; % generation gap
-    data.const.pMutate = 0.001; % single locus mutation probability
+    data.const.maxGenerations = 17;
+    data.const.genGap = 0.8; % generation gap
+    data.const.pMutate = 0.003; % single locus mutation probability
     data.const.pMutateStar = 0.1; % chromosome mutation probability
     data.const.pBack = 0.1; % back propagation probability
-    data.const.pCross = 0.7; % crossing probability
-    data.const.p = 0.1; % uniform crossover probability per locus
-    data.const.a = 0.2; % mixed selection proportion
-    data.const.N = 80; % population size
+    data.const.pCross = 0.75; % crossing probability
+    data.const.p = 0.05; % uniform crossover probability per locus
+    data.const.a = 0.5; % mixed selection proportion
+    data.const.N = 60; % population size
     data.const.uniqueTries = 2; % tries to remove repeated chromosomes
     data.const.targetFitness = 0.001;
-    data.const.contentGenerations = 4;
+    data.const.contentGenerations = 10;
     data.const.changeRatio = 0.8;
 
-    data.const.maxEpochs = 200;
+    data.const.maxEpochs = 80;
     data.const.rollback = true;
     data.const.momentum = 0.3;
     data.const.eta = 0.4;
     data.const.etaEps = 0.001;
     data.const.etaInc = 0.1;
     data.const.etaDec = 0.001;
-    data.const.etaSteps = 3;
+    data.const.etaSteps = 2;
 
-    data.const.generationsPerDump = 1;
+    data.const.generationsPerDump = 1000;
     data.const.path = '';
 
     data.const.g  = @algorithm.functions.sigmoidLog;
@@ -63,8 +63,8 @@ function data = initialize(params)
 
     data.const.selection   = @algorithm.ga.selection.roulette;
     data.const.selection2  = @algorithm.ga.selection.roulette;
-    data.const.crossover   = @algorithm.ga.crossover.singlePoint;
-    data.const.mutation    = @algorithm.ga.mutation.locus;
+    data.const.crossover   = @algorithm.ga.crossover.uniform;
+    data.const.mutation    = @algorithm.ga.mutation.chromosome;
     data.const.replacement = @algorithm.ga.replacement.first;
 
     names = fieldnames(params);
@@ -93,7 +93,7 @@ function data = initialize(params)
     %%%
 
     data.fun.selection   = @(k, population)data.const.selection(data, k, population);
-    data.fun.selection2  = @(k, population)data.const.selection(data, k, population);
+    data.fun.selection2  = @(k, population)data.const.selection2(data, k, population);
     data.fun.crossover   = @(dad, mom)data.const.crossover(data, dad, mom);
     data.fun.mutation    = @(parent)data.const.mutation(data, parent);
     data.fun.replacement = @(data)data.const.replacement(data);
@@ -115,5 +115,6 @@ function data = initialize(params)
     data.debug.globalBest = [];
     data.debug.sampleStd = [];
     data.debug.globalStd = [];
+    data.debug.fitness = [];
 end
 

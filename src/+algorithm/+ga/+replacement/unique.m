@@ -19,7 +19,7 @@ function population = unique(data, population, pool)
             break;
         end
 
-        population(equals) = data.fun.selection2(numel(equal), pool);
+        population(equals) = data.fun.selection2(numel(equals), pool);
     end
 end
 
