@@ -5,6 +5,19 @@ function goAway = ready(data)
     old = sort(data.debug.fitness);
     new = sort([data.alg.population.fitness]);
 
+    count = 0;
+    indexNew = 1;
+
+    for indexOld = 1 : data.const.N
+
+        while indexNew <= data.const.N && old(indexOld) >= new(indexNew)
+
+            count = count + (old(indexOld) == new(indexNew));
+
+            indexNew = indexNew + 1;
+        end
+    end
+
     if data.alg.generation >= data.const.maxGenerations
 
         fprintf('Reached max generation\n');
@@ -20,12 +33,13 @@ function goAway = ready(data)
         fprintf('Best fitness unchanged for too much generations\n');
         goAway = true;
 
-    elseif blabla
+    elseif count / data.const.N >= data.const.changeRatio
 
         fprintf('Population didn''t change for a while\n');
         goAway = true;
 
     else
+
         goAway = false;
     end
 end

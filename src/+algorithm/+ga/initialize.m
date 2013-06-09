@@ -44,6 +44,7 @@ function data = initialize(params)
     data.const.uniqueTries = 2; % tries to remove repeated chromosomes
     data.const.targetFitness = 0.001;
     data.const.contentGenerations = 4;
+    data.const.changeRatio = 0.8;
 
     data.const.maxEpochs = 200;
     data.const.rollback = true;
