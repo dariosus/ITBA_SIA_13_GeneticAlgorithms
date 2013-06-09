@@ -1,4 +1,4 @@
-function selected = tourney(k, population)
+function selected = tourney(data, k, population)
 
     selected = repmat(population(1), k, 1);
 

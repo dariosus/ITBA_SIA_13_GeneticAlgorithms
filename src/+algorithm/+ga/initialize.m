@@ -39,7 +39,7 @@ function data = initialize(params)
     data.const.pBack = 0.1; % back propagation probability
     data.const.pCross = 0.7; % crossing probability
     data.const.p = 0.1; % uniform crossover probability per locus
-    % data.const.a % mixed selection proportion
+    data.const.a = 0.2; % mixed selection proportion
     data.const.N = 80; % population size
     data.const.uniqueTries = 2; % tries to remove repeated chromosomes
     data.const.targetFitness = 0.001;
@@ -92,8 +92,8 @@ function data = initialize(params)
     %% Functions
     %%%
 
-    data.fun.selection   = @(k, population)data.const.selection(k, population);
-    data.fun.selection2  = @(k, population)data.const.selection(k, population);
+    data.fun.selection   = @(k, population)data.const.selection(data, k, population);
+    data.fun.selection2  = @(k, population)data.const.selection(data, k, population);
     data.fun.crossover   = @(dad, mom)data.const.crossover(data, dad, mom);
     data.fun.mutation    = @(parent)data.const.mutation(data, parent);
     data.fun.replacement = @(data)data.const.replacement(data);

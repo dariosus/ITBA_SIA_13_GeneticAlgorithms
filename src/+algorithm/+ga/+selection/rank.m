@@ -1,4 +1,4 @@
-function selected = rank(k, population)
+function selected = rank(data, k, population)
 
     [values indexes] = sort([population.fitness], 'descend');
 
