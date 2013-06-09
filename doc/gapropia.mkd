@@ -9,14 +9,14 @@ agregó la posibilidad de aplicar una cantidad de pasos del algoritmo de **backp
 
 Para poder evaluar el problema se prefijaron ciertos elementos de la red neuronal en base a una buena ejecución de la misma. Estos fueron:
 
-* Estructura de la red:
-* Momentum:
-* Parametros Adaptativos:
-* Learning Rate:
+* Estructura de la red: [2 9 8 1].
+* Momentum: 0.3.
+* Parametros Adaptativos: 0.1 para los incrementos del Learning Rate. 0.001 para los decrementos. 0.001 es considerado como el epsilon para evaluar si una iteración es buena, mala o neutral. 2 pasos buenos son considerados para aumentar el Learning Rate.
+* Learning Rate: 0.4.
 * Rollbacks: Activados.
-* Función de activación:
-* Beta:
-* Patrones utilizados para el aprendizaje:
+* Función de activación: Sigmoidea lógica.
+* Beta: 1.
+* Patrones utilizados para el aprendizaje: 300.
 
 Con esta configuración originalmente se pudo obtener un error de
 
