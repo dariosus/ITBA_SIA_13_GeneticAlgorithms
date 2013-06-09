@@ -16,12 +16,12 @@ function main(params)
 
         if mod(data.alg.generation, data.const.generationsPerDump) == 0
 
-            algorithm.debug.dump(data);
+            algorithm.debug.dumpGA(data);
         end
 
         % algorithm.debug.print(data.alg.population);
     end
 
-    algorithm.debug.dump(data);
+    algorithm.debug.dumpGA(data);
 end
 

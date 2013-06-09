@@ -1,4 +1,4 @@
-function dump(data)
+function dumpGA(data)
 
     run = int2str(data.alg.generation / data.const.generationsPerDump);
 

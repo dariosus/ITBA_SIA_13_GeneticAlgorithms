@@ -1,10 +1,10 @@
 function chromosome = main(data, chromosome)
 
-    [data chromosome] = algorithm.ga.network.initialize(data, chromosome);
+    chromosome = algorithm.ga.network.initialize(data, chromosome);
 
-    while data.alg.epoch < data.const.maxEpochs
+    while chromosome.epoch < data.const.maxEpochs
 
-        data.alg.epoch = data.alg.epoch + 1;
+        chromosome.epoch = chromosome.epoch + 1;
 
         data = algorithm.ga.network.shuffleInputs(data);
 
@@ -12,10 +12,13 @@ function chromosome = main(data, chromosome)
 
             chromosome = algorithm.ga.network.evalNetwork(data, chromosome, input);
             chromosome = algorithm.ga.network.backPropagate(data, chromosome, input);
-            % data = algorithm.adaptativeEta(input, data);
         end
+
+        chromosome = algorithm.ga.network.adaptativeEta(data, chromosome);
     end
 
-    chromosome = rmfield(chromosome, {'h', 'V', 'dW'});
+    algorithm.debug.dumpNetwork(data, chromosome);
+
+    chromosome = rmfield(chromosome, setdiff(fieldnames(chromosome), {'W', 'fitness'}));
 end
 

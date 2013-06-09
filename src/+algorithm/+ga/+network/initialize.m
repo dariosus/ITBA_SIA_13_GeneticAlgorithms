@@ -1,4 +1,4 @@
-function [data chromosome] = initialize(data, chromosome)
+function chromosome = initialize(data, chromosome)
 
     chromosome.V = cell(data.in.M, 1);
     chromosome.h = cell(data.in.M, 1);
@@ -8,12 +8,18 @@ function [data chromosome] = initialize(data, chromosome)
         chromosome.dW{n} = zeros(size(chromosome.W{n}));
     end
 
-    data.alg.epoch = 0;
-    data.alg.momentum = data.const.momentum;
-    data.alg.eta = data.const.eta;
-    data.alg.goodSteps = 0;
-    data.alg.rollbacks = 0;
-    data.alg.lastError = -1;
-    data.alg.totalGoodSteps = 0;
+    chromosome.epoch = 0;
+    chromosome.eta = data.const.eta;
+    chromosome.curError = 0;
+    chromosome.goodSteps = 0;
+
+    chromosome.debug = struct();
+
+    chromosome.debug.rollbacks = 0;
+    chromosome.debug.goodSteps = 0;
+    chromosome.debug.cummRollbacks = [];
+    chromosome.debug.cummGoodSteps = [];
+    chromosome.debug.etas = [];
+    chromosome.debug.errors = [];
 end
 
