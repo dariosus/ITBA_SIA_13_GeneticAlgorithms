@@ -76,7 +76,7 @@ function data = initialize(params)
     data.const.g  = @algorithm.functions.sigmoidLog;
     data.const.dg = @algorithm.functions.DsigmoidLog;
 
-    data.const.selection   = @algorithm.ga.selection.roulette;
+    data.const.selection   = @algorithm.ga.selection.elite;
     data.const.selection2  = @algorithm.ga.selection.roulette;
     data.const.crossover   = @algorithm.ga.crossover.annular;
     data.const.mutation    = @algorithm.ga.mutation.locus;
