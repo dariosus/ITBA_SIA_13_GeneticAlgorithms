@@ -1,4 +1,47 @@
-@ 3. Desarrollo @
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<xmp theme="united" style="display:none;">
+
+# 1. Introducción #
+
+Un algoritmo genético es un algoritmo utilizado para optimizar la solución a un problema.
+Para realizar esto, utiliza un conjunto inicial aleatorio de soluciones
+(llamado población inicial), las cuales poseen un grado de adaptación (fitness)
+que denota qué tan buena es.
+
+La implementación de un algoritmo genético está dada de modo tal que se realice
+un aprendizaje automático y existen muchos casos en donde un algoritmo genético puede ayudar
+a resolver problemas que serían muy difíciles o hasta imposibles de resolver de forma explícita.
+
+Considerando redes neuronales artificiales que buscan resolver la serie temporal
+**`y = f(x(t-1), x(t-2), ...)`** con un paso temporal **`t`**, se busca mejorar los resultados
+de esta red mediante un algoritmo genético.
+# 2. Marco Teórico #
+
+En un algoritmo genético cada solución (o individuo) está codificado mediante un cromosoma.
+Dicho cromosoma está compuesto por un conjunto de elementos denominados alelos,
+cuya posición (y por ende su significado) es denominado locus.
+
+La idea de un algoritmo genético es la de reemplazar la población actual a través de generaciones
+por una población nueva con el objetivo de que la nueva generación posea mejores soluciones.
+
+Cada solución posee un grado de adaptación (para lo cual se cuenta con una función de **Fitness**)
+que se utiliza para evaluar qué tan buena es.
+
+Para generar nuevos individuos se pueden intercambiar alelos entre dos indivudos conocidos
+(entrecruzamiento) o modificar algún alelo por un valor aleatorio (mutación).
+Mediante distintos criterios de selección y reemplazo se conforma una nueva población.
+Es importante destacar que algunos individuos de la población pueden pasar
+a la siguiente generación sin ser modificados.
+
+Existen diversas maneras de finalizar la ejecución de un algoritmo genético.
+Es posible definir el corte de dicha ejecución mediante una cantidad máxima de generaciones,
+al alcanzar un grado de adaptación menor a una cota definida, al detectar que la población
+no está siendo modificada significativamente a lo largo de cierta cantidad de generaciones
+o al haber alcanzado una solución que sea posible mejorar.
+# 3. Desarrollo #
 
 El problema a desarrollar es el de tratar de encontrar la mejor red neuronal
 que solucione el problema de aproximación de una serie temporal.
@@ -37,10 +80,7 @@ un porcentaje para el cual se considera que la población no ha sido modificada
 siginificativamente entre generaciones y una cantidad de generaciones en las cuales
 se espera que las soluciones hayan mejorado
 * __Mutaciones a los individuos__: Se cuenta con una probabilidad de mutación
-donde la misma puede ser de dos tipos: mutando con una misma probabilidad cada locus o
-mutando algún locus elegido al azar con otra probabilidad. Así mismo, dichas probabilidades
-pueden ser constantes durante las generaciones (clásica) o reducirse con el paso
-de las mismas (no uniforme)
+donde la misma puede ser clásica o no uniforme
 * __Entrecruzamientos entre individuos__: Se cuenta con una probabilidad de entrecruzamiento,
 pudiéndose elegir el método de entrecruzamiento entre individuos entre:
 cruce de un punto, cruce de dos puntos, cruce uniforme parametrizado y anular
@@ -51,6 +91,12 @@ cuántas iteraciones del mismo se realizarán
 dados por la cátedra será utilizado. Para los métodos que lo necesiten,
 también se puede configurar la brecha generacional
 * __Métodos de selección__: Es posible configurar cuál será el método de selección a utilizar
-entre ruleta, universal, elitismo, ranking, Boltzmann, torneos, mixto 1 (elitismo y ruleta)
+entre ruleta, universal, elitismo, ranking, Boltzman, torneos, mixto 1 (elitismo y ruleta)
 y mixto 2 (elitismo y universal).
+# 4. Resultados #
+# 5. Conclusiones #
 
+</xmp>
+
+<script src="http://strapdownjs.com/v/0.2/strapdown.js"></script>
+</html>

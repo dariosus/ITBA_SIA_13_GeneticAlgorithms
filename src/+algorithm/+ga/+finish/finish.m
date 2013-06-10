@@ -1,6 +1,6 @@
 function ready = finish(data)
 
-    if data.alg.generation >= data.const.maxGenerations
+    if data.alg.generation > data.const.maxGenerations
 
         fprintf('Reached max generation\n');
         ready = true;
