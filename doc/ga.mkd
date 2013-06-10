@@ -1,13 +1,24 @@
 @ 2. Marco Teórico @
 
-Un algoritmo genético toma como base un conjunto de Soluciones llamado población.
+En un algoritmo genético cada solución (o individuo) está codificado mediante un cromosoma.
+Dicho cromosoma está compuesto por un conjunto de elementos denominados alelos,
+cuya posición (y por ende su significado) es denominado locus.
 
-Cada solución (llamada individuo) contiene un cromosoma que posee cada elemento que conforma la solución. Cada uno de estos elementos es llamada Locus, mientras que su contenido concreto se denomina Alelo.
+La idea de un algoritmo genético es la de reemplazar la población actual a través de generaciones
+por una población nueva con el objetivo de que la nueva generación posea mejores soluciones.
 
-La idea de un algoritmo genético es la de reemplazar la población actual a través de generaciones por una población nueva con el objetivo de que la nueva generación posea mejores soluciones.
+Cada solución posee un grado de adaptación (para lo cual se cuenta con una función de **Fitness**)
+que se utiliza para evaluar qué tan buena es.
 
-Cada solución posee un valor de adaptación (para lo cual se cuenta con una función de **Fitness**) que se utiliza para evaluar que tan buena es esta solución.
+Para generar nuevos individuos se pueden intercambiar alelos entre dos indivudos conocidos
+(entrecruzamiento) o modificar algún alelo por un valor aleatorio (mutación).
+Mediante distintos criterios de selección y reemplazo se conforma una nueva población.
+Es importante destacar que algunos individuos de la población pueden pasar
+a la siguiente generación sin ser modificados.
 
-Para generar nuevos individuos se puede intercambiar alelos entre dos indivudos conocidos (entrecruzamiento) o modificar algún alelo por un valor aleatorio (mutación). Mediante distintos criterios de reemplazo y selección se conforma una nueva población. Es importante destacar que algunos elementos de la población pueden pasar intactos a la siguiente generación.
+Existen diversas maneras de finalizar la ejecución de un algoritmo genético.
+Es posible definir el corte de dicha ejecución mediante una cantidad máxima de generaciones,
+al alcanzar un grado de adaptación menor a una cota definida, al detectar que la población
+no está siendo modificada significativamente a lo largo de cierta cantidad de generaciones
+o al haber alcanzado una solución que sea posible mejorar.
 
-Existen distintas maneras de dar por terminada la ejecución de un algoritmo genético. Se puede definir una cantidad máxima de generaciones, buscar un grado de adaptación menor a una cota definida, evaluar que nuestra población no esta siendo modificada significativamente o notar que no estamos pudiendo mejorar la mejor solución encontrada.
