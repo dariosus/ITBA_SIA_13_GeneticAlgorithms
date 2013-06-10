@@ -37,11 +37,18 @@ En la **Tabla 3** se pueden ver las mejores soluciones y la solución promedio p
 
 @@ 4.4 Evaluación de métodos de reemplazo @@
 
-En la **Tabla 4** se pueden ver las mejores soluciones y la solución promedio para distintos métodos de reemplazo.
-Es importante destacar que para estas pruebas se utilizó elitismo como método de selección.
+En la **Tabla 4** se pueden ver las mejores soluciones y la solución promedio para distintos métodos de reemplazo usando también distintos métodos de selección.
+En los casos de los métodos 2 y 3 de reemplazo se pueden utilizar distintos métodos de
+selección para la primer y la segunda fase.
 
 @@ 4.5 Evaluación con y sin backpropagation @@
 
 En la **Tabla 5** se pueden ver las mejores soluciones y la solución promedio para evaluaciones con la probabilidad por defecto (0.1) de que se opere con el algoritmo de backpropagation y quitando este operador genético.
 
 Cabe destacar que el método de selección en este caso fue elitismo.
+
+@@ 4.6 Comparación entre la red neuronal y el algoritmo genético @@
+
+A modo de comparar ambas estrategias se compararon ejecuciones de la red neuronal y del algoritmo genético para este problema. En la **Tabla 6** se pueden ver los resultados obtenidos.
+
+Cabe destacar que en esta ejecución fueron modificados los criterios de finalización del algoritmo genético llegando a ejecutarse 37 generaciones.
