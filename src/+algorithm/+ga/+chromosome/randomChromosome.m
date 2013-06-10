@@ -2,12 +2,12 @@ function chromosome = randomChromosome(data)
 
     chromosome = struct();
 
-    chromosome.W = cell(data.in.M, 1);
+    chromosome.W = cell(data.const.M, 1);
 
-    for m = 2 : data.in.M
+    for m = 2 : data.const.M
 
-        curDim = data.in.arch(m);
-        oldDim = data.in.arch(m - 1) + 1;
+        curDim = data.const.arch(m);
+        oldDim = data.const.arch(m - 1) + 1;
 
         chromosome.W{m} = algorithm.ga.chromosome.randomAlleles(data, m, curDim, oldDim);
     end

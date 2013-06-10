@@ -4,7 +4,7 @@ function [child1 child2] = uniform(data, dad, mom)
 
         if data.const.p >= rand()
 
-            p = data.const.vec2w(index, :);
+            p = data.const.linearCoords(index, :);
 
             aux = dad.W{p(1)}(p(2), p(3));
             dad.W{p(1)}(p(2), p(3)) = mom.W{p(1)}(p(2), p(3));

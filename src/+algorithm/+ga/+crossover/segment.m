@@ -9,7 +9,7 @@ function [child1 child2] = segment(data, dad, mom, r1, r2)
 
     for index = r1 : r2
 
-        p = data.const.vec2w(index, :);
+        p = data.const.linearCoords(index, :);
 
         aux = dad.W{p(1)}(p(2), p(3));
         dad.W{p(1)}(p(2), p(3)) = mom.W{p(1)}(p(2), p(3));

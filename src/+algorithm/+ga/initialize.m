@@ -26,11 +26,15 @@ function data = initialize(params)
     %% Constants
     %%%
 
+    % General
+
     data.const.arch = [9 8];
     data.const.inputDim = 2;
     data.const.inputSamples = 300;
     data.const.bias = -1;
     data.const.beta = 1;
+
+    % Genetic algorithm
 
     data.const.maxGenerations = 17;
     data.const.genGap = 0.8; % generation gap
@@ -48,6 +52,8 @@ function data = initialize(params)
     data.const.changeRatio = 0.8;
     data.const.nonUniformMutation = false;
 
+    % Neuronal network
+
     data.const.maxEpochs = 80;
     data.const.rollback = true;
     data.const.momentum = 0.3;
@@ -57,9 +63,14 @@ function data = initialize(params)
     data.const.etaDec = 0.001;
     data.const.etaSteps = 2;
 
+    % Debug
+
     data.const.dumpNetwork = false;
+    data.const.globalDump = false;
     data.const.generationsPerDump = 1000;
     data.const.path = '';
+
+    % Functions
 
     data.const.g  = @algorithm.functions.sigmoidLog;
     data.const.dg = @algorithm.functions.DsigmoidLog;
@@ -70,36 +81,30 @@ function data = initialize(params)
     data.const.mutation    = @algorithm.ga.mutation.chromosome;
     data.const.replacement = @algorithm.ga.replacement.first;
 
+    % Override with user params
+
     names = fieldnames(params);
     for i = 1 : length(names)
         data.const.(names{i}) = params.(names{i});
     end
 
+    data.const.g  = @(x)data.const.g(data.const.beta, x);
+    data.const.dg = @(x)data.const.dg(data.const.beta, x);
+
     %%%
     %% Input
     %%%
 
-    data.fun.g  = @(x)data.const.g(data.const.beta, x);
-    data.fun.dg = @(x)data.const.dg(data.const.beta, x);
-
     [data.in.allXi, data.in.allS] = algorithm.input.getInputs(data);
     [data.in.Xi,    data.in.S   ] = algorithm.input.getRandomSamples(data);
 
-    data.in.arch = [size(data.in.Xi, 2) data.const.arch size(data.in.S, 2)]; % Architecture
+    % Derived params
 
-    data.in.M = length(data.in.arch); % Number of layers
+    data.const.arch = [size(data.in.Xi, 2) data.const.arch size(data.in.S, 2)];
+    data.const.M    = numel(data.const.arch);
 
-    data = algorithm.ga.chromosome.initializeCoords(data);
-
-    %%%
-    %% Functions
-    %%%
-
-    data.fun.selection   = @(k, population)data.const.selection(data, k, population);
-    data.fun.selection2  = @(k, population)data.const.selection2(data, k, population);
-    data.fun.crossover   = @(dad, mom)data.const.crossover(data, dad, mom);
-    data.fun.mutation    = @(parent)data.const.mutation(data, parent);
-    data.fun.replacement = @(data)data.const.replacement(data);
+    data.const.linearCoords = algorithm.ga.chromosome.linearCoords(data);
+    data.const.numLocus     = size(data.const.linearCoords, 1);
 
     %%%
     %% Algorithm
@@ -111,6 +116,8 @@ function data = initialize(params)
     data.alg.pMutate = data.const.pMutate;
     data.alg.pMutateStar = data.const.pMutateStar;
 
+    data.alg.lastFitness = [];
+
     %%%
     %% Debug
     %%%
@@ -121,6 +128,5 @@ function data = initialize(params)
     data.debug.globalBest = [];
     data.debug.sampleStd = [];
     data.debug.globalStd = [];
-    data.debug.fitness = [];
 end
 

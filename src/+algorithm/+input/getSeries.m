@@ -5,9 +5,6 @@ function series = getSeries()
     % Make column vector
     x = x(:);
 
-    % Standarize
-    % x = (x - mean(x)) / std(x);
-
     % Proyect to [0, 1]
     m = min(x);
     M = max(x);

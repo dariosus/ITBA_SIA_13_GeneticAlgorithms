@@ -15,9 +15,9 @@ function fitness = evalFitness(data, chromosome, useAllInputs)
 
         V = Xi(i, :)';
 
-        for m = 2 : data.in.M
+        for m = 2 : data.const.M
 
-            V = data.fun.g(chromosome.W{m} * [data.const.bias; V]);
+            V = data.const.g(chromosome.W{m} * [data.const.bias; V]);
         end
 
         error = error + norm(S(i, :)' - V) ^ 2;
