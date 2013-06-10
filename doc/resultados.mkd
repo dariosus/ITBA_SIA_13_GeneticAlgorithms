@@ -1,18 +1,24 @@
 @ 4. Resultados @
 
-Para evaluar las distintas configuraciones del algoritmo, se evaluo cada caracterísitica por separado,
+Para evaluar las distintas configuraciones del algoritmo, se evaluó cada caracterísitica por separado,
 prefijando valores por defecto para las otras configuraciones.
 
-La configuración por defecto considera como metodos de selección a ruleta. Para los métodos mixtos, se toma una proporcion del 50% por método.
-El primer método de reemplazo es el utilizado por defecto, aunque en los casos en que se usan los otros dos se toma 0.8 como brecha generacional.
-El método de entrecruzamiento utilizado es el uniforme con una probabilidad de entrecruzamiento de 0.75. En estos casos, donde el
-método es uniforme, la probabiladad de entrecruzamiento por locus es de 0.05.
-La probabilidad de mutación es fija y es de 0.1, mutando un solo locus por individuo. En los casos donde cambia la configuracion para que se evalue
-cada locus por separado, la probabilidad de mutación por locus es de 0.03.
+La configuración por defecto considera como métodos de selección a ruleta.
+Para los métodos mixtos, por defecto, se toma una proporción del 50% por método.
+Por su parte, para el reemplazo, es utilizado el primer método.
+Para aquellos casos en que se utilizan los otros dos métodos de reemplazo,
+por defecto, se toma 0.8 como brecha generacional.
+El método de entrecruzamiento utilizado es el uniforme con una probabilidad de entrecruzamiento de 0.75. En estos casos, donde el método sea uniforme, la probabiladad de entrecruzamiento por locus es de 0.05.
+La probabilidad de mutación es fijada en 0.1, mutando sólo un locus por individuo.
+En los casos donde cambia la configuracion para que se evalue cada locus por separado,
+la probabilidad de mutación por locus es de 0.03.
 
-Respecto a la finalización del algoritmo, se toma una cantidad máxima de 17 generaciones. Si la mejor solución de una generacion posee un nivel
-de adaptación menor a 0.01 también se finaliza el algoritmo. De la misma manera, si un 80% o más de la población no cambia entre generaciones, se
-finaliza la ejecución. Así mismo, si la mejor solución no pudo ser mejorada en las últimas 10 generaciones, se da por terminada la corrida.
+Respecto a la finalización del algoritmo, se toma una cantidad máxima de 17 generaciones.
+Si la mejor solución de una generacion posee un nivel de adaptación menor a 0.01
+también se finaliza el algoritmo. De la misma manera, si un 80% o más de la población
+no cambia entre generaciones, se finaliza la ejecución.
+Así mismo, si la mejor solución no pudo ser mejorada en las últimas 10 generaciones,
+se da por terminada la corrida.
 
 Por último, se considera una población de 60 individuos.
 
