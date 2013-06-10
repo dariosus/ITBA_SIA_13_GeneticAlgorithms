@@ -1,4 +1,4 @@
-function data = second(data)
+function population = second(data)
 
     k = floor(data.const.genGap * data.const.N);
 
@@ -6,6 +6,6 @@ function data = second(data)
 
     population = [population; data.fun.selection2(data.const.N - k, data.alg.population)];
 
-    data.alg.population = algorithm.ga.replacement.unique(data, population, data.alg.population);
+    population = algorithm.ga.replacement.unique(data, population, data.alg.population);
 end
 

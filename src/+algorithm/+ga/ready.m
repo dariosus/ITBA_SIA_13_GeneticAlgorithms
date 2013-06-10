@@ -8,7 +8,7 @@ function goAway = ready(data)
 
     best = min(data.debug.sampleBest(end - data.const.contentGenerations : end));
 
-    old = sort(data.debug.fitness);
+    old = sort(data.alg.lastFitness);
     new = sort([data.alg.population.fitness]);
 
     count = 0;

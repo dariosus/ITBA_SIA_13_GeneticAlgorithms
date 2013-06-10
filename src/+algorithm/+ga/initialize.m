@@ -40,11 +40,13 @@ function data = initialize(params)
     data.const.pCross = 0.75; % crossing probability
     data.const.p = 0.05; % uniform crossover probability per locus
     data.const.a = 0.5; % mixed selection proportion
+    data.const.c = 0.95; % mutation reduction ratio
     data.const.N = 60; % population size
     data.const.uniqueTries = 2; % tries to remove repeated chromosomes
     data.const.targetFitness = 0.001;
     data.const.contentGenerations = 10;
     data.const.changeRatio = 0.8;
+    data.const.nonUniformMutation = false;
 
     data.const.maxEpochs = 80;
     data.const.rollback = true;
@@ -102,8 +104,11 @@ function data = initialize(params)
     %% Algorithm
     %%%
 
-    data.alg.generation = 0;
+    data.alg.generation = 1;
     data.alg.population = arrayfun(@(x)algorithm.ga.chromosome.randomChromosome(data), [1 : data.const.N])';
+
+    data.alg.pMutate = data.const.pMutate;
+    data.alg.pMutateStar = data.const.pMutateStar;
 
     %%%
     %% Debug
