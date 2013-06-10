@@ -47,7 +47,7 @@ function data = initialize(params)
     data.const.c = 0.95; % mutation reduction ratio
     data.const.N = 60; % population size
     data.const.uniqueTries = 2; % tries to remove repeated chromosomes
-    data.const.targetFitness = 0.000001;
+    data.const.targetError = 0.000001;
     data.const.contentGenerations = 10;
     data.const.changeRatio = 0.8;
     data.const.nonUniformMutation = true;
@@ -117,8 +117,6 @@ function data = initialize(params)
     data.alg.pMutate = data.const.pMutate;
     data.alg.pMutateStar = data.const.pMutateStar;
 
-    data.alg.mutation = 0;
-    data.alg.crossover = 0;
     data.alg.lastFitness = [];
 
     %%%
@@ -131,7 +129,5 @@ function data = initialize(params)
     data.debug.globalBest = [];
     data.debug.sampleStd = [];
     data.debug.globalStd = [];
-    data.debug.mutations = [];
-    data.debug.crossovers = [];
 end
 

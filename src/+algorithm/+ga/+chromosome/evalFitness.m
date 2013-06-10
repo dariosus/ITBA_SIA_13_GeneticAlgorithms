@@ -23,6 +23,6 @@ function fitness = evalFitness(data, chromosome, useAllInputs)
         error = error + norm(S(i, :)' - V) ^ 2;
     end
 
-    fitness = error / size(S, 1);
+    fitness = size(S, 1) / error;
 end
 

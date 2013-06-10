@@ -7,7 +7,7 @@ function ready = finish(data)
         return
     end
 
-    if min([data.alg.population.fitness]) <= data.const.targetFitness
+    if max([data.alg.population.fitness]) >= 1 / data.const.targetError
 
         fprintf('Reached target fitness\n');
         ready = true;

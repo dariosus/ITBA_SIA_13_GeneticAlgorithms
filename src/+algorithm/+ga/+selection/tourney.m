@@ -6,7 +6,7 @@ function selected = tourney(data, k, population)
 
     for pos = 1 : k
 
-        if population(indexes(pos, 1)).fitness > population(indexes(pos, 2)).fitness
+        if population(indexes(pos, 1)).fitness < population(indexes(pos, 2)).fitness
 
             indexes(pos, :) = fliplr(indexes(pos, :));
         end
