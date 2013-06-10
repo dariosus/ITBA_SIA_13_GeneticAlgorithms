@@ -1,5 +1,5 @@
-function population = first(data)
+function [data population] = first(data)
 
-    population = algorithm.ga.replacement.populate(data, data.const.N);
+    [data population] = algorithm.ga.replacement.populate(data, data.const.N);
 end
 

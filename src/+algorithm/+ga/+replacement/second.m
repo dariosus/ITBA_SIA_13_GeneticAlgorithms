@@ -1,8 +1,8 @@
-function population = second(data)
+function [data population] = second(data)
 
     k = floor(data.const.genGap * data.const.N);
 
-    population = algorithm.ga.replacement.populate(data, k);
+    [data population] = algorithm.ga.replacement.populate(data, k);
 
     population = [population; data.const.selection2(data, data.const.N - k, data.alg.population)];
 

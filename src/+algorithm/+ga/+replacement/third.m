@@ -1,8 +1,10 @@
-function population = third(data)
+function [data population] = third(data)
 
     k = floor(data.const.genGap * data.const.N);
 
-    population = [data.alg.population; algorithm.ga.replacement.populate(data, k)];
+    [data population] = algorithm.ga.replacement.populate(data, k);
+
+    population = [data.alg.population; population];
 
     selected = data.const.selection2(data, data.const.N, population);
 

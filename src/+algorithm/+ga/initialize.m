@@ -117,6 +117,8 @@ function data = initialize(params)
     data.alg.pMutate = data.const.pMutate;
     data.alg.pMutateStar = data.const.pMutateStar;
 
+    data.alg.mutation = 0;
+    data.alg.crossover = 0;
     data.alg.lastFitness = [];
 
     %%%
@@ -129,5 +131,7 @@ function data = initialize(params)
     data.debug.globalBest = [];
     data.debug.sampleStd = [];
     data.debug.globalStd = [];
+    data.debug.mutations = [];
+    data.debug.crossovers = [];
 end
 

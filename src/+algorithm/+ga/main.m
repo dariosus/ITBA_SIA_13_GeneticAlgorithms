@@ -10,7 +10,7 @@ function main(params)
 
         data.alg.lastFitness = [data.alg.population.fitness];
 
-        data.alg.population = data.const.replacement(data);
+        [data data.alg.population] = data.const.replacement(data);
 
         data = algorithm.ga.update(data);
     end

@@ -1,4 +1,4 @@
-function population = populate(data, n)
+function [data population] = populate(data, n)
 
     population = repmat(data.alg.population(1), n + 1, 1);
 
@@ -6,7 +6,7 @@ function population = populate(data, n)
 
     for pair = 1 : (n + 1) / 2
 
-        [child1 child2] = algorithm.ga.replacement.spawn(data, data.alg.population);
+        [data child1 child2] = algorithm.ga.replacement.spawn(data, data.alg.population);
 
         population(pos : pos + 1) = [child1 child2];
 

@@ -1,4 +1,4 @@
-function [child1 child2] = spawn(data, population)
+function [data child1 child2] = spawn(data, population)
 
     children = data.const.selection(data, 2, population);
 
@@ -8,10 +8,12 @@ function [child1 child2] = spawn(data, population)
     if rand() <= data.const.pCross
 
         [child1 child2] = data.const.crossover(data, child1, child2);
+
+        data.alg.crossover = data.alg.crossover + 1;
     end
 
-    child1 = data.const.mutation(data, child1);
-    child2 = data.const.mutation(data, child2);
+    [data child1] = data.const.mutation(data, child1);
+    [data child2] = data.const.mutation(data, child2);
 
     if rand() <= data.const.pBack
 
