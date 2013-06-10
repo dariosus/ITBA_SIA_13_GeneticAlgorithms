@@ -9,6 +9,8 @@ selec[6]="third(elite|mixed1)"
 selec[7]="third(mixed1|elite)"
 selec[8]="third(tourney|elite)"
 selec[9]="third(roulette|elite)"
+selec[8]="third(tourney|elite|G=1.2)"
+selec[9]="third(roulette|elite|G=1.2)"
 
 echo
 printf "%22s | %14s | %14s | %14s | %14s\n" "Method" "avgMeanErrors" "avgBestErrors" "bestMeanErrors" "bestBestErrors"
