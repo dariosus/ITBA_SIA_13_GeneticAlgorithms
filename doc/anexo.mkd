@@ -15,10 +15,10 @@ Métodos de mutación
 
 || avgMeanError | avgBestError | bestMeanError | bestBestError |
 |------|-----|----|-------|-------|
-| Mutación clásica por individuo | 3 | 0.001 | | |
-| Mutación clásica por locus | 2 | 0.1 | | |
-| Mutación no uniforme por individuo | 2 | 0.1 | | |
-| Mutación no uniforme por locus | 2 | 0.001 | | |
+| Mutación clásica por individuo | 0.22881 | 0.11926 | 0.17949 | 0.1185 |
+| Mutación clásica por locus | 0.22642 | 0.09080 | 0.18694 | 0.0422 |
+| Mutación no uniforme por individuo | 0.23566 | 0.12303 | 0.22429 | 0.1149 |
+| Mutación no uniforme por locus | 0.20296 | 0.08593 | 0.16456 | 0.0382 |
 
 **Tabla 2**: Mejor Fitness y Fitness promedio para distintos métodos de mutación.
 

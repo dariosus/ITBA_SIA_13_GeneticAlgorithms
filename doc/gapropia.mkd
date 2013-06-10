@@ -25,7 +25,7 @@ en base a una buena ejecución de la misma. Estos fueron:
 * __Beta__: 1
 * __Patrones utilizados para el aprendizaje__: 300
 
-Con esta configuración originalmente se pudo obtener un error de
+Con esta configuración originalmente se pudo obtener un error de 0.0003756
 
 Dentro de nuestra implementación existe la posibilidad de configurar los siguientes parámetros
 para el algoritmo genético:
