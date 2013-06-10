@@ -24,7 +24,7 @@ function chromosome = main(data, chromosome)
 
     if chromosome.rollback
 
-        chromosome.W = chromosome.oldW
+        chromosome.W = chromosome.oldW;
     end
 
     chromosome = rmfield(chromosome, setdiff(fieldnames(chromosome), {'W', 'fitness'}));

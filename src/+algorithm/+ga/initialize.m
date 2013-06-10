@@ -78,8 +78,8 @@ function data = initialize(params)
 
     data.const.selection   = @algorithm.ga.selection.roulette;
     data.const.selection2  = @algorithm.ga.selection.roulette;
-    data.const.crossover   = @algorithm.ga.crossover.uniform;
-    data.const.mutation    = @algorithm.ga.mutation.chromosome;
+    data.const.crossover   = @algorithm.ga.crossover.annular;
+    data.const.mutation    = @algorithm.ga.mutation.locus;
     data.const.replacement = @algorithm.ga.replacement.first;
 
     % Override with user params
