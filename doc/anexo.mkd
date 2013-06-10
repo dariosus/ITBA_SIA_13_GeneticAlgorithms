@@ -1,5 +1,11 @@
 @ 6. Anexo @
 
+Erros cuadrático medio
+
+![](img/mse.png)
+
+**Gráfico 1**: Fórmula del error cuadrático medio.
+
 Métodos de entrecruzamiento
 
 || avgMeanError | avgBestError | bestMeanError | bestBestError |
@@ -57,12 +63,3 @@ Métodos de selección en la segunda fase
 | Mixto 2 | 3 | 0.1 | | |
 
 **Tabla 5**: Mejor Fitness y Fitness promedio para distintos métodos de selección en la segunda fase.
-
-(grafico a modo de ejemplo)
-
-Erros cuadráticos medios
-
-![](img/grafico_1.png)
-
-**Gráfico 1**: Gráfico del error cuadrático medio en función de la cantidad de epochs
-

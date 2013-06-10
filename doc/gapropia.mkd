@@ -6,7 +6,11 @@ que solucione el problema de aproximación de una serie temporal.
 Para representar nuestro problema, cada individuo estaba conformado por la matriz de pesos
 correspondiente a una red neuronal, mientras que el valor de cada locus de su codificación
 equivalía a un peso particular.
+
 La función de adaptación para este problema era el Error Cuadrático Medio obtenido al evaluar la red.
+
+El error cuadrático medio es cálculado como se puede ver en la **Figura 1** en donde la resta equivale 
+a la resta entre el valor esperado y el obtenido para cada patrón.
 
 A las operaciones habituales de un algoritmo genético (entrecruzamiento y mutación) se
 agregó la posibilidad de aplicar una cantidad de pasos del algoritmo de **backpropagation** a un individuo.
