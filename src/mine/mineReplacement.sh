@@ -9,6 +9,8 @@ selec[6]="third(elite|mixed1)"
 selec[7]="third(mixed1|elite)"
 selec[8]="third(tourney|elite)"
 selec[9]="third(roulette|elite)"
+selec[10]="third(tourney|elite|G=1.2)"
+selec[11]="third(roulette|elite|G=1.2)"
 
 echo
 printf "%22s | %14s | %14s | %14s | %14s\n" "Method" "avgMeanErrors" "avgBestErrors" "bestMeanErrors" "bestBestErrors"
@@ -16,7 +18,7 @@ echo "--------------------------------------------------------------------------
 
 i=0
 
-for outDec in 29 30 31 32 33 34 35 36 37; do
+for outDec in 29 30 31 32 33 34 35 36 37 40 41; do
 
     let i=i+1
 
