@@ -6,25 +6,84 @@
 
 # 6. Anexo #
 
-(Dejo tabla y gráfico a modo de ejemplo)
+Error cuadrático medio
 
-Parámetros adaptativos
+![](img/mse.png)
 
-|| a | b | c | d | ECM (promedio)|
-|------|-----|----|-----|-----|-----|
-| Prueba N°1 | 3 | 0.001 | 0.001 | 0.01 | 0.14304 |
-| Prueba N°2 | 2 | 0.1 | 0.1 | 0.1 | 0.14348 |
-| Prueba N°3 | 2 | 0.1 | 0.01 | 0.01 | 0.16717 |
-| Prueba N°4 | 2 | 0.001 | 0.1 | 0.0001 | 0.17097 |
-| Prueba N°5 | 3 | 0.1 | 0.1 | 0.001 | 0.17152 |
+**Gráfico 1**: Fórmula del error cuadrático medio.
 
-**Tabla 1**: ECM para diferentes configuraciones de los parámetros adaptativos.
+Métodos de entrecruzamiento
 
-Erros cuadráticos medios
+|| avgMeanError | avgBestError | bestMeanError | bestBestError |
+|------|-----|----|-------|-------|
+| Cruce de un punto | 0.23749 | 0.11590 | 0.19596 | 0.1091 |
+| Cruce de dos puntos | 0.22127 | 0.10040 | 0.18068 | 0.0837 |
+| Uniforme | 0.22962 | 0.11706 | 0.19179 | 0.1134 |
+| Anular | 0.21647 | 0.10700 | 0.17796 | 0.0831 |
 
-![](img/grafico_1.png)
+**Tabla 1**: Mejor Fitness y Fitness promedio para los distintos métodos de entrecruzamiento.
 
-**Gráfico 1**: Gráfico del error cuadrático medio en función de la cantidad de epochs
+Métodos de mutación
+
+|| avgMeanError | avgBestError | bestMeanError | bestBestError |
+|------|-----|----|-------|-------|
+| Mutación clásica por individuo | 0.22881 | 0.11926 | 0.17949 | 0.1185 |
+| Mutación clásica por locus | 0.22642 | 0.09080 | 0.18694 | 0.0422 |
+| Mutación no uniforme por individuo | 0.23566 | 0.12303 | 0.22429 | 0.1149 |
+| Mutación no uniforme por locus | 0.20296 | 0.08593 | 0.16456 | 0.0382 |
+
+**Tabla 2**: Mejor Fitness y Fitness promedio para los distintos métodos de mutación.
+
+Métodos de selección
+
+|| avgMeanError | avgBestError | bestMeanError | bestBestError |
+|------|-----|----|-------|-------|
+| Ruleta | 0.22511 | 0.08090 | 0.18318 | 0.0597 |
+| Torneo | 0.11762 | 0.10760 | 0.11057 | 0.0970 |
+| Elitismo | 0.01023 | 0.00104 | 0.00483 | 0.00045311 |
+| Boltzman | 0.18120 | 0.11223 | 0.13888 | 0.1065 |
+| Mixto 1 (a = 0.5) | 0.12654 | 0.03047 | 0.09441 | 0.00083285 |
+| Mixto 2 (a = 0.5) | 0.09615 | 0.03613 | 0.08196 | 0.0020 |
+| Mixto 1 (a = 0.9) | 0.12995 | 0.03313 | 0.10994 | 0.00059524 |
+| Mixto 2 (a = 0.9) | 0.14226 | 0.03339 | 0.10969| 0.00051494 |
+| Mixto 1 (a = 0.1) | 0.19477 | 0.11743 | 0.15831 | 0.1140 |
+| Mixto 2 (a = 0.1) | 0.20432 | 0.11746 | 0.17941 | 0.1130 |
+
+**Tabla 3**: Mejor Fitness y Fitness promedio para los distintos métodos de selección.
+
+Métodos de reemplazo
+
+|| avgMeanError | avgBestError | bestMeanError | bestBestError |
+|------|-----|----|-------|-------|
+| Método N°1 (Elitismo) | 0.03388 | 0.01924 | 0.00177 | 0.00072060 |
+| Método N°2 (Elitismo + Mixto 1) | 0.06999 | 0.03313 | 0.04794 | 0.0025 |
+| Método N°2 (Mixto 1 + Elitismo)| 0.12184 | 0.06138 | 0.08908 | 0.00054982 |
+| Método N°2 (Torneo + Elitismo) | 0.12126 | 0.10916 | 0.11583 | 0.0978 |
+| Método N°2 (Ruleta + Elitismo)| 0.17071 | 0.04566 | 0.14037 | 0.0037 |
+| Método N°3 (Elitismo + Mixto 1) | 0.11200 | 0.07853 | 0.07595 | 0.0044 |
+| Método N°3 (Mixto 1 + Elitismo)| 0.06666 | 0.03996 | 0.02323 | 0.0036 |
+| Método N°3 (Toreno + Elitismo) | 0.030000 | 0.01210 | 0.00167 | 0.0011 |
+| Método N°3 (Ruleta + Elitismo)| 0.08217 | 0.07480 | 0.02256 | 0.0075 |
+| Método N°3 (Torneo + Elitismo. G = 1.2) | 0.06918 | 0.06787 | 0.00448 | 0.00083225 |
+| Método N°3 (Ruleta + Elitismo. G = 1.2)| 0.11201 | 0.10873 | 009592 | 0.0943 |
+
+**Tabla 4**: Mejor Fitness y Fitness promedio para los distintos métodos de reemplazo.
+
+Evaluación de Backpropagation
+
+|| avgMeanError | avgBestError | bestMeanError | bestBestError |
+|------|-----|----|-------|-------|
+| Con Backpropagation | 0.01023 | 0.00104 | 0.00483 | 0.00045311 |
+| Sin Backpropagation | 0.11807 | 0.11793 | 0.11621 | 0.1162 |
+
+**Tabla 5**: Mejor Fitness y Fitness promedio para los distintos métodos de selección en la segunda fase.
+
+Redes Neuronales vs. Algoritmos Genétivos
+
+|| Mejor error en el aprendizaje | Mejor error global |
+|------|-----|----|
+| Redes Neuronales | 0.00026 | 0.00028 |
+| Algoritmos genéticos | 0.00032 | 0.00043 |
 
 </xmp>
 
