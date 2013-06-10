@@ -17,7 +17,10 @@ function chromosome = main(data, chromosome)
         chromosome = algorithm.ga.network.adaptativeEta(data, chromosome);
     end
 
-    % algorithm.debug.dumpNetwork(data, chromosome);
+    if data.const.dumpNetwork
+
+        algorithm.debug.dumpNetwork(data, chromosome);
+    end
 
     chromosome = rmfield(chromosome, setdiff(fieldnames(chromosome), {'W', 'fitness'}));
 end

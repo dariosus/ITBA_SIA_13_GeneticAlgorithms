@@ -17,8 +17,8 @@ function chromosome = initialize(data, chromosome)
 
     chromosome.debug.rollbacks = 0;
     chromosome.debug.goodSteps = 0;
-    chromosome.debug.cummRollbacks = [];
-    chromosome.debug.cummGoodSteps = [];
+    chromosome.debug.cumRollbacks = [];
+    chromosome.debug.cumGoodSteps = [];
     chromosome.debug.etas = [];
     chromosome.debug.errors = [];
 end

@@ -57,6 +57,7 @@ function data = initialize(params)
     data.const.etaDec = 0.001;
     data.const.etaSteps = 2;
 
+    data.const.dumpNetwork = false;
     data.const.generationsPerDump = 1000;
     data.const.path = '';
 

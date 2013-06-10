@@ -47,8 +47,8 @@ function chromosome = adaptativeEta(data, chromosome)
     %%%
 
     if ~rollback
-        chromosome.debug.cummGoodSteps = [chromosome.debug.cummGoodSteps chromosome.debug.goodSteps];
-        chromosome.debug.cummRollbacks = [chromosome.debug.cummRollbacks chromosome.debug.rollbacks];
+        chromosome.debug.cumGoodSteps = [chromosome.debug.cumGoodSteps chromosome.debug.goodSteps];
+        chromosome.debug.cumRollbacks = [chromosome.debug.cumRollbacks chromosome.debug.rollbacks];
         chromosome.debug.etas = [chromosome.debug.etas chromosome.eta];
         chromosome.debug.errors = [chromosome.debug.errors error];
     end
