@@ -1,16 +1,7 @@
 #!/bin/bash
 
-selec[1]="elite"
-selec[2]="roulette"
-selec[3]="tourney"
-selec[4]="universal"
-selec[5]="boltzmann"
-selec[6]="mixed1(a = 0.5)"
-selec[7]="mixed2(a = 0.5)"
-selec[8]="mixed1(a = 0.9)"
-selec[9]="mixed2(a = 0.9)"
-selec[10]="mixed1(a = 0.1)"
-selec[11]="mixed2(a = 0.1)"
+selec[1]="w backpropagation"
+selec[2]="w/o backpropagation"
 
 echo
 printf "%20s | %14s | %14s | %14s | %14s\n" "Method" "avgMeanErrors" "avgBestErrors" "bestMeanErrors" "bestBestErrors"
@@ -18,7 +9,7 @@ echo "--------------------------------------------------------------------------
 
 i=0
 
-for outDec in 7 10 11 24 18 8 9 20 21 22 23; do
+for outDec in 7 38; do
 
     let i=i+1
 
