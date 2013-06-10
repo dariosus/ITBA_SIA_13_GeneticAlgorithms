@@ -22,6 +22,11 @@ function chromosome = main(data, chromosome)
         algorithm.debug.dumpNetwork(data, chromosome);
     end
 
+    if chromosome.rollback
+
+        chromosome.W = chromosome.oldW;
+    end
+
     chromosome = rmfield(chromosome, setdiff(fieldnames(chromosome), {'W', 'fitness'}));
 end
 

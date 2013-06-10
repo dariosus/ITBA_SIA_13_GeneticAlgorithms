@@ -47,10 +47,10 @@ function data = initialize(params)
     data.const.c = 0.95; % mutation reduction ratio
     data.const.N = 60; % population size
     data.const.uniqueTries = 2; % tries to remove repeated chromosomes
-    data.const.targetFitness = 0.001;
+    data.const.targetFitness = 0.000001;
     data.const.contentGenerations = 10;
     data.const.changeRatio = 0.8;
-    data.const.nonUniformMutation = false;
+    data.const.nonUniformMutation = true;
     data.const.tempFactor = 1; % boltzmann's temperature factor
 
     % Neuronal network
@@ -78,8 +78,8 @@ function data = initialize(params)
 
     data.const.selection   = @algorithm.ga.selection.roulette;
     data.const.selection2  = @algorithm.ga.selection.roulette;
-    data.const.crossover   = @algorithm.ga.crossover.uniform;
-    data.const.mutation    = @algorithm.ga.mutation.chromosome;
+    data.const.crossover   = @algorithm.ga.crossover.annular;
+    data.const.mutation    = @algorithm.ga.mutation.locus;
     data.const.replacement = @algorithm.ga.replacement.first;
 
     % Override with user params
