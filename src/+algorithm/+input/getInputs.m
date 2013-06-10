@@ -10,7 +10,7 @@ function [Xi S] = getInputs(data)
         inputs = [inputs series(i : end - dim + i)];
     end
 
-    if data.fun.g(-1) < 0
+    if data.const.g(-1) < 0
         inputs = inputs * 2 - 1;
     end
 

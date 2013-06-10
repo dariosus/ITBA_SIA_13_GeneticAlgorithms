@@ -4,7 +4,7 @@ function child = locus(data, parent)
 
         if data.alg.pMutate >= rand()
 
-            p = data.const.vec2w(index, :);
+            p = data.const.linearCoords(index, :);
 
             parent.W{p(1)}(p(2), p(3)) = algorithm.ga.chromosome.randomAlleles(data, p(1), 1, 1);
         end

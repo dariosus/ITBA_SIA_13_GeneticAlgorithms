@@ -1,17 +1,17 @@
 function [child1 child2] = spawn(data, population)
 
-    children = data.fun.selection(2, population);
+    children = data.const.selection(data, 2, population);
 
     child1 = children(1);
     child2 = children(2);
 
     if rand() <= data.const.pCross
 
-        [child1 child2] = data.fun.crossover(child1, child2);
+        [child1 child2] = data.const.crossover(data, child1, child2);
     end
 
-    child1 = data.fun.mutation(child1);
-    child2 = data.fun.mutation(child2);
+    child1 = data.const.mutation(data, child1);
+    child2 = data.const.mutation(data, child2);
 
     if rand() <= data.const.pBack
 
