@@ -16,6 +16,13 @@ finaliza la ejecución. Así mismo, si la mejor solución no pudo ser mejorada e
 
 Por último, se considera una población de 60 individuos.
 
+Para cada combinación de parametros probada se hizo un conjunto de 3 corridas. Para cada conjunto se midieron:
+
+* __avgMeanError__: promedio entre cada corrida del conjunto de los errores medios de las poblaciones finales
+* __avgBestError__: promedio entre cada corrida del conjunto de los menores errores de las poblaciones finales
+* __bestMeanError__: menor entre cada corrida del conjunto de los errores medios de las poblaciones finales
+* __bestBestError__: menor entre cada corrida del conjunto de los menores errores de las poblaciones finales
+
 @@ 4.1 Evaluación de métodos de entrecruzamiento @@
 
 En la **Tabla 1** se pueden ver las mejores soluciones y la solución promedio para distintos métodos de entrecruzamiento.
