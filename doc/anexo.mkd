@@ -55,19 +55,11 @@ Métodos de reemplazo
 
 **Tabla 4**: Mejor Fitness y Fitness promedio para distintos métodos de reemplazo.
 
-Métodos de selección en la segunda fase
+Evaluación de Backpropagation
 
 || avgMeanError | avgBestError | bestMeanError | bestBestError |
 |------|-----|----|-------|-------|
-| Ruleta | 0.22511 | 0.08090 | 0.18318 | 0.0597 |
-| Torneo | 0.11762 | 0.10760 | 0.11057 | 0.0970 |
-| Elitismo | 0.01023 | 0.00104 | 0.00483 | 0.00045311 |
-| Boltzman | 0.18120 | 0.11223 | 0.13888 | 0.1065 |
-| Mixto 1 (a = 0.5) | 0.12654 | 0.03047 | 0.09441 | 0.00083285 |
-| Mixto 2 (a = 0.5) | 0.09615 | 0.03613 | 0.08196 | 0.0020 |
-| Mixto 1 (a = 0.9) | 0.12995 | 0.03313 | 0.10994 | 0.00059524 |
-| Mixto 2 (a = 0.9) | 0.14226 | 0.03339 | 0.10969| 0.00051494 |
-| Mixto 1 (a = 0.1) | 0.19477 | 0.11743 | 0.15831 | 0.1140 |
-| Mixto 2 (a = 0.1) | 0.20432 | 0.11746 | 0.17941 | 0.1130 |
+| Con Backpropagation | 0.01023 | 0.00104 | 0.00483 | 0.00045311 |
+| Sin Backpropagation | 0.11807 | 0.11793 | 0.11621 | 0.1162 |
 
 **Tabla 5**: Mejor Fitness y Fitness promedio para distintos métodos de selección en la segunda fase.
