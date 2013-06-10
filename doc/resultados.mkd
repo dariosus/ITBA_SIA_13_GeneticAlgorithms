@@ -13,12 +13,11 @@ La probabilidad de mutación es fijada en 0.1, mutando sólo un locus por indivi
 En los casos donde cambia la configuracion para que se evalue cada locus por separado,
 la probabilidad de mutación por locus es de 0.03.
 
-Respecto a la finalización del algoritmo, se toma una cantidad máxima de 17 generaciones.
-Si la mejor solución de una generacion posee un nivel de adaptación menor a 0.01
-también se finaliza el algoritmo. De la misma manera, si un 80% o más de la población
-no cambia entre generaciones, se finaliza la ejecución.
-Así mismo, si la mejor solución no pudo ser mejorada en las últimas 10 generaciones,
-se da por terminada la corrida.
+Respecto a la finalización del algoritmo, se tomaron varios criterios de cortes:
+al alcanzar un número máximo de 17 generaciones, al conseguir un nivel de adaptación menor a 0.001,
+en el caso en el cual un 80% o más de la población no haya sido modificado entre
+las últimas dos generaciones, y en el caso en el cual la mejor solución no se haya podido mejorar
+en las últimas 10 generaciones.
 
 Por último, se considera una población de 60 individuos.
 
