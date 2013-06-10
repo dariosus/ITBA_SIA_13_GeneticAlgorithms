@@ -1,2 +1,42 @@
 @ 4. Resultados @
 
+Para evaluar las distintas configuraciones del algoritmo, se evaluo cada caracterísitica por separado,
+prefijando valores por defecto para las otras configuraciones.
+
+La configuración por defecto considera como metodos de selección a ruleta. Para los métodos mixtos, se toma una proporcion del 50% por método.
+El primer método de reemplazo es el utilizado por defecto, aunque en los casos en que se usan los otros dos se toma 0.8 como brecha generacional.
+El método de entrecruzamiento utilizado es el uniforme con una probabilidad de entrecruzamiento de 0.75. En estos casos, donde el 
+método es uniforme, la probabiladad de entrecruzamiento por locus es de 0.05.
+La probabilidad de mutación es fija y es de 0.1, mutando un solo locus por individuo. En los casos donde cambia la configuracion para que se evalue 
+cada locus por separado, la probabilidad de mutación por locus es de 0.03.
+
+Respecto a la finalización del algoritmo, se toma una cantidad máxima de 17 generaciones. Si la mejor solución de una generacion posee un nivel 
+de adaptación menor a 0.01 también se finaliza el algoritmo. De la misma manera, si un 80% o más de la población no cambia entre generaciones, se 
+finaliza la ejecución. Así mismo, si la mejor solución no pudo ser mejorada en las últimas 10 generaciones, se da por terminada la corrida.
+
+Por último, se considera una población de 60 individuos.
+
+@@ 4.1 Evaluación de métodos de entrecruzamiento @@
+
+En la **Tabla 1** se pueden ver las mejores soluciones y la solución promedio para distintos métodos de entrecruzamiento.
+
+@@ 4.2 Evaluación de métodos de mutación @@
+
+En la **Tabla 2** se pueden ver las mejores soluciones y la solución promedio para distintos métodos de mutación.
+
+@@ 4.3 Evaluación de métodos de selección @@
+
+En la **Tabla 3** se pueden ver las mejores soluciones y la solución promedio para distintos métodos de selección.
+
+@@ 4.4 Evaluación de métodos de reemplazo @@
+
+En la **Tabla 4** se pueden ver las mejores soluciones y la solución promedio para distintos métodos de reemplazo.
+Es importante destacar que para estas pruebas se utilizó elitismo como método de selección.
+
+@@ 4.5 Evaluación de métodos de entrecruzamiento @@
+
+En la **Tabla 5** se pueden ver las mejores soluciones y la solución promedio para distintos métodos de selección en la segunda fase del reemplazo 
+de la población. Dado que esto solo es relevante para los métodos 2 y 3 de reemplazo, se utilizó el método 2 para estas pruebas.
+
+
+
