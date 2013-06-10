@@ -1,6 +1,6 @@
 Para correr el código del tp, abrir matlab, agrgar la carpeta `src` al path, y ejecutar `src/run.m`.
 
-Opcionalmente, se pueden setear los siguientes parametros para pisar loss valores default en el struct params:
+Opcionalmente, se pueden setear en el struct params los siguientes parametros para pisar los valores default:
 
 ```
 % General
