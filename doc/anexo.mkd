@@ -49,9 +49,17 @@ Métodos de reemplazo
 
 || avgMeanError | avgBestError | bestMeanError | bestBestError |
 |------|-----|----|-------|-------|
-| Método N°1 | 3 | 0.001 | | |
-| Método N°2 | 2 | 0.1 | | |
-| Método N°3 | 2 | 0.1 | | |
+| Método N°1 (Elitismo) | 0.03388 | 0.01924 | 0.00177 | 0.00072060 |
+| Método N°2 (Elitismo + Mixto 1) | 0.06999 | 0.03313 | 0.04794 | 0.0025 |
+| Método N°2 (Mixto 1 + Elitismo)| 0.12184 | 0.06138 | 0.08908 | 0.00054982 |
+| Método N°2 (Torneo + Elitismo) | 0.12126 | 0.10916 | 0.11583 | 0.0978 |
+| Método N°2 (Ruleta + Elitismo)| 0.17071 | 0.04566 | 0.14037 | 0.0037 |
+| Método N°3 (Elitismo + Mixto 1) | 0.11200 | 0.07853 | 0.07595 | 0.0044 |
+| Método N°3 (Mixto 1 + Elitismo)| 0.06666 | 0.03996 | 0.02323 | 0.0036 |
+| Método N°3 (Toreno + Elitismo) | 0.030000 | 0.01210 | 0.00167 | 0.0011 |
+| Método N°3 (Ruleta + Elitismo)| 0.08217 | 0.07480 | 0.02256 | 0.0075 |
+| Método N°3 (Torneo + Elitismo. G = 1.2) | 0.06918 | 0.06787 | 0.00448 | 0.00083225 |
+| Método N°3 (Ruleta + Elitismo. G = 1.2)| 0.11201 | 0.10873 | 009592 | 0.0943 |
 
 **Tabla 4**: Mejor Fitness y Fitness promedio para distintos métodos de reemplazo.
 
@@ -70,5 +78,5 @@ Redes Neuronales vs Algoritmos Genétivos
 || Mejor error en el aprendizaje | Mejor error global |
 |------|-----|----|
 | Redes Neuronales | 0.00026 | 0.00028 |
-| Algoritmos genéticos | 0.00032 | 0.00044 |
+| Algoritmos genéticos | 0.00032 | 0.00043 |
 
