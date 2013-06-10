@@ -17,6 +17,11 @@ function chromosome = main(data, chromosome)
         chromosome = algorithm.ga.network.adaptativeEta(data, chromosome);
     end
 
+    if chromosome.oldError < chromosome.curError / size(data.in.Xi, 1)
+
+        chromosome.W = chromosome.oldW
+    end
+
     if data.const.dumpNetwork
 
         algorithm.debug.dumpNetwork(data, chromosome);
