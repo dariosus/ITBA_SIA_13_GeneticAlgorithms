@@ -1,17 +1,17 @@
 #!/bin/bash
 
-cross[1]="annular"
-cross[2]="doublePoint"
-cross[3]="singlePont"
-cross[4]="uniform"
+mutate[1]="chromosome"
+mutate[2]="locus"
+mutate[3]="chromosome non-uni"
+mutate[4]="locus non-uni"
 
 echo
-printf "%15s | %14s | %14s | %14s | %14s\n" "Method" "avgMeanErrors" "avgBestErrors" "bestMeanErrors" "bestBestErrors"
-echo "-----------------------------------------------------------------------------------"
+printf "%19s | %14s | %14s | %14s | %14s\n" "Method" "avgMeanErrors" "avgBestErrors" "bestMeanErrors" "bestBestErrors"
+echo "---------------------------------------------------------------------------------------"
 
 i=0
 
-for outDec in 1 2 3 4; do
+for outDec in 5 6 15 16; do
 
     let i=i+1
 
@@ -44,6 +44,6 @@ for outDec in 1 2 3 4; do
     AvgBest=`bc -l <<< "\"0\";scale=5;(${Best})/${cant}"`
     AvgMean=`bc -l <<< "\"0\";scale=5;(${Mean})/${cant}"`
 
-    printf "%15s | %14s | %14s | %14s | %14s\n" "${cross[$i]}:" "${AvgMean}" "${AvgBest}" "${BestMean}" "${BestBest}"
+    printf "%19s | %14s | %14s | %14s | %14s\n" "${mutate[$i]}:" "${AvgMean}" "${AvgBest}" "${BestMean}" "${BestBest}"
 done
 
