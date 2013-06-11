@@ -3,14 +3,15 @@
 selec[1]="elite"
 selec[2]="roulette"
 selec[3]="tourney"
-selec[4]="universal"
-selec[5]="boltzmann"
-selec[6]="mixed1(a = 0.5)"
-selec[7]="mixed2(a = 0.5)"
-selec[8]="mixed1(a = 0.9)"
-selec[9]="mixed2(a = 0.9)"
-selec[10]="mixed1(a = 0.1)"
+selec[4]="rank"
+selec[5]="boltzmann(f=1)"
+selec[6]="boltzmann(f=0.5)"
+selec[7]="boltzmann(f=0.1)"
+selec[8]="universal"
+selec[9]="mixed1(a = 0.1)"
+selec[10]="mixed1(a = 0.2)"
 selec[11]="mixed2(a = 0.1)"
+selec[12]="mixed2(a = 0.2)"
 
 echo
 printf "%20s | %14s | %14s | %14s | %14s\n" "Method" "avgMeanErrors" "avgBestErrors" "bestMeanErrors" "bestBestErrors"
@@ -18,7 +19,7 @@ echo "--------------------------------------------------------------------------
 
 i=0
 
-for outDec in 7 10 11 24 18 8 9 20 21 22 23; do
+for outDec in 50 51 52 53 54 55 56 57 58 59 60 61; do
 
     let i=i+1
 
@@ -54,6 +55,6 @@ for outDec in 7 10 11 24 18 8 9 20 21 22 23; do
     AvgBest=`bc -l <<< "\"0\";scale=5;(${Best})/${cant}"`
     AvgMean=`bc -l <<< "\"0\";scale=5;(${Mean})/${cant}"`
 
-    printf "%19s | %14s | %14s | %14s | %14s\n" "${selec[$i]}:" "${AvgMean}" "${AvgBest}" "${BestMean}" "${BestBest}"
+    printf "%20s | %14s | %14s | %14s | %14s\n" "${selec[$i]}:" "${AvgMean}" "${AvgBest}" "${BestMean}" "${BestBest}"
 done
 
