@@ -17,7 +17,7 @@ function runTests(runs, start, params, tests)
 
             if isempty(message)
 
-                printf('Running test %d\n', dirNum);
+                fprintf(1, 'Running test %d\n', dirNum);
 
                 p.path = dir;
 
