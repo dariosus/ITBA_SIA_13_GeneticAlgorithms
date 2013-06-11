@@ -1,4 +1,4 @@
-function runTests(runs, start, params, tests)
+function runTest(runs, start, params, tests)
 
     for t = 1: length(tests)
 

@@ -21,9 +21,9 @@ tests = {
     struct('selection', @algorithm.ga.selection.roulette),
     struct('selection', @algorithm.ga.selection.tourney),
     struct('selection', @algorithm.ga.selection.rank),
-    struct('selection', @algorithm.ga.selection.boltzman, 'tempFactor', 1),
-    struct('selection', @algorithm.ga.selection.boltzman, 'tempFactor', 0.5),
-    struct('selection', @algorithm.ga.selection.boltzman, 'tempFactor', 0.1),
+    struct('selection', @algorithm.ga.selection.boltzmann, 'tempFactor', 1),
+    struct('selection', @algorithm.ga.selection.boltzmann, 'tempFactor', 0.5),
+    struct('selection', @algorithm.ga.selection.boltzmann, 'tempFactor', 0.1),
     struct('selection', @algorithm.ga.selection.universal),
     struct('selection', @algorithm.ga.selection.mixed1, 'a', 0.1),
     struct('selection', @algorithm.ga.selection.mixed1, 'a', 0.2),
@@ -31,5 +31,5 @@ tests = {
     struct('selection', @algorithm.ga.selection.mixed2, 'a', 0.2)
 };
 
-runTests(runs, start, params, tests);
+test.runTest(runs, start, params, tests);
 
