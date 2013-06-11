@@ -28,7 +28,7 @@ for outDec in 50 51 52 53 54 55 56 57 58 59 60 61; do
     Best=""
     Mean=""
 
-    for outUnit in 1 2 3; do
+    for outUnit in 0 1 2; do
 
         file="output${outDec}${outUnit}/output_0.txt"
         e04="s/\([0-9]\).\([0-9]*\)e-04/0.000\1\2/"

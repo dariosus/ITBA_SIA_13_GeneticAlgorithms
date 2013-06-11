@@ -1,12 +1,12 @@
 function runTests(runs, start, params, tests)
 
-    for test = tests
+    for t = 1: length(tests)
 
         p = params;
 
-        names = fieldnames(test{1});
+        names = fieldnames(tests{t});
         for i = 1 : length(names)
-            p.(names{i}) = test{1}.(names{i});
+            p.(names{i}) = tests{t}.(names{i});
         end
 
         for dirNum = start : start + runs - 1
