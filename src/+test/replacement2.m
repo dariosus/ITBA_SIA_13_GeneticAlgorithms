@@ -1,4 +1,4 @@
-function [runs start params tests] = replacement_2()
+function [runs start params tests] = replacement2()
 
     runs = 3;
 
