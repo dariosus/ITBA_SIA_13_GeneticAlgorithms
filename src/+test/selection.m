@@ -25,8 +25,6 @@ function [runs start params tests] = selection()
         struct('name', 'roulette'    , 'selection', @algorithm.ga.selection.roulette),
         struct('name', 'tourney'     , 'selection', @algorithm.ga.selection.tourney),
         struct('name', 'rank'        , 'selection', @algorithm.ga.selection.rank),
-        struct('name', 'borrame'     , 'selection', @algorithm.ga.selection.boltzmann),
-        struct('name', 'borrame'     , 'selection', @algorithm.ga.selection.boltzmann),
         struct('name', 'boltzmann'   , 'selection', @algorithm.ga.selection.boltzmann),
         struct('name', 'universal'   , 'selection', @algorithm.ga.selection.universal),
         struct('name', 'mixed1(a=.1)', 'selection', @algorithm.ga.selection.mixed1, 'a', 0.1),
