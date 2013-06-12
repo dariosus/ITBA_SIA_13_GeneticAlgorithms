@@ -1,4 +1,4 @@
-function data = replacement()
+function data = replacement(data)
 
     data.alg.lastFitness = [data.alg.population.fitness];
 
