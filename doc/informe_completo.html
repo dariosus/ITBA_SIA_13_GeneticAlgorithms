@@ -28,7 +28,7 @@ La idea de un algoritmo genético es la de reemplazar la población actual a tra
 por una población nueva con el objetivo de que la nueva generación posea mejores soluciones.
 
 Cada solución posee un grado de adaptación (para lo cual se cuenta con una función de **Fitness**)
-que se utiliza para evaluar qué tan buena es.
+que se utiliza para evaluar qué tan buena es. El objetivo es maximizar este grado de adaptación.
 
 Para generar nuevos individuos se pueden intercambiar alelos entre dos indivudos conocidos
 (entrecruzamiento) o modificar algún alelo por un valor aleatorio (mutación).
@@ -38,7 +38,7 @@ a la siguiente generación sin ser modificados.
 
 Existen diversas maneras de finalizar la ejecución de un algoritmo genético.
 Es posible definir el corte de dicha ejecución mediante una cantidad máxima de generaciones,
-al alcanzar un grado de adaptación menor a una cota definida, al detectar que la población
+al alcanzar un grado de adaptación mayor a una cota definida, al detectar que la población
 no está siendo modificada significativamente a lo largo de cierta cantidad de generaciones
 o al haber alcanzado una solución que no sea posible mejorar.
 # 3. Desarrollo #
@@ -50,7 +50,7 @@ Para representar nuestro problema, cada individuo estaba conformado por la matri
 correspondiente a una red neuronal, mientras que el valor de cada locus de su codificación
 equivalía a un peso particular.
 
-La función de adaptación para este problema era el Error Cuadrático Medio obtenido al evaluar la red.
+La función de adaptación para este problema era el el inverso del Error Cuadrático Medio obtenido al evaluar la red. Así, se puede maximizar el nivel de adaptación obteniendo menores errores.
 
 El error cuadrático medio es cálculado como se puede ver en la **Figura 1** en donde la resta equivale
 a la resta entre el valor esperado y el obtenido para cada patrón.
@@ -79,7 +79,7 @@ para el algoritmo genético:
 
 * __Cantidad de individuos en la población__
 * __Criterios de corte__: Se puede definir una cantidad máxima de generaciones,
-una cota mínima para el grado de adaptación de los individuos,
+una cota máxima para el grado de adaptación de los individuos,
 un porcentaje para el cual se considera que la población no ha sido modificada
 siginificativamente entre generaciones y una cantidad de generaciones en las cuales
 se espera que las soluciones hayan mejorado
@@ -99,7 +99,7 @@ dados por la cátedra será utilizado. Para los métodos que lo necesiten,
 también se puede configurar la brecha generacional
 * __Métodos de selección__: Es posible configurar cuál será el método de selección a utilizar
 entre ruleta, universal, elitismo, ranking, Boltzmann, torneos, mixto 1 (elitismo y ruleta)
-y mixto 2 (elitismo y universal).
+y mixto 2 (elitismo y universal). La temperatura utilizada en el método de Boltzmann puede ser vista en el **Gráfico 2**.
 <br/>
 <br/>
 <br/>
@@ -110,18 +110,17 @@ y mixto 2 (elitismo y universal).
 Para evaluar las distintas configuraciones del algoritmo, se evaluó cada caracterísitica por separado,
 prefijando valores por defecto para las otras configuraciones.
 
-La configuración por defecto considera como métodos de selección a ruleta.
+La configuración por defecto considera como métodos de selección a elitismo para elegir a los padres a reproducir, mientras que utiliza ruleta para elegir a la nueva población.
 Para los métodos mixtos, por defecto, se toma una proporción del 50% por método.
 Por su parte, para el reemplazo, es utilizado el primer método.
-Para aquellos casos en que se utilizan los otros dos métodos de reemplazo,
-por defecto, se toma 0.8 como brecha generacional.
-El método de entrecruzamiento utilizado es el uniforme con una probabilidad de entrecruzamiento de 0.75. En estos casos, donde el método sea uniforme, la probabiladad de entrecruzamiento por locus es de 0.05.
+Por defecto, se toma 0.9 como brecha generacional.
+La probabilidad de entrecruzamiento es de 0.75, mientras que para el método uniforme, la probabilidad de entrecruzamiento por locus es de 0.05.
 La probabilidad de mutación es fijada en 0.1, mutando sólo un locus por individuo.
 En los casos donde cambia la configuracion para que se evalue cada locus por separado,
-la probabilidad de mutación por locus es de 0.03.
+la probabilidad de mutación por locus es de 0.01.
 
 Respecto a la finalización del algoritmo, se tomaron varios criterios de cortes:
-al alcanzar un número máximo de 17 generaciones, al conseguir un nivel de adaptación menor a 0.001,
+al alcanzar un número máximo de 20 generaciones, al conseguir un nivel de adaptación menor a 0.001,
 en el caso en el cual un 80% o más de la población no haya sido modificado entre
 las últimas dos generaciones, y en el caso en el cual la mejor solución no se haya podido mejorar
 en las últimas 10 generaciones.
@@ -136,6 +135,8 @@ Para cada conjunto se midieron:
 * __bestMeanError__: menor entre cada corrida del conjunto de los errores medios de las poblaciones finales
 * __bestBestError__: menor entre cada corrida del conjunto de los menores errores de las poblaciones finales
 
+Cabe destacar que a medida que las pruebas fueron progresando, se fijaron aquellas configuraciones con las que se obtuvieron los mejores resultados.
+
 ## 4.1 Evaluación de métodos de entrecruzamiento ##
 
 En la **Tabla 1** se pueden observar las mejores soluciones y la solución promedio
@@ -146,48 +147,60 @@ para los distintos métodos de entrecruzamiento.
 En la **Tabla 2** se pueden observar las mejores soluciones y la solución promedio
 para los distintos métodos de mutación.
 
+pM denota la probabilidad de mutación por locus, pM\* la probabilidad de mutación por individuo y c denota el valor utilizado para modificar las probabilidades entre generaciones.
+
+El método de entrecruzamiento utilizado a partir de estas pruebas y en la siguientes es el anular.
+
 ## 4.3 Evaluación de métodos de selección ##
 
 En la **Tabla 3** se pueden observar las mejores soluciones y la solución promedio
-para los distintos métodos de selección.
+para los distintos métodos de selección a la hora de seleccionar padres que serán cruzados.
 Para los métodos mixtos, el parámetro `a` indica qué porcentaje de la selección
 se realiza mediante el método elite.
 
+A partir de estas pruebas y en las que se realizaron a continuación se utilizaron mutaciones por individuo con una probabilidad de 0.1. Estas mutaciones son no uniformes con un grado de modificación de 0.95.
+
+En la **Tabla 4** se pueden ver pruebas nuevamente en los métodos de reemplazo pero esta vez no son para seleccionar los padres a cruzar, sino para elegir los individuos que formarán parte de la nueva generación.
+
+En estas pruebas se utiliza el método de elitismo para elegir a los padres que se cruzarán.
+
 ## 4.4 Evaluación de métodos de reemplazo ##
 
-En la **Tabla 4** se pueden observar las mejores soluciones y la solución promedio
-para los distintos métodos de reemplazo utilizando además diversos métodos de selección.
-En los casos de los métodos 2 y 3, el posible utilizar distintos métodos de
-selección para la fase de selección y para la fase de reemplazo.
+En la **Tabla 5**, **Tabla 6** y **Tabla 7** se pueden observar las mejores soluciones y la solución promedio para los tres métodos de reemplazo respectivamente utilizando además diversos métodos de selección.
 
-## 4.5 Evaluación de backpropagation ##
+Los métodos de selección evaluados fueron elegidos en función a los datos obtenidos previamente.
 
-En la **Tabla 5** se pueden observar las mejores soluciones y la solución promedio
+## 4.5 Evaluación de la brecha generacional ##
+
+En la **Tabla 8** y la **Tabla 9** se pueden ver evaluaciones con la brecha generacional en 0.8 y 0.9 respectivamente para distintas configuraciones.
+
+## 4.6 Evaluación de backpropagation ##
+
+En la **Tabla 10** se pueden observar las mejores soluciones y la solución promedio
 para evaluaciones con probabilidad por defecto de 0.1 de que operar con el algoritmo de backpropagation,
 como así también para evaluaciones en las que no se utilice dicho algoritmo.
 
-Se debe mencionar, además, que el método de selección utilizado para estas evaluacioes ha sido elitismo,
-mientras que para el entrecruzamiento, la opción a utilizar ha sido anular.
-Por otra parte, para la mutación se ha empleado aquel tipo de mutación en el cual cada locus
-puede ser mutado con misma probabiladad. Dicha mutación además era no uniforme.
+En este caso se utiliza el primer método de reemplazo y mixto 2 y ruleta como métodos de selección. Realizar una prueba comparativa utilizando el método de elitismo como selección probaría siendo fallida sin backpropagation. La proporición utilizada para elitismo en el método mixto 2 es de 0.1.
 
-## 4.6 Comparación entre la red neuronal y el algoritmo genético ##
+## 4.7 Comparación entre la red neuronal y el algoritmo genético ##
 
 A modo de contrastar ambas estrategias, se han corrido ejecuciones de la red neuronal
 como así también del algoritmo genético para el problema a tratar.
-En la **Tabla 6** se pueden ver los resultados obtenidos de dichas corridas.
+En la **Tabla 10** se pueden ver los resultados obtenidos de dichas corridas.
 
-Es importante destacar que en estas ejecuciones el criterio de finalización
-por una máxima cantidad de 17 generaciones ha sido modificado elevando este número a 37.
+Para esta ejecución se utilizaron elitismo y ruleta como métodos de selección y el primer método de reemplazo.
+
+El método de mutación fue por locus no uniforme con una probabilidad de mutación de 0.01.
 <br/>
 <br/>
 <br/>
 <br/>
 # 5. Conclusiones #
 
-El mejor individuo conseguido con el algoritmo genético tuvo un error cuadrático medio
-durante el testing (para 300 inputs) de 0.00028 y para todos los inputs, de 0.00039.
-Esto es ligeramente superior a los 0.00026, 0.00028 (respectivamente) de la RNA.
+El mejor individuo conseguido con el algoritmo genético tuvo un error cuadrático medio,
+durante el testing realizado para 300 inputs, de 0.00036 y para todos los inputs, de 0.00040.
+Esto es ligeramente superior a los 0.00026, 0.00028 (respectivamente) de los errores cuadráticos
+medios conseguidos con la RNA.
 Sin embargo notamos que el AG es mucho más consistente en sus corridas.
 Esto es, en cerca del 70% de las ejecuciones de éste con los mejores parámetros encontrados
 se llega a un individuo cercano al óptimo. Contrariamente, con la RNA esto pasa sólo
@@ -195,12 +208,13 @@ en aproximadamente un 10% de los casos.
 
 El mejor individuo fue hallado con los siguientes parámetros:
 ```
-pMutate = 0.003; % single locus mutation probability
+pMutate = 0.01; % single locus mutation probability
 pBack = 0.1; % back propagation probability
 pCross = 0.75; % crossing probability
 p = 0.05; % uniform crossover probability per locus
 c = 0.95; % mutation reduction ratio
-N = 60; % population size
+N = 30; % population size
+G = 0.9; % generation gap
 nonUniformMutation = true;
 maxEpochs = 80;
 rollback = true;
@@ -213,6 +227,7 @@ etaSteps = 2;
 g = #algorithm.functions.sigmoidLog;
 dg = #algorithm.functions.DsigmoidLog;
 selection = #algorithm.ga.selection.elite;
+selection2 = #algorithm.ga.selection.roulette;
 crossover = #algorithm.ga.crossover.annular;
 mutation = #algorithm.ga.mutation.locus;
 replacement = #algorithm.ga.replacement.first;
