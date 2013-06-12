@@ -77,4 +77,6 @@ A modo de contrastar ambas estrategias, se han corrido ejecuciones de la red neu
 como así también del algoritmo genético para el problema a tratar.
 En la **Tabla 9** se pueden ver los resultados obtenidos de dichas corridas.
 
-TODO: Agregar config del AG.
+Para esta ejecución se utilizaron elitismo y ruleta como métodos de selección y el primer método de reemplazo.
+
+El método de mutación fue por locus no uniforme con una probabilidad de mutación de 0.01.
