@@ -7,7 +7,7 @@ function plotInfo(plots, name)
     ret = [];
     msg = {};
 
-    colors = {'b', 'g', 'r'};
+    colors = {'b', 'g', 'r', 'k'};
 
     for i = 1 : length(plots)
 
