@@ -16,7 +16,7 @@ function [data children] = spawn(data, children)
 
         child = data.const.mutation(data, children(c));
 
-        if ismember(false, cellfun(@(x,y)ismember(false, x == y), child.W, children(c).W))
+        if ismember(true, cellfun(@(x,y)ismember(false, x == y), child.W, children(c).W))
 
             children(c) = child;
 

@@ -17,7 +17,7 @@ function selected = linealFitness(k, values, r, unique)
 
     r = sort(r, 'descend') * F;
 
-    selected = [1 : k]';
+    selected = [];
 
     rpos = 1;
 
@@ -37,7 +37,7 @@ function selected = linealFitness(k, values, r, unique)
 
                 desp = val2sort(i) + delta;
 
-                if desp < i || desp > numel(values)
+                if desp < 1 || desp > numel(values)
 
                     continue;
                 end

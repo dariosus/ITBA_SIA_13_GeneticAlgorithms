@@ -2,7 +2,7 @@ function child = locus(data, parent)
 
     for index = 1 : data.const.numLocus
 
-        if data.alg.pMutate >= rand()
+        if rand() < data.alg.pMutate
 
             p = data.const.linearCoords(index, :);
 

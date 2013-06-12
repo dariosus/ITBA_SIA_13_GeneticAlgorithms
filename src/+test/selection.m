@@ -17,22 +17,22 @@ function [runs start params tests] = selection()
         'crossover', @algorithm.ga.crossover.annular, ...
         'mutation', @algorithm.ga.mutation.chromosome, ...
         'replacement', @algorithm.ga.replacement.first, ...
-        'selection', @algorithm.ga.selection.elite ...
+        'selection2', @algorithm.ga.selection.elite ...
     );
 
     tests = {
-        struct('name', 'elite'          , 'selection2', @algorithm.ga.selection.elite),
-        struct('name', 'roulette'       , 'selection2', @algorithm.ga.selection.roulette),
-        struct('name', 'tourney'        , 'selection2', @algorithm.ga.selection.tourney),
-        struct('name', 'rank'           , 'selection2', @algorithm.ga.selection.rank),
-        struct('name', 'boltzmann(f=1)' , 'selection2', @algorithm.ga.selection.boltzmann, 'tempFactor', 1),
-        struct('name', 'boltzmann(f=.5)', 'selection2', @algorithm.ga.selection.boltzmann, 'tempFactor', 0.5),
-        struct('name', 'boltzmann(f=.1)', 'selection2', @algorithm.ga.selection.boltzmann, 'tempFactor', 0.1),
-        struct('name', 'universal'      , 'selection2', @algorithm.ga.selection.universal),
-        struct('name', 'mixed1(a=.1)'   , 'selection2', @algorithm.ga.selection.mixed1, 'a', 0.1),
-        struct('name', 'mixed1(a=.2)'   , 'selection2', @algorithm.ga.selection.mixed1, 'a', 0.2),
-        struct('name', 'mixed2(a=.1)'   , 'selection2', @algorithm.ga.selection.mixed2, 'a', 0.1),
-        struct('name', 'mixed2(a=.2)'   , 'selection2', @algorithm.ga.selection.mixed2, 'a', 0.2)
+        struct('name', 'elite'          , 'selection', @algorithm.ga.selection.elite),
+        struct('name', 'roulette'       , 'selection', @algorithm.ga.selection.roulette),
+        struct('name', 'tourney'        , 'selection', @algorithm.ga.selection.tourney),
+        struct('name', 'rank'           , 'selection', @algorithm.ga.selection.rank),
+        struct('name', 'boltzmann(f=1)' , 'selection', @algorithm.ga.selection.boltzmann, 'tempFactor', 1),
+        struct('name', 'boltzmann(f=.5)', 'selection', @algorithm.ga.selection.boltzmann, 'tempFactor', 0.5),
+        struct('name', 'boltzmann(f=.1)', 'selection', @algorithm.ga.selection.boltzmann, 'tempFactor', 0.1),
+        struct('name', 'universal'      , 'selection', @algorithm.ga.selection.universal),
+        struct('name', 'mixed1(a=.1)'   , 'selection', @algorithm.ga.selection.mixed1, 'a', 0.1),
+        struct('name', 'mixed1(a=.2)'   , 'selection', @algorithm.ga.selection.mixed1, 'a', 0.2),
+        struct('name', 'mixed2(a=.1)'   , 'selection', @algorithm.ga.selection.mixed2, 'a', 0.1),
+        struct('name', 'mixed2(a=.2)'   , 'selection', @algorithm.ga.selection.mixed2, 'a', 0.2)
     };
 end
 

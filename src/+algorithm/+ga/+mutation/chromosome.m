@@ -1,6 +1,6 @@
 function child = chromosome(data, parent)
 
-    if data.alg.pMutateStar >= rand()
+    if rand() < data.alg.pMutateStar
 
         index = floor(rand() * data.const.numLocus) + 1;
 

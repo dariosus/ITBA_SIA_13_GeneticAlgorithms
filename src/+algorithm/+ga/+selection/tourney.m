@@ -24,7 +24,7 @@ function selected = tourney(data, k, population, unique, tries)
 
         equals = [];
 
-        for i = 2 : data.const.N
+        for i = 2 : numel(values)
 
             if values(i - 1) == values(i)
 
@@ -34,7 +34,7 @@ function selected = tourney(data, k, population, unique, tries)
 
         if ~isempty(equals)
 
-            selected(equals) = tourney(data, numel(equals), population, unique, tries + 1);
+            selected(equals) = algorithm.ga.selection.tourney(data, numel(equals), population, unique, tries + 1);
         end
     end
 end
