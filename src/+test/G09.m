@@ -15,7 +15,7 @@ function [runs start params tests] = G09()
         'G', 0.9, ...
         'nonUniformMutation', true, ...
         'crossover', @algorithm.ga.crossover.annular, ...
-        'mutation', @algorithm.ga.mutation.locus, ...
+        'mutation', @algorithm.ga.mutation.locus ...
     );
 
     tests = {
@@ -23,7 +23,7 @@ function [runs start params tests] = G09()
         struct('name', 'r1-elite-univ(G=.9)', 'replacement', @algorithm.ga.replacement.first, 'selection', @algorithm.ga.selection.elite, 'selection2', @algorithm.ga.selection.universal),
         struct('name', 'r1-elite-roule(G=.9)', 'replacement', @algorithm.ga.replacement.first, 'selection', @algorithm.ga.selection.elite, 'selection2', @algorithm.ga.selection.roulette),
         struct('name', 'r2-boltz-roule(G=.9)', 'replacement', @algorithm.ga.replacement.second, 'selection', @algorithm.ga.selection.boltzmann, 'selection2', @algorithm.ga.selection.roulette),
-        struct('name', 'r2-mix2-roule(G=.9)', 'replacement', @algorithm.ga.replacement.second, 'selection', @algorithm.ga.selection.mixed2, 'selection2', @algorithm.ga.selection.roulette),
+        struct('name', 'r2-mix2-roule(G=.9)', 'replacement', @algorithm.ga.replacement.second, 'selection', @algorithm.ga.selection.mixed2, 'selection2', @algorithm.ga.selection.roulette)
     };
 end
 
