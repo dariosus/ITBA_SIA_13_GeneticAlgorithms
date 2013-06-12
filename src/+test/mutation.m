@@ -2,7 +2,7 @@ function [runs start params tests] = mutation()
 
     runs = 3;
 
-    start = 750;
+    start = 850;
 
     params = struct( ...
         'maxGenerations', 20, ...
