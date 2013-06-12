@@ -12,78 +12,159 @@ Error cuadrático medio
 
 **Gráfico 1**: Fórmula del error cuadrático medio.
 
+Boltzmann
+
+![](img/boltzmann.png)
+
+**Gráfico 2**: Fórmula utilizada en el método de selección de Boltzmann.
+
 Métodos de entrecruzamiento
 
 || avgMeanError | avgBestError | bestMeanError | bestBestError |
 |------|-----|----|-------|-------|
-| Cruce de un punto | 0.23749 | 0.11590 | 0.19596 | 0.1091 |
-| Cruce de dos puntos | 0.22127 | 0.10040 | 0.18068 | 0.0837 |
-| Uniforme | 0.22962 | 0.11706 | 0.19179 | 0.1134 |
-| Anular | 0.21647 | 0.10700 | 0.17796 | 0.0831 |
+| Cruce de un punto | 0.079263 | 0.072379 | 0.001330 | 0.000870 |
+| Cruce de dos puntos | 0.116376 | 0.093309 | 0.103140 | 0.064214 |
+| Uniforme | 0.113188 | 0.085694 | 0.109754 | 0.041951 |
+| Anular | 0.091063 | 0.076970 | 0.031730 | 0.006821 |
 
-**Tabla 1**: Mejor Fitness y Fitness promedio para los distintos métodos de entrecruzamiento.
+**Tabla 1**: Error Cuadrático Medio para los distintos métodos de entrecruzamiento.
 
 Métodos de mutación
 
 || avgMeanError | avgBestError | bestMeanError | bestBestError |
 |------|-----|----|-------|-------|
-| Mutación clásica por individuo | 0.22881 | 0.11926 | 0.17949 | 0.1185 |
-| Mutación clásica por locus | 0.22642 | 0.09080 | 0.18694 | 0.0422 |
-| Mutación no uniforme por individuo | 0.23566 | 0.12303 | 0.22429 | 0.1149 |
-| Mutación no uniforme por locus | 0.20296 | 0.08593 | 0.16456 | 0.0382 |
+| Mutación clásica por individuo (pM* = 0.5 ; c = 1) | 0.124022 | 0.116066 | 0.117052 | 0.104919 |
+| Mutación clásica por individuo (pM* = 0.1 ; c = 1) | 0.121205 | 0.111865 | 0.114815 | 0.102082 |
+| Mutación clásica por locus (pM = 0.01 ; c = 1) | 0.112939 | 0.077349 | 0.107707 | 0.039626 |
+| Mutación clásica por locus (pM = 0.001 ; c = 1) | 0.071066 | 0.053303 | 0.033935 | 0.002283 |
+| Mutación no uniforme por individuo (pM* = 0.5 ; c = 0.95) | 0.071370 | 0.037166 | 0.002416 | 0.000709 |
+| Mutación no uniforme por individuo (pM* = 0.1 ; c = 0.95) | 0.071641 | 0.055804 | 0.006078 | 0.003622 |
+| Mutación no uniforme por locus (pM = 0.01 ; c = 0.95) | 0.064518 | 0.041330 | 0.027015 | 0.000505 |
+| Mutación no uniforme por locus (pM = 0.001 ; c = 0.95) | 0.076345 | 0.039439 | 0.019032 | 0.001490 |
 
-**Tabla 2**: Mejor Fitness y Fitness promedio para los distintos métodos de mutación.
+**Tabla 2**: Error Cuadrático Medio para los distintos métodos de mutación.
 
 Métodos de selección
 
 || avgMeanError | avgBestError | bestMeanError | bestBestError |
 |------|-----|----|-------|-------|
-| Ruleta | 0.22511 | 0.08090 | 0.18318 | 0.0597 |
-| Torneo | 0.11762 | 0.10760 | 0.11057 | 0.0970 |
-| Elitismo | 0.01023 | 0.00104 | 0.00483 | 0.00045311 |
-| Boltzman | 0.18120 | 0.11223 | 0.13888 | 0.1065 |
-| Mixto 1 (a = 0.5) | 0.12654 | 0.03047 | 0.09441 | 0.00083285 |
-| Mixto 2 (a = 0.5) | 0.09615 | 0.03613 | 0.08196 | 0.0020 |
-| Mixto 1 (a = 0.9) | 0.12995 | 0.03313 | 0.10994 | 0.00059524 |
-| Mixto 2 (a = 0.9) | 0.14226 | 0.03339 | 0.10969| 0.00051494 |
-| Mixto 1 (a = 0.1) | 0.19477 | 0.11743 | 0.15831 | 0.1140 |
-| Mixto 2 (a = 0.1) | 0.20432 | 0.11746 | 0.17941 | 0.1130 |
+| Elitismo | 0.076195 | 0.068471 | 0.002187 | 0.001094 |
+| Ruleta | 0.137316 | 0.123480 | 0.134340 | 0.119855 |
+| Torneo | 0.124755 | 0.119299 | 0.123383 | 0.116358 |
+| Ranking | 0.142922 | 0.108951 | 0.141267 | 0.105678 |
+| Boltzmann | 0.083913 | 0.078391 | 0.002884 | 0.001276 |
+| Universal | 0.132146 | 0.114994 | 0.127234 | 0.109160 |
+| Mixto 1 (a = 0.1) | 0.123850 | 0.110080 | 0.117641 | 0.101102 |
+| Mixto 1 (a = 0.2) | 0.128696 | 0.116379 | 0.122094 | 0.108675 |
+| Mixto 2 (a = 0.1) | 0.086469 | 0.078436 | 0.003100 | 0.000534 |
+| Mixto 2 (a = 0.2) | 0.086453 | 0.077905 | 0.004594 | 0.001737 |
 
-**Tabla 3**: Mejor Fitness y Fitness promedio para los distintos métodos de selección.
+**Tabla 3**: Error Cuadrático Medio para los distintos métodos de selección.
 
-Métodos de reemplazo
+Métodos de selección para el reemplazo
 
 || avgMeanError | avgBestError | bestMeanError | bestBestError |
 |------|-----|----|-------|-------|
-| Método N°1 (Elitismo) | 0.03388 | 0.01924 | 0.00177 | 0.00072060 |
-| Método N°2 (Elitismo + Mixto 1) | 0.06999 | 0.03313 | 0.04794 | 0.0025 |
-| Método N°2 (Mixto 1 + Elitismo)| 0.12184 | 0.06138 | 0.08908 | 0.00054982 |
-| Método N°2 (Torneo + Elitismo) | 0.12126 | 0.10916 | 0.11583 | 0.0978 |
-| Método N°2 (Ruleta + Elitismo)| 0.17071 | 0.04566 | 0.14037 | 0.0037 |
-| Método N°3 (Elitismo + Mixto 1) | 0.11200 | 0.07853 | 0.07595 | 0.0044 |
-| Método N°3 (Mixto 1 + Elitismo)| 0.06666 | 0.03996 | 0.02323 | 0.0036 |
-| Método N°3 (Toreno + Elitismo) | 0.030000 | 0.01210 | 0.00167 | 0.0011 |
-| Método N°3 (Ruleta + Elitismo)| 0.08217 | 0.07480 | 0.02256 | 0.0075 |
-| Método N°3 (Torneo + Elitismo. G = 1.2) | 0.06918 | 0.06787 | 0.00448 | 0.00083225 |
-| Método N°3 (Ruleta + Elitismo. G = 1.2)| 0.11201 | 0.10873 | 009592 | 0.0943 |
+| Elitismo | 0.112548 | 0.109386 | 0.110350 | 0.102569 |
+| Ruleta | 0.075699 | 0.071606 | 0.001663 | 0.000976 |
+| Torneo | 0.107966 | 0.072427 | 0.096175 | 0.001941 |
+| Ranking | 0.219079 | 0.109979 | 0.173152 | 0.096364 |
+| Boltzmann | 0.129495 | 0.116072 | 0.126876 | 0.111177 |
+| Universal | 0.051858 | 0.043567 | 0.004820 | 0.003387 |
+| Mixto 1 (a = 0.1) | 0.126875 | 0.105620 | 0.122787 | 0.094920 |
+| Mixto 1 (a = 0.2) | 0.124631 | 0.114865 | 0.119620 | 0.108417 |
+| Mixto 2 (a = 0.1) | 0.082813 | 0.037407 | 0.024918 | 0.000980 |
+| Mixto 2 (a = 0.2) | 0.082928 | 0.076242 | 0.001797 | 0.000633 |
 
-**Tabla 4**: Mejor Fitness y Fitness promedio para los distintos métodos de reemplazo.
+**Tabla 4**: Error Cuadrático Medio para para distintos métodos de selección en el reemplazo.
+
+Método de reemplazo 1
+
+|| avgMeanError | avgBestError | bestMeanError | bestBestError |
+|------|-----|----|-------|-------|
+| Con Elitismo + Mixto 2 | 0.082813 | 0.037407 | 0.024918 | 0.000980 |
+| Con Boltzmann + Mixto 2 | 0.045529 | 0.036563 | 0.015773 | 0.001377 |
+| Con Mixto 2 + Mixto 2 | 0.121206 | 0.118501 | 0.109341 | 0.108652 |
+| Con Elitismo + Ruleta | 0.075699 | 0.071606 | 0.001663 | 0.000976 |
+| Con Bolztmann + Ruleta | 0.083913 | 0.078391 | 0.002884 | 0.001276 |
+| Con Mixto 2 + Ruleta | 0.086469 | 0.078436 | 0.003100 | 0.000534 |
+| Con Elitismo + Universal | 0.051858 | 0.043567 | 0.004820 | 0.003387 |
+| Con Boltzmann + Universal | 0.126246 | 0.111339 | 0.114470 | 0.100410 |
+| Con Mixto 2 + Universal | 0.121190 | 0.113387 | 0.114827 | 0.107024 |
+
+**Tabla 5**: Error Cuadrático Medio para distintas configuraciones de selección con el método de reemplazo 1.
+
+Método de reemplazo 2
+
+|| avgMeanError | avgBestError | bestMeanError | bestBestError |
+|------|-----|----|-------|-------|
+| Con Elitismo + Mixto 2 | 0.093585 | 0.071369 | 0.067605 | 0.006332 |
+| Con Boltzmann + Mixto 2 | 0.080786 | 0.077386 | 0.001714 | 0.000777 |
+| Con Mixto 2 + Mixto 2 | 0.106810 | 0.078639 | 0.082207 | 0.001849 |
+| Con Elitismo + Ruleta | 0.104979 | 0.075214 | 0.071141 | 0.007368 |
+| Con Boltzmann + Ruleta | 0.056510 | 0.038115 | 0.003475 | 0.001810 |
+| Con Mixto 2 + Ruleta | 0.054953 | 0.036020 | 0.002250 | 0.000747 |
+| Con Elitismo + Universal | 0.082241 | 0.070755 | 0.020705 | 0.001175 |
+| Con Boltzmann + Universal | 0.130141 | 0.083463 | 0.120651 | 0.018817 |
+| Con Mixto 2 + Universal | 0.127744 | 0.116154 | 0.120506 | 0.110179 |
+
+**Tabla 6**: Error Cuadrático Medio para distintas configuraciones de selección con el método de reemplazo 2.
+
+Método de reemplazo 3
+
+|| avgMeanError | avgBestError | bestMeanError | bestBestError |
+|------|-----|----|-------|-------|
+| Con Elitismo + Mixto 2 | 0.115895 | 0.113503 | 0.105407 | 0.103973 |
+| Con Boltzmann + Mixto 2 | 0.126140 | 0.120888 | 0.115656 | 0.111736 |
+| Con Mixto 2 + Mixto 2 | 0.116721 | 0.112884 | 0.107964 | 0.103472 |
+| Con Elitismo + Ruleta | 0.121263 | 0.114396 | 0.113441 | 0.108932 |
+| Con Boltzmann + Ruleta | 0.136655 | 0.119946 | 0.128545 | 0.118610 |
+| Con Mixto 2 + Ruleta | 0.127183 | 0.118353 | 0.118780 | 0.114334 |
+| Con Elitismo + Universal | 0.128145 | 0.118137 | 0.113274 | 0.110412 |
+| Con Boltzmann + Universal | 0.136574 | 0.119990 | 0.124269 | 0.113496 |
+| Con Mixto 2 + Universal | 0.128982 | 0.116775 | 0.126120 | 0.115420 |
+
+**Tabla 7**: Error Cuadrático Medio para distintas configuraciones de selección con el método de reemplazo 3.
+
+Pruebas de Generation Gap
+
+|| avgMeanError | avgBestError | bestMeanError | bestBestError |
+|------|-----|----|-------|-------|
+| Reemplazo 1 con Elitismo + Ruleta | 0.064518 | 0.041330 | 0.027015 | 0.000505 |
+| Reemplazo 1 con Elitismo + Universal | 0.051858 | 0.043567 | 0.004820 | 0.003387 |
+| Reemplazo 1 con Boltmann + Mixto 2 | 0.045529 | 0.036563 | 0.015773 | 0.001377 |
+| Reemplazo 2 con Boltzmann + Ruleta | 0.056510 | 0.038115 | 0.003475 | 0.001810 |
+| Reemplazo 2 con Elitismo + Universal | 0.082241 | 0.070755 | 0.020705 | 0.001175 |
+
+**Tabla 8**: Error Cuadrático Medio con Generation Gap 0.9
+
+|| avgMeanError | avgBestError | bestMeanError | bestBestError |
+|------|-----|----|-------|-------|
+| Reemplazo 1 con Boltzmann + Mixto 2 | 0.057746 | 0.041131 | 0.019272 | 0.003171 |
+| Reemplazo 1 con Elite + Universal | 0.118693 | 0.113683 | 0.115069 | 0.109389 |
+| Reemplazo 1 con Elite + Ruleta | 0.121479 | 0.112583 | 0.115795 | 0.111701 |
+| Reemplazo 2 con Boltzmann + Ruleta | 0.088081 | 0.076522 | 0.020616 | 0.003145 |
+| Reemplazo 2 con Mixto 2 + Ruleta | 0.126845 | 0.111224 | 0.120418 | 0.107771
+
+**Tabla 9**: Error Cuadrático Medio con Generation Gap 0.8
 
 Evaluación de Backpropagation
 
 || avgMeanError | avgBestError | bestMeanError | bestBestError |
 |------|-----|----|-------|-------|
-| Con Backpropagation | 0.01023 | 0.00104 | 0.00483 | 0.00045311 |
-| Sin Backpropagation | 0.11807 | 0.11793 | 0.11621 | 0.1162 |
+| Con Backpropagation | 0.064518 | 0.041330 | 0.027015 | 0.000505 |
+| Sin Backpropagation | 0.124671 | 0.118929 | 0.119723 | 0.114943 |
 
-**Tabla 5**: Mejor Fitness y Fitness promedio para los distintos métodos de selección en la segunda fase.
+**Tabla 10**: Error Cuadrático Medio para ejecuciones con y sin backpropagation.
 
-Redes Neuronales vs. Algoritmos Genétivos
+Redes Neuronales vs. Algoritmos Genéticos
 
 || Mejor error en el aprendizaje | Mejor error global |
 |------|-----|----|
 | Redes Neuronales | 0.00026 | 0.00028 |
-| Algoritmos genéticos | 0.00032 | 0.00043 |
+| Algoritmos genéticos | 0.00036 | 0.00040 |
+
+**Tabla 11**: Mejor Error Cuadrático Medio para RNAs y AGs.
 
 </xmp>
 
