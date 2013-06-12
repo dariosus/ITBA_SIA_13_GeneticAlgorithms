@@ -30,6 +30,7 @@ etaSteps = 2;
 g  = @algorithm.functions.sigmoidLog;
 dg = @algorithm.functions.DsigmoidLog;
 selection   = @algorithm.ga.selection.elite;
+selection2  = @algorithm.ga.selection.roulette;
 crossover   = @algorithm.ga.crossover.annular;
 mutation    = @algorithm.ga.mutation.locus;
 replacement = @algorithm.ga.replacement.first;
