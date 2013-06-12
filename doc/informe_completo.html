@@ -100,11 +100,6 @@ también se puede configurar la brecha generacional
 * __Métodos de selección__: Es posible configurar cuál será el método de selección a utilizar
 entre ruleta, universal, elitismo, ranking, Boltzmann, torneos, mixto 1 (elitismo y ruleta)
 y mixto 2 (elitismo y universal). La temperatura utilizada en el método de Boltzmann puede ser vista en el **Gráfico 2**.
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
 # 4. Resultados #
 
 Para evaluar las distintas configuraciones del algoritmo, se evaluó cada caracterísitica por separado,
@@ -191,10 +186,6 @@ En la **Tabla 10** se pueden ver los resultados obtenidos de dichas corridas.
 Para esta ejecución se utilizaron elitismo y ruleta como métodos de selección y el primer método de reemplazo.
 
 El método de mutación fue por locus no uniforme con una probabilidad de mutación de 0.01.
-<br/>
-<br/>
-<br/>
-<br/>
 # 5. Conclusiones #
 
 El mejor individuo conseguido con el algoritmo genético tuvo un error cuadrático medio,
@@ -233,12 +224,25 @@ mutation = #algorithm.ga.mutation.locus;
 replacement = #algorithm.ga.replacement.first;
 ```
 
-Como se puede observar en las tablas, eliminar la operación de backpropagation
+Como podemos ver en la Tabla 2, la mutacion no uniforme es claramente superior a la uniforme, con lo cual apoptamos `c = 0.95` como factor de decaimiento de la mutacion.
+
+En la Tabla 3 vemos que los mejores metodos como primera selección (generation gap selection) son elitismo, bolzmann y mixto2. Y de segunda selección (Tabla 4) ruleta, universal y mixto2.
+
+Probamos todas las combinaciones de estos métodos de selección para cada método de reemplazo, y los resultados se pueden ver en las tablas 5, 6 y 7.
+
+Las mejores combinaciones fueron:
+
+* Método 1, elite, roulette
+* Método 1, elite, universal
+* Método 1, boltzmann, mixed2
+* Método 2, boltzmann, toulette
+* Método 2, mixed2, roulette
+
+Probamos cada una de estas con un generation gap de 0.8 y 0.9 (Tablas 8 y 9), y concluimos que 0.9 es mejor en general.
+
+Finalmente, como se puede observar en la Tabla 10, eliminar la operación de backpropagation
 hace que la mejora sea extremadamente lenta, por lo cual la consideramos una parte
 fundamental de nuestro algoritmo.
-
-Por último, otra observación clave que hicimos fue el uso de la estrategia de elitismo
-ya que sin ésta el algoritmo se comporta casi como una búsqueda aleatoria.
 
 </xmp>
 
