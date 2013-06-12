@@ -2,7 +2,7 @@ function [runs start params tests] = crossover()
 
     runs = 3;
 
-    start = 500;
+    start = 700;
 
     params = struct( ...
         'maxGenerations', 20, ...
