@@ -11,8 +11,6 @@ function data = first(data, k)
         [data children] = algorithm.ga.replacement.spawn(data, children);
 
         population(pos : pos + 1) = children;
-
-        algorithm.debug.printProgress(pos, k);
     end
 
     data.alg.population = population(1 : k);

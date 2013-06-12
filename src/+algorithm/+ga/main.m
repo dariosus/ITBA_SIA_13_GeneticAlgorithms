@@ -6,7 +6,7 @@ function main(params)
 
     while ~algorithm.ga.finish.finish(data)
 
-        fprintf(1, 'Generation %d: ', data.alg.generation);
+        fprintf(1, '%d ', data.alg.generation);
 
         data = algorithm.ga.replacement(data);
 
