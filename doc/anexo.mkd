@@ -6,6 +6,12 @@ Error cuadrático medio
 
 **Gráfico 1**: Fórmula del error cuadrático medio.
 
+Boltzmann
+
+![](img/boltzmann.png)
+
+**Gráfico 2**: Fórmula utilizada en el método de selección de Boltzmann.
+
 Métodos de entrecruzamiento
 
 || avgMeanError | avgBestError | bestMeanError | bestBestError |

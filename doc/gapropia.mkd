@@ -56,5 +56,5 @@ dados por la cátedra será utilizado. Para los métodos que lo necesiten,
 también se puede configurar la brecha generacional
 * __Métodos de selección__: Es posible configurar cuál será el método de selección a utilizar
 entre ruleta, universal, elitismo, ranking, Boltzmann, torneos, mixto 1 (elitismo y ruleta)
-y mixto 2 (elitismo y universal).
+y mixto 2 (elitismo y universal). La temperatura utilizada en el método de Boltzmann puede ser vista en el **Gráfico 2**.
 
