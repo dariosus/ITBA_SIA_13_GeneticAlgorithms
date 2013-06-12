@@ -63,19 +63,23 @@ En la **Tabla 5**, **Tabla 6** y **Tabla 7** se pueden observar las mejores solu
 
 Los métodos de selección evaluados fueron elegidos en función a los datos obtenidos previamente.
 
-@@ 4.5 Evaluación de backpropagation @@
+@@ 4.5 Evaluación de la brecha generacional @@
 
-En la **Tabla 8** se pueden observar las mejores soluciones y la solución promedio
+En la **Tabla 8** y la **Tabla 9** se pueden ver evaluaciones con la brecha generacional en 0.8 y 0.9 respectivamente para distintas configuraciones.
+
+@@ 4.6 Evaluación de backpropagation @@
+
+En la **Tabla 10** se pueden observar las mejores soluciones y la solución promedio
 para evaluaciones con probabilidad por defecto de 0.1 de que operar con el algoritmo de backpropagation,
 como así también para evaluaciones en las que no se utilice dicho algoritmo.
 
 En este caso se utiliza el primer método de reemplazo y mixto 2 y ruleta como métodos de selección. Realizar una prueba comparativa utilizando el método de elitismo como selección probaría siendo fallida sin backpropagation. La proporición utilizada para elitismo en el método mixto 2 es de 0.1.
 
-@@ 4.6 Comparación entre la red neuronal y el algoritmo genético @@
+@@ 4.7 Comparación entre la red neuronal y el algoritmo genético @@
 
 A modo de contrastar ambas estrategias, se han corrido ejecuciones de la red neuronal
 como así también del algoritmo genético para el problema a tratar.
-En la **Tabla 9** se pueden ver los resultados obtenidos de dichas corridas.
+En la **Tabla 10** se pueden ver los resultados obtenidos de dichas corridas.
 
 Para esta ejecución se utilizaron elitismo y ruleta como métodos de selección y el primer método de reemplazo.
 
