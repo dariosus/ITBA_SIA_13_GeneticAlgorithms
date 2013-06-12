@@ -2,7 +2,7 @@ function [runs start params tests] = G08()
 
     runs = 3;
 
-    start = 430;
+    start = 400;
 
     params = struct( ...
         'maxGenerations', 20, ...

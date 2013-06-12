@@ -29,12 +29,12 @@ Métodos de mutación
 |------|-----|----|-------|-------|
 | Mutación clásica por individuo (pM* = 0.5) | 0.124022 | 0.116066 | 0.117052 | 0.104919 |
 | Mutación clásica por individuo (pM* = 0.1) | 0.121205 | 0.111865 | 0.114815 | 0.102082 |
-| Mutación clásica por locus (pM = 0.001) | 0.112939 | 0.077349 | 0.107707 | 0.039626 |
-| Mutación clásica por locus (pM = 0.0001) | 0.071066 | 0.053303 | 0.033935 | 0.002283 |
+| Mutación clásica por locus (pM = 0.01) | 0.112939 | 0.077349 | 0.107707 | 0.039626 |
+| Mutación clásica por locus (pM = 0.001) | 0.071066 | 0.053303 | 0.033935 | 0.002283 |
 | Mutación no uniforme por individuo (pM* = 0.5) | 0.071370 | 0.037166 | 0.002416 | 0.000709 |
 | Mutación no uniforme por individuo (pM* = 0.1) | 0.071641 | 0.055804 | 0.006078 | 0.003622 |
-| Mutación no uniforme por locus (pM = 0.001) | 0.064518 | 0.041330 | 0.027015 | 0.000505 |
-| Mutación no uniforme por locus (pM = 0.0001) | 0.076345 | 0.039439 | 0.019032 | 0.001490 |
+| Mutación no uniforme por locus (pM = 0.01) | 0.064518 | 0.041330 | 0.027015 | 0.000505 |
+| Mutación no uniforme por locus (pM = 0.001) | 0.076345 | 0.039439 | 0.019032 | 0.001490 |
 
 **Tabla 2**: Error Cuadrático Medio para los distintos métodos de mutación.
 

@@ -1,5 +1,16 @@
 >> printResults('backpropagation')
-         Method | ayyvgMeanErrors | avgBestErrors | bestMeanErrors | bestBestErrors
------------------------------------------------------------------------------------
-backpropagation |        0.064518 |      0.041330 |       0.027015 |       0.000505
-
+              Method | avgMeanErrors | avgBestErrors | bestMeanErrors | bestBestErrors
+--------------------------------------------------------------------------------------
+     backpropagation |      0.064518 |      0.041330 |       0.027015 |       0.000505
+>> printResults('backpropagation')
+              Method | avgMeanErrors | avgBestErrors | bestMeanErrors | bestBestErrors
+--------------------------------------------------------------------------------------
+         no backprop |      0.124671 |      0.118929 |       0.119723 |       0.114943
+>> printResults('backpropagation')
+              Method | avgMeanErrors | avgBestErrors | bestMeanErrors | bestBestErrors
+--------------------------------------------------------------------------------------
+         no backprop |      0.128428 |      0.124150 |       0.126010 |       0.121942
+>> printResults('backpropagation')
+              Method | avgMeanErrors | avgBestErrors | bestMeanErrors | bestBestErrors
+--------------------------------------------------------------------------------------
+         no backprop |      0.122553 |      0.121558 |       0.121829 |       0.121155

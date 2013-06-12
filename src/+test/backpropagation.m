@@ -2,7 +2,7 @@ function [runs start params tests] = backpropagation()
 
     runs = 3;
 
-    start = 1200;
+    start = 1000;
 
     params = struct( ...
         'maxGenerations', 20, ...
