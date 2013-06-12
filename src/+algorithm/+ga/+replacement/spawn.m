@@ -30,7 +30,7 @@ function [data children] = spawn(data, children)
             data.alg.backpropagations = data.alg.backpropagations + 1;
         end
 
-        children(c).fitness = algorithm.ga.chromosome.evalFitness(data, child1);
+        children(c).fitness = algorithm.ga.chromosome.evalFitness(data, children(c));
     end
 end
 
