@@ -7,9 +7,9 @@ Para representar nuestro problema, cada individuo estaba conformado por la matri
 correspondiente a una red neuronal, mientras que el valor de cada locus de su codificación
 equivalía a un peso particular.
 
-La función de adaptación para este problema era el Error Cuadrático Medio obtenido al evaluar la red.
+La función de adaptación para este problema era el el inverso del Error Cuadrático Medio obtenido al evaluar la red. Así, se puede maximizar el nivel de adaptación obteniendo menores errores.
 
-El error cuadrático medio es cálculado como se puede ver en la **Figura 1** en donde la resta equivale 
+El error cuadrático medio es cálculado como se puede ver en la **Figura 1** en donde la resta equivale
 a la resta entre el valor esperado y el obtenido para cada patrón.
 
 A las operaciones habituales de un algoritmo genético (entrecruzamiento y mutación) se
@@ -36,7 +36,7 @@ para el algoritmo genético:
 
 * __Cantidad de individuos en la población__
 * __Criterios de corte__: Se puede definir una cantidad máxima de generaciones,
-una cota mínima para el grado de adaptación de los individuos,
+una cota máxima para el grado de adaptación de los individuos,
 un porcentaje para el cual se considera que la población no ha sido modificada
 siginificativamente entre generaciones y una cantidad de generaciones en las cuales
 se espera que las soluciones hayan mejorado

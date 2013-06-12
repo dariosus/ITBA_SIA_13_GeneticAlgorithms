@@ -8,7 +8,7 @@ La idea de un algoritmo genético es la de reemplazar la población actual a tra
 por una población nueva con el objetivo de que la nueva generación posea mejores soluciones.
 
 Cada solución posee un grado de adaptación (para lo cual se cuenta con una función de **Fitness**)
-que se utiliza para evaluar qué tan buena es.
+que se utiliza para evaluar qué tan buena es. El objetivo es maximizar este grado de adaptación.
 
 Para generar nuevos individuos se pueden intercambiar alelos entre dos indivudos conocidos
 (entrecruzamiento) o modificar algún alelo por un valor aleatorio (mutación).
@@ -18,7 +18,7 @@ a la siguiente generación sin ser modificados.
 
 Existen diversas maneras de finalizar la ejecución de un algoritmo genético.
 Es posible definir el corte de dicha ejecución mediante una cantidad máxima de generaciones,
-al alcanzar un grado de adaptación menor a una cota definida, al detectar que la población
+al alcanzar un grado de adaptación mayor a una cota definida, al detectar que la población
 no está siendo modificada significativamente a lo largo de cierta cantidad de generaciones
 o al haber alcanzado una solución que no sea posible mejorar.
 

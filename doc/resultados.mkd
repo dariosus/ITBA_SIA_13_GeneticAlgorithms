@@ -3,18 +3,17 @@
 Para evaluar las distintas configuraciones del algoritmo, se evaluó cada caracterísitica por separado,
 prefijando valores por defecto para las otras configuraciones.
 
-La configuración por defecto considera como métodos de selección a ruleta.
+La configuración por defecto considera como métodos de selección a elitismo para elegir a los padres a reproducir, mientras que utiliza ruleta para elegir a la nueva población.
 Para los métodos mixtos, por defecto, se toma una proporción del 50% por método.
 Por su parte, para el reemplazo, es utilizado el primer método.
-Para aquellos casos en que se utilizan los otros dos métodos de reemplazo,
-por defecto, se toma 0.8 como brecha generacional.
-El método de entrecruzamiento utilizado es el uniforme con una probabilidad de entrecruzamiento de 0.75. En estos casos, donde el método sea uniforme, la probabiladad de entrecruzamiento por locus es de 0.05.
+Por defecto, se toma 0.9 como brecha generacional.
+La probabilidad de entrecruzamiento es de 0.75, mientras que para el método uniforme, la probabilidad de entrecruzamiento por locus es de 0.05.
 La probabilidad de mutación es fijada en 0.1, mutando sólo un locus por individuo.
 En los casos donde cambia la configuracion para que se evalue cada locus por separado,
-la probabilidad de mutación por locus es de 0.03.
+la probabilidad de mutación por locus es de 0.01.
 
 Respecto a la finalización del algoritmo, se tomaron varios criterios de cortes:
-al alcanzar un número máximo de 17 generaciones, al conseguir un nivel de adaptación menor a 0.001,
+al alcanzar un número máximo de 20 generaciones, al conseguir un nivel de adaptación menor a 0.001,
 en el caso en el cual un 80% o más de la población no haya sido modificado entre
 las últimas dos generaciones, y en el caso en el cual la mejor solución no se haya podido mejorar
 en las últimas 10 generaciones.
@@ -29,6 +28,8 @@ Para cada conjunto se midieron:
 * __bestMeanError__: menor entre cada corrida del conjunto de los errores medios de las poblaciones finales
 * __bestBestError__: menor entre cada corrida del conjunto de los menores errores de las poblaciones finales
 
+Cabe destacar que a medida que las pruebas fueron progresando, se fijaron aquellas configuraciones con las que se obtuvieron los mejores resultados.
+
 @@ 4.1 Evaluación de métodos de entrecruzamiento @@
 
 En la **Tabla 1** se pueden observar las mejores soluciones y la solución promedio
@@ -39,37 +40,41 @@ para los distintos métodos de entrecruzamiento.
 En la **Tabla 2** se pueden observar las mejores soluciones y la solución promedio
 para los distintos métodos de mutación.
 
+pM denota la probabilidad de mutación por locus, pM\* la probabilidad de mutación por individuo y c denota el valor utilizado para modificar las probabilidades entre generaciones.
+
+El método de entrecruzamiento utilizado a partir de estas pruebas y en la siguientes es el anular.
+
 @@ 4.3 Evaluación de métodos de selección @@
 
 En la **Tabla 3** se pueden observar las mejores soluciones y la solución promedio
-para los distintos métodos de selección.
+para los distintos métodos de selección a la hora de seleccionar padres que serán cruzados.
 Para los métodos mixtos, el parámetro `a` indica qué porcentaje de la selección
 se realiza mediante el método elite.
 
+A partir de estas pruebas y en las que se realizaron a continuación se utilizaron mutaciones por individuo con una probabilidad de 0.1. Estas mutaciones son no uniformes con un grado de modificación de 0.95.
+
+En la **Tabla 4** se pueden ver pruebas nuevamente en los métodos de reemplazo pero esta vez no son para seleccionar los padres a cruzar, sino para elegir los individuos que formarán parte de la nueva generación.
+
+En estas pruebas se utiliza el método de elitismo para elegir a los padres que se cruzarán.
+
 @@ 4.4 Evaluación de métodos de reemplazo @@
 
-En la **Tabla 4** se pueden observar las mejores soluciones y la solución promedio
-para los distintos métodos de reemplazo utilizando además diversos métodos de selección.
-En los casos de los métodos 2 y 3, el posible utilizar distintos métodos de
-selección para la fase de selección y para la fase de reemplazo.
+En la **Tabla 5**, **Tabla 6** y **Tabla 7** se pueden observar las mejores soluciones y la solución promedio para los tres métodos de reemplazo respectivamente utilizando además diversos métodos de selección.
+
+Los métodos de selección evaluados fueron elegidos en función a los datos obtenidos previamente.
 
 @@ 4.5 Evaluación de backpropagation @@
 
-En la **Tabla 5** se pueden observar las mejores soluciones y la solución promedio
+En la **Tabla 8** se pueden observar las mejores soluciones y la solución promedio
 para evaluaciones con probabilidad por defecto de 0.1 de que operar con el algoritmo de backpropagation,
 como así también para evaluaciones en las que no se utilice dicho algoritmo.
 
-Se debe mencionar, además, que el método de selección utilizado para estas evaluacioes ha sido elitismo,
-mientras que para el entrecruzamiento, la opción a utilizar ha sido anular.
-Por otra parte, para la mutación se ha empleado aquel tipo de mutación en el cual cada locus
-puede ser mutado con misma probabiladad. Dicha mutación además era no uniforme.
+TODO: Agregar configuracion particular
 
 @@ 4.6 Comparación entre la red neuronal y el algoritmo genético @@
 
 A modo de contrastar ambas estrategias, se han corrido ejecuciones de la red neuronal
 como así también del algoritmo genético para el problema a tratar.
-En la **Tabla 6** se pueden ver los resultados obtenidos de dichas corridas.
+En la **Tabla 9** se pueden ver los resultados obtenidos de dichas corridas.
 
-Es importante destacar que en estas ejecuciones el criterio de finalización
-por una máxima cantidad de 17 generaciones ha sido modificado elevando este número a 37.
-
+TODO: Agregar config del AG.
