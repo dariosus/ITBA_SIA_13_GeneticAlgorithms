@@ -147,7 +147,7 @@ Evaluación de Backpropagation
 || avgMeanError | avgBestError | bestMeanError | bestBestError |
 |------|-----|----|-------|-------|
 | Con Backpropagation | 0.064518 | 0.041330 | 0.027015 | 0.000505 |
-| Sin Backpropagation | 0.11807 | 0.11793 | 0.11621 | 0.1162 |
+| Sin Backpropagation | 0.124671 | 0.118929 | 0.119723 | 0.114943 |
 
 **Tabla 10**: Error Cuadrático Medio para ejecuciones con y sin backpropagation.
 
