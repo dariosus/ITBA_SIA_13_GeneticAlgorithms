@@ -69,7 +69,7 @@ En la **Tabla 8** se pueden observar las mejores soluciones y la solución prome
 para evaluaciones con probabilidad por defecto de 0.1 de que operar con el algoritmo de backpropagation,
 como así también para evaluaciones en las que no se utilice dicho algoritmo.
 
-TODO: Agregar configuracion particular
+En este caso se utiliza el primer método de reemplazo y elitismo y ruleta como métodos de selección.
 
 @@ 4.6 Comparación entre la red neuronal y el algoritmo genético @@
 

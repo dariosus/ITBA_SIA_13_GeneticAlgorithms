@@ -118,7 +118,7 @@ Evaluación de Backpropagation
 
 || avgMeanError | avgBestError | bestMeanError | bestBestError |
 |------|-----|----|-------|-------|
-| Con Backpropagation | 0.01023 | 0.00104 | 0.00483 | 0.00045311 |
+| Con Backpropagation | 0.064518 | 0.041330 | 0.027015 | 0.000505 |
 | Sin Backpropagation | 0.11807 | 0.11793 | 0.11621 | 0.1162 |
 
 **Tabla 8**: Error Cuadrático Medio para ejecuciones con y sin backpropagation.
@@ -128,7 +128,7 @@ Redes Neuronales vs. Algoritmos Genétivos
 || Mejor error en el aprendizaje | Mejor error global |
 |------|-----|----|
 | Redes Neuronales | 0.00026 | 0.00028 |
-| Algoritmos genéticos | 0.00032 | 0.00043 |
+| Algoritmos genéticos | 0.00039 | 0.00043 |
 
 **Tabla 9**: Mejor Error Cuadrático Medio para RNAs y AGs.
 
