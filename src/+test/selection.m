@@ -21,18 +21,18 @@ function [runs start params tests] = selection()
     );
 
     tests = {
-        struct('name', 'elite'          , 'selection', @algorithm.ga.selection.elite),
-        struct('name', 'roulette'       , 'selection', @algorithm.ga.selection.roulette),
-        struct('name', 'tourney'        , 'selection', @algorithm.ga.selection.tourney),
-        struct('name', 'rank'           , 'selection', @algorithm.ga.selection.rank),
-        struct('name', 'boltzmann(f=1)' , 'selection', @algorithm.ga.selection.boltzmann, 'tempFactor', 1),
-        struct('name', 'boltzmann(f=.5)', 'selection', @algorithm.ga.selection.boltzmann, 'tempFactor', 0.5),
-        struct('name', 'boltzmann(f=.1)', 'selection', @algorithm.ga.selection.boltzmann, 'tempFactor', 0.1),
-        struct('name', 'universal'      , 'selection', @algorithm.ga.selection.universal),
-        struct('name', 'mixed1(a=.1)'   , 'selection', @algorithm.ga.selection.mixed1, 'a', 0.1),
-        struct('name', 'mixed1(a=.2)'   , 'selection', @algorithm.ga.selection.mixed1, 'a', 0.2),
-        struct('name', 'mixed2(a=.1)'   , 'selection', @algorithm.ga.selection.mixed2, 'a', 0.1),
-        struct('name', 'mixed2(a=.2)'   , 'selection', @algorithm.ga.selection.mixed2, 'a', 0.2)
+        struct('name', 'elite'       , 'selection', @algorithm.ga.selection.elite),
+        struct('name', 'roulette'    , 'selection', @algorithm.ga.selection.roulette),
+        struct('name', 'tourney'     , 'selection', @algorithm.ga.selection.tourney),
+        struct('name', 'rank'        , 'selection', @algorithm.ga.selection.rank),
+        struct('name', 'borrame'     , 'selection', @algorithm.ga.selection.boltzmann),
+        struct('name', 'borrame'     , 'selection', @algorithm.ga.selection.boltzmann),
+        struct('name', 'boltzmann'   , 'selection', @algorithm.ga.selection.boltzmann),
+        struct('name', 'universal'   , 'selection', @algorithm.ga.selection.universal),
+        struct('name', 'mixed1(a=.1)', 'selection', @algorithm.ga.selection.mixed1, 'a', 0.1),
+        struct('name', 'mixed1(a=.2)', 'selection', @algorithm.ga.selection.mixed1, 'a', 0.2),
+        struct('name', 'mixed2(a=.1)', 'selection', @algorithm.ga.selection.mixed2, 'a', 0.1),
+        struct('name', 'mixed2(a=.2)', 'selection', @algorithm.ga.selection.mixed2, 'a', 0.2)
     };
 end
 

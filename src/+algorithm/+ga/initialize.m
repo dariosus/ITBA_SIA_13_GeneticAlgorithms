@@ -52,7 +52,6 @@ function data = initialize(params)
     data.const.contentGenerations = 8;
     data.const.changeRatio = 0.8;
     data.const.nonUniformMutation = true;
-    data.const.tempFactor = 1; % boltzmann's temperature factor
 
     % Neuronal network
 

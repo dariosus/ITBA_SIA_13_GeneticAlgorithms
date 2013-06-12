@@ -1,6 +1,6 @@
 function data = first(data, k)
 
-    population = data.alg.population;
+    population = repmat(data.alg.population(1), k + 1, 1);
 
     pos = 1;
 

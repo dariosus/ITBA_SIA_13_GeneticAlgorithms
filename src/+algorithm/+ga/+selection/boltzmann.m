@@ -1,6 +1,6 @@
 function selected = boltzmann(data, k, population, unique)
 
-    T = (1 - data.alg.generation / data.const.maxGenerations) * data.const.tempFactor;
+    T = (data.const.maxGenerations - data.alg.generation + 1) * 10000;
 
     expValues = exp([population.fitness] ./ T);
 
