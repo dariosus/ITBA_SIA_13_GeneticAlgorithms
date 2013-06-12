@@ -151,7 +151,7 @@ Evaluación de Backpropagation
 
 **Tabla 10**: Error Cuadrático Medio para ejecuciones con y sin backpropagation.
 
-Redes Neuronales vs. Algoritmos Genétivos
+Redes Neuronales vs. Algoritmos Genéticos
 
 || Mejor error en el aprendizaje | Mejor error global |
 |------|-----|----|
