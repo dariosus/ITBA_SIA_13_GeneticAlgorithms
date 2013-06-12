@@ -1,8 +1,9 @@
 @ 5. Conclusiones @
 
-El mejor individuo conseguido con el algoritmo genético tuvo un error cuadrático medio
-durante el testing (para 300 inputs) de 0.00036 y para todos los inputs, de 0.00040.
-Esto es ligeramente superior a los 0.00026, 0.00028 (respectivamente) de la RNA.
+El mejor individuo conseguido con el algoritmo genético tuvo un error cuadrático medio,
+durante el testing realizado para 300 inputs, de 0.00036 y para todos los inputs, de 0.00040.
+Esto es ligeramente superior a los 0.00026, 0.00028 (respectivamente) de los errores cuadráticos
+medios conseguidos con la RNA.
 Sin embargo notamos que el AG es mucho más consistente en sus corridas.
 Esto es, en cerca del 70% de las ejecuciones de éste con los mejores parámetros encontrados
 se llega a un individuo cercano al óptimo. Contrariamente, con la RNA esto pasa sólo
@@ -10,12 +11,13 @@ en aproximadamente un 10% de los casos.
 
 El mejor individuo fue hallado con los siguientes parámetros:
 ```
-pMutate = 0.003; % single locus mutation probability
+pMutate = 0.01; % single locus mutation probability
 pBack = 0.1; % back propagation probability
 pCross = 0.75; % crossing probability
 p = 0.05; % uniform crossover probability per locus
 c = 0.95; % mutation reduction ratio
-N = 60; % population size
+N = 30; % population size
+G = 0.9; % generation gap
 nonUniformMutation = true;
 maxEpochs = 80;
 rollback = true;
