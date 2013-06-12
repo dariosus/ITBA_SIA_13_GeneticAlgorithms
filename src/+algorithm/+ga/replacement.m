@@ -8,6 +8,6 @@ function data = replacement(data)
 
     data = data.const.replacement(data, k);
 
-    data.alg.population = [unchanged data.alg.population];
+    data.alg.population = [unchanged; data.alg.population];
 end
 
