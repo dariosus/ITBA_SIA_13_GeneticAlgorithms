@@ -1,13 +1,13 @@
-function [data population] = third(data)
+function data = third(data, k)
 
-    k = floor(data.const.genGap * data.const.N);
+    r = floor(data.const.offsprings * data.const.N);
 
-    [data population] = algorithm.ga.replacement.populate(data, k);
+    population = data.const.selection2(data, r, data.const.population, false);
+
+    [data population] = algorithm.ga.replacement.spawn(data, population(randperm(k)));
 
     population = [data.alg.population; population];
 
-    selected = data.const.selection2(data, data.const.N, population);
-
-    population = algorithm.ga.replacement.unique(data, selected, population);
+    data.alg.population = data.const.selection2(data, k, population, false);
 end
 

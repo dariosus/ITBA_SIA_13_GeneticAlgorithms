@@ -2,11 +2,12 @@ function data = update(data)
 
     sampleFitness = 1 ./ [data.alg.population.fitness];
 
-    data.debug.sampleErrors = [data.debug.sampleErrors mean(sampleFitness)];
-    data.debug.sampleBest   = [data.debug.sampleBest min(sampleFitness)];
-    data.debug.sampleStd    = [data.debug.sampleStd std(sampleFitness)];
-    data.debug.mutations    = [data.debug.mutations data.alg.mutation];
-    data.debug.crossovers   = [data.debug.crossovers data.alg.crossover];
+    data.debug.sampleErrors     = [data.debug.sampleErrors mean(sampleFitness)];
+    data.debug.sampleBest       = [data.debug.sampleBest min(sampleFitness)];
+    data.debug.sampleStd        = [data.debug.sampleStd std(sampleFitness)];
+    data.debug.mutations        = [data.debug.mutations data.alg.mutations];
+    data.debug.crossovers       = [data.debug.crossovers data.alg.crossovers];
+    data.debug.backpropagations = [data.debug.backpropagations data.alg.backpropagations];
 
     if data.const.globalDump
 

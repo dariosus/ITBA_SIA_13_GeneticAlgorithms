@@ -1,4 +1,6 @@
-function runTest(runs, start, params, tests)
+function runTest(name)
+
+    [runs start params tests] = eval(strcat('test.', name, '()'));
 
     for t = 1: length(tests)
 
@@ -17,7 +19,7 @@ function runTest(runs, start, params, tests)
 
             if isempty(message)
 
-                fprintf(1, 'Running test %d\n', dirNum);
+                fprintf(1, 'Running test ''%s'' (%d)\n', p.name, dirNum);
 
                 p.path = dir;
 

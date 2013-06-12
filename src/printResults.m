@@ -1,4 +1,6 @@
-function printResults(start, tests)
+function printResults(name)
+
+    [runs start params tests] = eval(strcat('test.', name, '()'));
 
     fprintf(1, '%20s | avgMeanErrors | avgBestErrors | bestMeanErrors | bestBestErrors\n', 'Method');
     fprintf(1, '%s\n', repmat('-', 1, 86));
@@ -24,7 +26,7 @@ function printResults(start, tests)
         start = start + 10;
 
         if ~isempty(avg)
-            fprintf(1, '%20s | %13f | %13f | %14f | %14f\n', tests{t}, mean(avg), mean(best), min(avg), min(best));
+            fprintf(1, '%20s | %13f | %13f | %14f | %14f\n', tests{t}.name, mean(avg), mean(best), min(avg), min(best));
         end
     end
 end

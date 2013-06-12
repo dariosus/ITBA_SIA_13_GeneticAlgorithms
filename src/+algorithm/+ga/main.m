@@ -8,9 +8,7 @@ function main(params)
 
         fprintf(1, 'Generation %d: ', data.alg.generation);
 
-        data.alg.lastFitness = [data.alg.population.fitness];
-
-        [data data.alg.population] = data.const.replacement(data);
+        data = algorithm.ga.replacement(data);
 
         data = algorithm.ga.update(data);
     end

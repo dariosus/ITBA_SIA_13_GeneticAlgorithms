@@ -38,6 +38,7 @@ function data = initialize(params)
 
     data.const.maxGenerations = 17;
     data.const.genGap = 0.8; % generation gap
+    data.const.offsprings = 0.8; % offsprings proportion for third method
     data.const.pMutate = 0.003; % single locus mutation probability
     data.const.pMutateStar = 0.1; % chromosome mutation probability
     data.const.pBack = 0.1; % back propagation probability
@@ -46,7 +47,7 @@ function data = initialize(params)
     data.const.a = 0.5; % mixed selection proportion
     data.const.c = 0.95; % mutation reduction ratio
     data.const.N = 60; % population size
-    data.const.uniqueTries = 2; % tries to remove repeated chromosomes
+    data.const.uniqueTries = 3; % tries to remove repeated chromosomes
     data.const.targetError = 0.000001;
     data.const.contentGenerations = 5;
     data.const.changeRatio = 0.8;
@@ -118,8 +119,9 @@ function data = initialize(params)
     data.alg.pMutateStar = data.const.pMutateStar;
 
     data.alg.lastFitness = [];
-    data.alg.crossover = 0;
-    data.alg.mutation = 0;
+    data.alg.crossovers = 0;
+    data.alg.mutations = 0;
+    data.alg.backpropagations = 0;
 
     %%%
     %% Debug
@@ -133,5 +135,6 @@ function data = initialize(params)
     data.debug.globalStd = [];
     data.debug.crossovers = [];
     data.debug.mutations = [];
+    data.debug.backpropagations = [];
 end
 

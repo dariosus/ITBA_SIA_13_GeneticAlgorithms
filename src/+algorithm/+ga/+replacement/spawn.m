@@ -1,31 +1,36 @@
-function [data child1 child2] = spawn(data, population)
+function [data children] = spawn(data, children)
 
-    children = data.const.selection(data, 2, population);
+    for c = 2 : 2 : numel(children)
 
-    child1 = children(1);
-    child2 = children(2);
+        if rand() <= data.const.pCross
 
-    if rand() <= data.const.pCross
+            [c1 c2] = data.const.crossover(data, children(c - 1), children(c));
 
-        [child1 child2] = data.const.crossover(data, child1, child2);
+            children(c - 1 : c) = [c1 c2];
 
-        data.alg.crossover = data.alg.crossover + 1;
+            data.alg.crossovers = data.alg.crossovers + 1;
+        end
     end
 
-    [data child1] = data.const.mutation(data, child1);
-    [data child2] = data.const.mutation(data, child2);
+    for c = 1 : numel(children)
 
-    if rand() <= data.const.pBack
+        child = data.const.mutation(data, children(c));
 
-        child1 = algorithm.ga.network.main(data, child1);
+        if ~prod(cellfun(@(x,y)prod(prod(x == y)), child, children(c)))
+
+            children(c) = child;
+
+            data.alg.mutations = data.alg.mutations + 1;
+        end
+
+        if rand() <= data.const.pBack
+
+            children(c) = algorithm.ga.network.main(data, children(c));
+
+            data.alg.backpropagations = data.alg.backpropagations + 1;
+        end
+
+        children(c).fitness = algorithm.ga.chromosome.evalFitness(data, child1);
     end
-
-    if rand() <= data.const.pBack
-
-        child2 = algorithm.ga.network.main(data, child2);
-    end
-
-    child1.fitness = algorithm.ga.chromosome.evalFitness(data, child1);
-    child2.fitness = algorithm.ga.chromosome.evalFitness(data, child2);
 end
 
