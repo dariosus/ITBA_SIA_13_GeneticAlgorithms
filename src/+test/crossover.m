@@ -1,6 +1,6 @@
 function [runs start params tests] = crossover()
 
-    runs = 3;
+    runs = 6;
 
     start = 800;
 
