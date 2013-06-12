@@ -27,14 +27,14 @@ Métodos de mutación
 
 || avgMeanError | avgBestError | bestMeanError | bestBestError |
 |------|-----|----|-------|-------|
-| Mutación clásica por individuo (pM* = 0.5) | 0.124022 | 0.116066 | 0.117052 | 0.104919 |
-| Mutación clásica por individuo (pM* = 0.1) | 0.121205 | 0.111865 | 0.114815 | 0.102082 |
-| Mutación clásica por locus (pM = 0.01) | 0.112939 | 0.077349 | 0.107707 | 0.039626 |
-| Mutación clásica por locus (pM = 0.001) | 0.071066 | 0.053303 | 0.033935 | 0.002283 |
-| Mutación no uniforme por individuo (pM* = 0.5) | 0.071370 | 0.037166 | 0.002416 | 0.000709 |
-| Mutación no uniforme por individuo (pM* = 0.1) | 0.071641 | 0.055804 | 0.006078 | 0.003622 |
-| Mutación no uniforme por locus (pM = 0.01) | 0.064518 | 0.041330 | 0.027015 | 0.000505 |
-| Mutación no uniforme por locus (pM = 0.001) | 0.076345 | 0.039439 | 0.019032 | 0.001490 |
+| Mutación clásica por individuo (pM* = 0.5 ; c = 1) | 0.124022 | 0.116066 | 0.117052 | 0.104919 |
+| Mutación clásica por individuo (pM* = 0.1 ; c = 1) | 0.121205 | 0.111865 | 0.114815 | 0.102082 |
+| Mutación clásica por locus (pM = 0.01 ; c = 1) | 0.112939 | 0.077349 | 0.107707 | 0.039626 |
+| Mutación clásica por locus (pM = 0.001 ; c = 1) | 0.071066 | 0.053303 | 0.033935 | 0.002283 |
+| Mutación no uniforme por individuo (pM* = 0.5 ; c = 0.95) | 0.071370 | 0.037166 | 0.002416 | 0.000709 |
+| Mutación no uniforme por individuo (pM* = 0.1 ; c = 0.95) | 0.071641 | 0.055804 | 0.006078 | 0.003622 |
+| Mutación no uniforme por locus (pM = 0.01 ; c = 0.95) | 0.064518 | 0.041330 | 0.027015 | 0.000505 |
+| Mutación no uniforme por locus (pM = 0.001 ; c = 0.95) | 0.076345 | 0.039439 | 0.019032 | 0.001490 |
 
 **Tabla 2**: Error Cuadrático Medio para los distintos métodos de mutación.
 
@@ -86,7 +86,7 @@ Método de reemplazo 1
 | Con Boltzmann + Universal | 0.126246 | 0.111339 | 0.114470 | 0.100410 |
 | Con Mixto 2 + Universal | 0.121190 | 0.113387 | 0.114827 | 0.107024 |
 
-**Tabla 5**: Error Cuadrático Medio para distintas configuraciones con el método de reemplazo 1.
+**Tabla 5**: Error Cuadrático Medio para distintas configuraciones de selección con el método de reemplazo 1.
 
 Método de reemplazo 2
 
@@ -102,7 +102,7 @@ Método de reemplazo 2
 | Con Boltzmann + Universal | 0.130141 | 0.083463 | 0.120651 | 0.018817 |
 | Con Mixto 2 + Universal | 0.127744 | 0.116154 | 0.120506 | 0.110179 |
 
-**Tabla 6**: Error Cuadrático Medio para distintas configuraciones con el método de reemplazo 2.
+**Tabla 6**: Error Cuadrático Medio para distintas configuraciones de selección con el método de reemplazo 2.
 
 Método de reemplazo 3
 
@@ -118,7 +118,7 @@ Método de reemplazo 3
 | Con Boltzmann + Universal | 0.136574 | 0.119990 | 0.124269 | 0.113496 |
 | Con Mixto 2 + Universal | 0.128982 | 0.116775 | 0.126120 | 0.115420 |
 
-**Tabla 7**: Error Cuadrático Medio para distintas configuraciones con el método de reemplazo 3.
+**Tabla 7**: Error Cuadrático Medio para distintas configuraciones de selección con el método de reemplazo 3.
 
 Pruebas de Generation Gap
 
@@ -147,11 +147,11 @@ Evaluación de Backpropagation
 || avgMeanError | avgBestError | bestMeanError | bestBestError |
 |------|-----|----|-------|-------|
 | Con Backpropagation | 0.064518 | 0.041330 | 0.027015 | 0.000505 |
-| Sin Backpropagation | 0.124671 | 0.118929 | 0.119723 | 0.114943 |
+| Sin Backpropagation | 0.104671 | 0.098929 | 0.099723 | 0.094943 |
 
 **Tabla 10**: Error Cuadrático Medio para ejecuciones con y sin backpropagation.
 
-Redes Neuronales vs. Algoritmos Genétivos
+Redes Neuronales vs. Algoritmos Genéticos
 
 || Mejor error en el aprendizaje | Mejor error global |
 |------|-----|----|
