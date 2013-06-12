@@ -4,7 +4,7 @@ function data = replacement(data)
 
     k = floor(data.const.genGap * data.const.N);
 
-    unchanged = data.const.selection(data, data.const.N - k, data.population, true);
+    unchanged = data.const.selection(data, data.const.N - k, data.alg.population, true);
 
     data = data.const.replacement(data, k);
 
